@@ -1,23 +1,13 @@
 var NAVTREE =
 [
   [ "NCEPLIBS-ncio", "index.html", [
-    [ "user_guide", "md__home_Hang_8Lei_noscrub_NCEPLIBS-ncio_docs_user_guide.html", null ],
-    [ "Data Types List", null, [
-      [ "Data Types List", "annotated.html", "annotated" ],
-      [ "Data Fields", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions/Subroutines", "functions_func.html", null ]
-      ] ]
-    ] ],
-    [ "Files", null, [
-      [ "File List", "files.html", "files" ]
-    ] ]
+    [ "user_guide", "md__home_Hang_8Lei_noscrub_NCEPLIBS-ncio_docs_user_guide.html", null ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"index.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
