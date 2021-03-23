@@ -128,9 +128,7 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 <li>character(len=nf90_max_name) :: name ! name of dimension</li>
 </ul>
 </li>
-</ul>
-<p>end type Dimension</p>
-<ul>
+<li>end type Dimension</li>
 <li>type Dataset<ul>
 <li>integer :: ncid ! netCDF ID.</li>
 <li>integer :: nvars ! number of variables in dataset</li>
@@ -147,23 +145,20 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 </ul>
 </li>
 <li>end type Dataset</li>
-</ul>
-<p>logical function has_var(dset, varname) ! returns .true. is varname exists in dset, otherwise .false.</p>
-<ul>
+<li>logical function has_var(dset, varname) ! returns .true. is varname exists in dset, otherwise .false.</li>
 <li>logical function has_attr(dset, attname, varname)<ul>
 <li>! returns .true. if attribute exists in dset, otherwise .false.</li>
 <li>! use optional kwarg varname to check for a variable attribute.</li>
 </ul>
 </li>
-</ul>
-<p>function get_dim(dset, dimname) result(dim) ! get Dimension object given name</p>
-<ul>
+<li>function get_dim(dset, dimname) result(dim) ! get Dimension object given name</li>
 <li>integer function get_ndim(dset,varname)<ul>
 <li>! get Dimension index (ndim) given name</li>
 <li>! Dimension object can then be accessed via Datasetdimensions(ndim)</li>
-<li>function get_var(dset, varname) result (var) ! get Variable object given name</li>
+<li></li>
 </ul>
 </li>
+<li>function get_var(dset, varname) result (var) ! get Variable object given name</li>
 <li>integer function get_nvar(dset,varname)<ul>
 <li>! get variable index (nvar) given name</li>
 <li>! Variable object can then be accessed via Datasetvariables(nvar)</li>
