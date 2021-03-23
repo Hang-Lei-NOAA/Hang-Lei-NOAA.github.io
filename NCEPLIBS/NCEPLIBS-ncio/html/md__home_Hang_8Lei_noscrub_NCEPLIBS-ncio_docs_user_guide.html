@@ -100,8 +100,15 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 <div class="title">API </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>type Variable *integer varid ! netCDF variable ID *integer ndims ! number of dimensions *integer dtype ! netCDF data type *integer natts ! number of attributes *integer deflate_level ! compression level (if &gt; 0) *logical shuffle ! shuffle filter? *logical hasunlim ! has an unlimited dim? *character(len=nf90_max_name) :: name ! variable name *integer, allocatable, dimension(:) :: dimids ! netCDF dimension IDs *! indices into Datasetdimensions for associated dimensions. *integer, allocatable, dimension(:) :: dimindxs *! names of associated dimensions. *character(len=nf90_max_name), allocatable, dimension(:) :: dimnames *! current dimension lengths (updated after every write_vardata call) *integer, allocatable, dimension(:) :: dimlens *integer, allocatable, dimension(:) :: chunksizes end type Variable</p>
-<p>type Dimension integer dimid ! netCDF dimension ID integer len ! dimension length (updated after every write_vardata call) logical isunlimited ! unlimited? character(len=nf90_max_name) :: name ! name of dimension end type Dimension</p>
+<div class="textblock"><p>type Variable integer varid ! netCDF variable ID integer ndims ! number of dimensions integer dtype ! netCDF data type integer natts ! number of attributes integer deflate_level ! compression level (if &gt; 0) logical shuffle ! shuffle filter? logical hasunlim ! has an unlimited dim? character(len=nf90_max_name) :: name ! variable name integer, allocatable, dimension(:) :: dimids ! netCDF dimension IDs ! indices into Datasetdimensions for associated dimensions. integer, allocatable, dimension(:) :: dimindxs ! names of associated dimensions. character(len=nf90_max_name), allocatable, dimension(:) :: dimnames ! current dimension lengths (updated after every write_vardata call) integer, allocatable, dimension(:) :: dimlens integer, allocatable, dimension(:) :: chunksizes end type Variable</p>
+<p>/** type Dimension</p>
+<ul>
+<li>integer dimid ! netCDF dimension ID</li>
+<li>integer len ! dimension length (updated after every write_vardata call)</li>
+<li>logical isunlimited ! unlimited?</li>
+<li>character(len=nf90_max_name) :: name ! name of dimension</li>
+</ul>
+<p>end type Dimension */</p>
 <p>type Dataset integer :: ncid ! netCDF ID. integer :: nvars ! number of variables in dataset integer :: ndims ! number of dimensions in dataset integer :: natts ! number of dataset (global) attributes integer :: nunlimdim ! dimension ID for unlimited dimension logical :: ishdf5 ! is underlying disk format HDF5? logical :: isparallel ! was file opened for parallel I/O? character(len=500) filename ! netCDF filename ! array of Variable instances type(Variable), allocatable, dimension(:) :: variables ! array of Dimension instances type(Dimension), allocatable, dimension(:) :: dimensions end type Dataset</p>
 <p>logical function has_var(dset, varname) ! returns .true. is varname exists in dset, otherwise .false.</p>
 <p>logical function has_attr(dset, attname, varname) ! returns .true. if attribute exists in dset, otherwise .false. ! use optional kwarg varname to check for a variable attribute.</p>
