@@ -121,7 +121,6 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 </ul>
 </li>
 <li>end type Variable</li>
-<li></li>
 <li>type Dimension<ul>
 <li>integer dimid ! netCDF dimension ID</li>
 <li>integer len ! dimension length (updated after every write_vardata call)</li>
@@ -132,10 +131,7 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 </ul>
 <p>end type Dimension</p>
 <ul>
-<li></li>
-</ul>
-<p>type Dataset</p>
-<ul>
+<li>type Dataset<ul>
 <li>integer :: ncid ! netCDF ID.</li>
 <li>integer :: nvars ! number of variables in dataset</li>
 <li>integer :: ndims ! number of dimensions in dataset</li>
@@ -149,15 +145,19 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 <li>! array of Dimension instances</li>
 <li>type(Dimension), allocatable, dimension(:) :: dimensions</li>
 </ul>
-<p>end type Dataset</p>
+</li>
+<li>end type Dataset</li>
+</ul>
+<p>logical function has_var(dset, varname) ! returns .true. is varname exists in dset, otherwise .false.</p>
 <ul>
-<li>logical function has_var(dset, varname) ! returns .true. is varname exists in dset, otherwise .false.</li>
 <li>logical function has_attr(dset, attname, varname)<ul>
 <li>! returns .true. if attribute exists in dset, otherwise .false.</li>
 <li>! use optional kwarg varname to check for a variable attribute.</li>
-<li>function get_dim(dset, dimname) result(dim) ! get Dimension object given name</li>
 </ul>
 </li>
+</ul>
+<p>function get_dim(dset, dimname) result(dim) ! get Dimension object given name</p>
+<ul>
 <li>integer function get_ndim(dset,varname)<ul>
 <li>! get Dimension index (ndim) given name</li>
 <li>! Dimension object can then be accessed via Datasetdimensions(ndim)</li>
@@ -167,7 +167,6 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 <li>integer function get_nvar(dset,varname)<ul>
 <li>! get variable index (nvar) given name</li>
 <li>! Variable object can then be accessed via Datasetvariables(nvar)</li>
-<li></li>
 </ul>
 </li>
 <li>function open_dataset(filename,errcode,paropen, mpicomm) result(dset)<ul>
@@ -204,14 +203,12 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 <li>! ignored if paropen=F</li>
 <li>!</li>
 <li>! returns Dataset object.</li>
-<li></li>
 </ul>
 </li>
 <li>subroutine close_dataset(dset,errcode)<ul>
 <li>! close netcdf file, deallocate members of dataset object.</li>
 <li>! if optional error return code errcode is not specified,</li>
 <li>! program will stop if a nonzero error code returned by the netcdf lib.</li>
-<li></li>
 </ul>
 </li>
 <li>subroutine read_vardata(dset,varname,values,nslice,slicedim,errcode)<ul>
@@ -232,7 +229,6 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 <li>! errcode: optional error return code. If not specified,</li>
 <li>! program will stop if a nonzero error code returned</li>
 <li>! from netcdf library. /</li>
-<li></li>
 </ul>
 </li>
 <li>subroutine write_vardata(dset,varname,values,nslice,slicedim,errcode)<ul>
@@ -253,7 +249,6 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 <li>! errcode: optional error return code. If not specified,</li>
 <li>! program will stop if a nonzero error code returned</li>
 <li>! from netcdf library.</li>
-<li></li>
 </ul>
 </li>
 <li>subroutine read_attribute(dset, attname, values, varname, errcode)<ul>
@@ -261,14 +256,12 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 <li>! argument 'varname' is given, a variable attribute is returned.</li>
 <li>! if the attribute is a 1d array, values should be an allocatable 1d</li>
 <li>! array of the correct type.</li>
-<li></li>
 </ul>
 </li>
 <li>subroutine write_attribute(dset, attname, values, varname, errcode)<ul>
 <li>! write attribute 'attname' with data in 'values'. If optional</li>
 <li>! argument 'varname' is given, a variable attribute is written.</li>
-<li>! values can be a real(4), real(8), integer, string or 1d array.</li>
-<li></li>
+<li>! values can be a real(4), real(8), integer, string or 1d array. </li>
 </ul>
 </li>
 </ul>

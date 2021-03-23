@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('user__guide_8md.html','');});
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    * integer, allocatable, dimension(:) :: dimlens</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    * integer, allocatable, dimension(:) :: chunksizes </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  * end type Variable</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  *</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  * type Dimension</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    * integer dimid ! netCDF dimension ID</div>
@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('user__guide_8md.html','');});
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    * logical isunlimited ! unlimited?</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    * character(len=nf90_max_name) :: name ! name of dimension </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   * end type Dimension</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   *</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  * type Dataset</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    * integer :: ncid ! netCDF ID.</div>
@@ -149,7 +149,7 @@ $(document).ready(function(){initNavTree('user__guide_8md.html','');});
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    * ! array of Dimension instances</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    * type(Dimension), allocatable, dimension(:) :: dimensions </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  * end type Dataset</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  *</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  logical function has_var(dset, varname)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;     ! returns .true. is varname exists in dset, otherwise .false.  </div>
@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('user__guide_8md.html','');});
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  * logical function has_attr(dset, attname, varname)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    * ! returns .true. if attribute exists in dset, otherwise .false.</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    * ! use optional kwarg varname to check for a variable attribute.</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    *</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;     </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  function get_dim(dset, dimname) result(dim)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;     ! get Dimension object given name </div>
@@ -173,7 +173,7 @@ $(document).ready(function(){initNavTree('user__guide_8md.html','');});
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  * integer function get_nvar(dset,varname)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;     * ! get variable index (nvar) given name</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;     * ! Variable object can then be accessed via Dataset%variables(nvar)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;     *</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  * function open_dataset(filename,errcode,paropen, mpicomm) result(dset)</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;     * ! open existing dataset, create dataset object for reading netcdf file</div>
@@ -208,13 +208,13 @@ $(document).ready(function(){initNavTree('user__guide_8md.html','');});
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    * !          ignored if paropen=F</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    * !</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    * ! returns Dataset object.  </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    *</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;     </div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  * subroutine close_dataset(dset,errcode)</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    * ! close netcdf file, deallocate members of dataset object.</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    * ! if optional error return code errcode is not specified,</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    * ! program will stop if a nonzero error code returned by the netcdf lib.  </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    *</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;     </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  * subroutine read_vardata(dset,varname,values,nslice,slicedim,errcode)</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    * ! read data from variable varname in dataset dset, return in it array values.</div>
@@ -234,7 +234,7 @@ $(document).ready(function(){initNavTree('user__guide_8md.html','');});
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    * ! errcode: optional error return code.  If not specified,</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    * !          program will stop if a nonzero error code returned</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    * !          from netcdf library.  /</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    *</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;     </div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  * subroutine write_vardata(dset,varname,values,nslice,slicedim,errcode)</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    * ! write data (in array values) to variable varname in dataset dset.</div>
@@ -254,20 +254,20 @@ $(document).ready(function(){initNavTree('user__guide_8md.html','');});
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    * ! errcode: optional error return code.  If not specified,</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    * !          program will stop if a nonzero error code returned</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    * !          from netcdf library.    </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    *</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;     </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  * subroutine read_attribute(dset, attname, values, varname, errcode)</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    * ! read attribute <span class="stringliteral">&#39;attname&#39;</span> return in <span class="stringliteral">&#39;values&#39;</span>.  If optional</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    * ! argument <span class="stringliteral">&#39;varname&#39;</span> is given, a variable attribute is returned.</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    * ! if the attribute is a 1d array, values should be an allocatable 1d</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    * ! array of the correct type.    </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    *</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;     </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  * subroutine write_attribute(dset, attname, values, varname, errcode)</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    * ! write attribute <span class="stringliteral">&#39;attname&#39;</span> with data in <span class="stringliteral">&#39;values&#39;</span>.  If optional</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    * ! argument <span class="stringliteral">&#39;varname&#39;</span> is given, a variable attribute is written.</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    * ! values can be a real(4), real(8), integer, string or 1d array.  </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    *</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;     </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
