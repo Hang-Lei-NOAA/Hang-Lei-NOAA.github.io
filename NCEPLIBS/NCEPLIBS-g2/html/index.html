@@ -46,7 +46,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Types&#160;List</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -86,7 +85,7 @@ $(document).ready(function(){initNavTree('index.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -129,10 +128,10 @@ SECTION 8 - End Section                   }             }            }
 <h1>Extracting GRIB2 Fields from a GRIB2 file</h1>
 <p>Subroutine GETGB2 can be used to extract a specified field from a file containing many GRIB2 messages. GETGB2 searches an index to find the location of the user specified field. The index can be supplied from a seperate GRIB2 index file, or it can be generated internally.</p>
 <p>The GRIB2 file ( and the index file, if supplied ) must be opened with a call to subroutine BAOPEN prior to the call to GETGB2.</p>
-<p>The decoded information for the selected GRIB field is returned in a derived type variable, gfld. Gfld is of type gribfield, which is defined in module <a class="el" href="classgrib__mod.html">grib_mod</a>, so users of this routine will need to include the line "USE GRIB_MOD" in their calling routine. Each component of the gribfield type is described in the OUTPUT ARGUMENT LIST in the docblock for subroutine GETGB2 below.</p>
+<p>The decoded information for the selected GRIB field is returned in a derived type variable, gfld. Gfld is of type gribfield, which is defined in module grib_mod, so users of this routine will need to include the line "USE GRIB_MOD" in their calling routine. Each component of the gribfield type is described in the OUTPUT ARGUMENT LIST in the docblock for subroutine GETGB2 below.</p>
 <p>Note that derived type gribfield contains pointers to many arrays of data. The memory for these arrays is allocated when the values in the arrays are set, to help minimize problems with array overloading. Because of this, users are encouraged to free up this memory, when it is no longer needed, by an explicit call to subroutine GF_FREE.</p>
 <p>Example usage:</p>
-<div class="fragment"><div class="line">    use <a class="code" href="classgrib__mod.html">grib_mod</a></div>
+<div class="fragment"><div class="line">    use grib_mod</div>
 <div class="line">    type(gribfield) :: gfld</div>
 <div class="line">    integer,dimension(200) :: jids,jpdt,jgdt</div>
 <div class="line">    logical :: unpack=.true.</div>
