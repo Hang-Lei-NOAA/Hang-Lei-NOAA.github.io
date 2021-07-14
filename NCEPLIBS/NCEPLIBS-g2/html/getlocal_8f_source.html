@@ -193,12 +193,12 @@ $(document).ready(function(){initNavTree('getlocal_8f_source.html','');});
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">!  Unpack Section 0 - Indicator Section </span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">!</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      iofst=8*(istart+5)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      call g2_gbytec(cgrib,listsec0(1),iofst,8)     <span class="comment">! Discipline</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,listsec0(1),iofst,8)     <span class="comment">! Discipline</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      iofst=iofst+8</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      call g2_gbytec(cgrib,listsec0(2),iofst,8)     <span class="comment">! GRIB edition number</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,listsec0(2),iofst,8)     <span class="comment">! GRIB edition number</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      iofst=iofst+8</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      iofst=iofst+32</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      call g2_gbytec(cgrib,lengrib,iofst,32)        <span class="comment">! Length of GRIB message</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,lengrib,iofst,32)        <span class="comment">! Length of GRIB message</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      iofst=iofst+32</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      lensec0=16</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      ipos=istart+lensec0</div>
@@ -230,9 +230,9 @@ $(document).ready(function(){initNavTree('getlocal_8f_source.html','');});
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="comment">!     Get length of Section and Section number</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        iofst=(ipos-1)*8</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        call g2_gbytec(cgrib,lensec,iofst,32)        <span class="comment">! Get Length of Section</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,lensec,iofst,32)        <span class="comment">! Get Length of Section</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        iofst=iofst+32</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        call g2_gbytec(cgrib,isecnum,iofst,8)         <span class="comment">! Get Section number</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,isecnum,iofst,8)         <span class="comment">! Get Section number</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        iofst=iofst+8</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="comment">!   If found the requested occurrence of Section 2,</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="comment">!   return the section contents.</span></div>
@@ -274,12 +274,13 @@ $(document).ready(function(){initNavTree('getlocal_8f_source.html','');});
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="ttc" id="g2__gbytesc_8f_html_aca0f5451292195fe5e0eb3ff4e53fe98"><div class="ttname"><a href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a></div><div class="ttdeci">subroutine g2_gbytec(IN, IOUT, ISKIP, NBYTE)</div><div class="ttdoc">This subrountine is to extract arbitrary size values from a packed bit string, right justifying each ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00019">g2_gbytesc.f:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_d016ec1399c85acecef32bf81e1fad9c.html">dox</a></li><li class="navelem"><a class="el" href="dir_a7b3ebe721b8c60c479822a40383d337.html">src</a></li><li class="navelem"><b>getlocal.f</b></li>
+    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_29e1b67c9143278d7563af0e979ac998.html">gb_info</a></li><li class="navelem"><a class="el" href="dir_ef55fd17451adfc641685685314f83bc.html">src</a></li><li class="navelem"><b>getlocal.f</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>

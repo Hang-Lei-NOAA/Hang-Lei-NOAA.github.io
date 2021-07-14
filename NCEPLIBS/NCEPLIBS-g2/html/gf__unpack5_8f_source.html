@@ -171,14 +171,14 @@ $(document).ready(function(){initNavTree('gf__unpack5_8f_source.html','');});
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      ierr=0</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      nullify(idrstmpl)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      call g2_gbytec(cgrib,lensec,iofst,32)        <span class="comment">! Get Length of Section</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,lensec,iofst,32)        <span class="comment">! Get Length of Section</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      iofst=iofst+32</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      iofst=iofst+8     <span class="comment">! skip section number</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keyword">allocate</span>(mapdrs(lensec))</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      call g2_gbytec(cgrib,ndpts,iofst,32)    <span class="comment">! Get num of data points</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,ndpts,iofst,32)    <span class="comment">! Get num of data points</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      iofst=iofst+32</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      call g2_gbytec(cgrib,idrsnum,iofst,16)     <span class="comment">! Get Data Rep Template Num.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,idrsnum,iofst,16)     <span class="comment">! Get Data Rep Template Num.</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      iofst=iofst+16</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="comment">!   Gen Data Representation Template</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      call <a class="code" href="classdrstemplates.html#a289f2f4b832edac2286b1d494df0fc5d">getdrstemplate</a>(idrsnum,mapdrslen,mapdrs,needext,iret)</div>
@@ -203,10 +203,10 @@ $(document).ready(function(){initNavTree('gf__unpack5_8f_source.html','');});
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">do</span> i=1,mapdrslen</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        nbits=iabs(mapdrs(i))*8</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">if</span> ( mapdrs(i).ge.0 ) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;          call g2_gbytec(cgrib,idrstmpl(i),iofst,nbits)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;          call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,idrstmpl(i),iofst,nbits)</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;          call g2_gbytec(cgrib,isign,iofst,1)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;          call g2_gbytec(cgrib,idrstmpl(i),iofst+1,nbits-1)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;          call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,isign,iofst,1)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;          call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,idrstmpl(i),iofst+1,nbits-1)</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;          <span class="keywordflow">if</span> (isign.eq.1) idrstmpl(i)=-idrstmpl(i)</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        iofst=iofst+nbits</div>
@@ -225,10 +225,10 @@ $(document).ready(function(){initNavTree('gf__unpack5_8f_source.html','');});
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">do</span> i=mapdrslen+1,newmapdrslen</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;          nbits=iabs(mapdrs(i))*8</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;          <span class="keywordflow">if</span> ( mapdrs(i).ge.0 ) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            call g2_gbytec(cgrib,idrstmpl(i),iofst,nbits)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,idrstmpl(i),iofst,nbits)</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;          <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            call g2_gbytec(cgrib,isign,iofst,1)</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            call g2_gbytec(cgrib,idrstmpl(i),iofst+1,nbits-1)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,isign,iofst,1)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,idrstmpl(i),iofst+1,nbits-1)</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">if</span> (isign.eq.1) idrstmpl(i)=-idrstmpl(i)</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;          <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;          iofst=iofst+nbits</div>
@@ -240,9 +240,10 @@ $(document).ready(function(){initNavTree('gf__unpack5_8f_source.html','');});
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      <span class="keywordflow">return</span>    <span class="comment">! End of Section 5 processing</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <span class="keywordflow">end</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="ttc" id="classdrstemplates_html_a7faeffac8ac21af2be2eda0fc0156ea6"><div class="ttname"><a href="classdrstemplates.html#a7faeffac8ac21af2be2eda0fc0156ea6">drstemplates::extdrstemplate</a></div><div class="ttdeci">subroutine extdrstemplate(number, list, nummap, map)</div><div class="ttdoc">This subroutine generates the remaining octet map for a given Data Representation Template...</div><div class="ttdef"><b>Definition:</b> <a href="drstemplates_8f_source.html#l00202">drstemplates.f:202</a></div></div>
-<div class="ttc" id="classdrstemplates_html"><div class="ttname"><a href="classdrstemplates.html">drstemplates</a></div><div class="ttdoc">Each Template has three parts: The number of entries in the template (mapgridlen); A map of the templ...</div><div class="ttdef"><b>Definition:</b> <a href="drstemplates_8f_source.html#l00035">drstemplates.f:35</a></div></div>
-<div class="ttc" id="classdrstemplates_html_a289f2f4b832edac2286b1d494df0fc5d"><div class="ttname"><a href="classdrstemplates.html#a289f2f4b832edac2286b1d494df0fc5d">drstemplates::getdrstemplate</a></div><div class="ttdeci">subroutine getdrstemplate(number, nummap, map, needext, iret)</div><div class="ttdoc">This subroutine returns DRS template information for a . </div><div class="ttdef"><b>Definition:</b> <a href="drstemplates_8f_source.html#l00160">drstemplates.f:160</a></div></div>
+<div class="ttc" id="g2__gbytesc_8f_html_aca0f5451292195fe5e0eb3ff4e53fe98"><div class="ttname"><a href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a></div><div class="ttdeci">subroutine g2_gbytec(IN, IOUT, ISKIP, NBYTE)</div><div class="ttdoc">This subrountine is to extract arbitrary size values from a packed bit string, right justifying each ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00019">g2_gbytesc.f:19</a></div></div>
+<div class="ttc" id="classdrstemplates_html_a7faeffac8ac21af2be2eda0fc0156ea6"><div class="ttname"><a href="classdrstemplates.html#a7faeffac8ac21af2be2eda0fc0156ea6">drstemplates::extdrstemplate</a></div><div class="ttdeci">subroutine extdrstemplate(number, list, nummap, map)</div><div class="ttdoc">This subroutine generates the remaining octet map for a given Data Representation Template...</div><div class="ttdef"><b>Definition:</b> <a href="drstemplates_8f_source.html#l00204">drstemplates.f:204</a></div></div>
+<div class="ttc" id="classdrstemplates_html"><div class="ttname"><a href="classdrstemplates.html">drstemplates</a></div><div class="ttdoc">This Fortran Module contains info on all the available GRIB2 Data Representation Templates used in Se...</div><div class="ttdef"><b>Definition:</b> <a href="drstemplates_8f_source.html#l00037">drstemplates.f:37</a></div></div>
+<div class="ttc" id="classdrstemplates_html_a289f2f4b832edac2286b1d494df0fc5d"><div class="ttname"><a href="classdrstemplates.html#a289f2f4b832edac2286b1d494df0fc5d">drstemplates::getdrstemplate</a></div><div class="ttdeci">subroutine getdrstemplate(number, nummap, map, needext, iret)</div><div class="ttdoc">This subroutine returns DRS template information for a . </div><div class="ttdef"><b>Definition:</b> <a href="drstemplates_8f_source.html#l00162">drstemplates.f:162</a></div></div>
 <div class="ttc" id="classre__alloc_html"><div class="ttname"><a href="classre__alloc.html">re_alloc</a></div><div class="ttdef"><b>Definition:</b> <a href="realloc_8f_source.html#l00001">realloc.f:1</a></div></div>
 <div class="ttc" id="interfacere__alloc_1_1realloc_html"><div class="ttname"><a href="interfacere__alloc_1_1realloc.html">re_alloc::realloc</a></div><div class="ttdef"><b>Definition:</b> <a href="realloc_8f_source.html#l00003">realloc.f:3</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -250,7 +251,7 @@ $(document).ready(function(){initNavTree('gf__unpack5_8f_source.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_d016ec1399c85acecef32bf81e1fad9c.html">dox</a></li><li class="navelem"><a class="el" href="dir_a7b3ebe721b8c60c479822a40383d337.html">src</a></li><li class="navelem"><b>gf_unpack5.f</b></li>
+    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_29e1b67c9143278d7563af0e979ac998.html">gb_info</a></li><li class="navelem"><a class="el" href="dir_ef55fd17451adfc641685685314f83bc.html">src</a></li><li class="navelem"><b>gf_unpack5.f</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>

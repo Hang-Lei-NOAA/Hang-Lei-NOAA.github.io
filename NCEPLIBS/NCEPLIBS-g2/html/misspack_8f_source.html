@@ -340,34 +340,34 @@ $(document).ready(function(){initNavTree('misspack_8f_source.html','');});
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;           <span class="keywordflow">if</span> (nbitsd.ne.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;              <span class="comment">!   pack first original value</span></div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;              <span class="keywordflow">if</span> (ival1.ge.0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                 call g2_sbytec(cpack,ival1,iofst,nbitsd)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                 call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,ival1,iofst,nbitsd)</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                 iofst=iofst+nbitsd</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;              <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                 call g2_sbytec(cpack,1,iofst,1)</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                 call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,1,iofst,1)</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                 iofst=iofst+1</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                 call g2_sbytec(cpack,iabs(ival1),iofst,nbitsd-1)</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                 call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,iabs(ival1),iofst,nbitsd-1)</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                 iofst=iofst+nbitsd-1</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;              <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;              <span class="keywordflow">if</span> (idrstmpl(17).eq.2) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;               <span class="comment">!  pack second original value</span></div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                 <span class="keywordflow">if</span> (ival2.ge.0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    call g2_sbytec(cpack,ival2,iofst,nbitsd)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,ival2,iofst,nbitsd)</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    iofst=iofst+nbitsd</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                 <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    call g2_sbytec(cpack,1,iofst,1)</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,1,iofst,1)</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    iofst=iofst+1</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    call g2_sbytec(cpack,iabs(ival2),iofst,nbitsd-1)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,iabs(ival2),iofst,nbitsd-1)</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    iofst=iofst+nbitsd-1</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                 <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;              <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;              <span class="comment">!  pack overall min of spatial differences</span></div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;              <span class="keywordflow">if</span> (minsd.ge.0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                 call g2_sbytec(cpack,minsd,iofst,nbitsd)</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                 call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,minsd,iofst,nbitsd)</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                 iofst=iofst+nbitsd</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;              <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                 call g2_sbytec(cpack,1,iofst,1)</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                 call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,1,iofst,1)</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                 iofst=iofst+1</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                 call g2_sbytec(cpack,iabs(minsd),iofst,nbitsd-1)</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                 call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,iabs(minsd),iofst,nbitsd-1)</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                 iofst=iofst+nbitsd-1</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;              <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;           <span class="keywordflow">endif</span></div>
@@ -501,13 +501,13 @@ $(document).ready(function(){initNavTree('misspack_8f_source.html','');});
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;               <span class="keywordflow">if</span> (gref(j).eq.-1) gref(j)=mtemp-1</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;               <span class="keywordflow">if</span> (gref(j).eq.-2) gref(j)=mtemp-2</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;           <span class="keywordflow">enddo</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;           call g2_sbytesc(cpack,gref,iofst,nbitsgref,0,ngroups)</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;           call <a class="code" href="g2__gbytesc_8f.html#a9cf11b602b6b58376477c58af3281aa4">g2_sbytesc</a>(cpack,gref,iofst,nbitsgref,0,ngroups)</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;           itemp=nbitsgref*ngroups</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;           iofst=iofst+itemp</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;           <span class="comment">!         Pad last octet with Zeros, if necessary,</span></div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;           <span class="keywordflow">if</span> (mod(itemp,8).ne.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;              left=8-mod(itemp,8)</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;              call g2_sbytec(cpack,zero,iofst,left)</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;              call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,zero,iofst,left)</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;              iofst=iofst+left</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;           <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">else</span></div>
@@ -527,13 +527,13 @@ $(document).ready(function(){initNavTree('misspack_8f_source.html','');});
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;           <span class="keywordflow">do</span> i=1,ngroups</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;              gwidth(i)=gwidth(i)-ngwidthref</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;           <span class="keywordflow">enddo</span></div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;           call g2_sbytesc(cpack,gwidth,iofst,nbitsgwidth,0,ngroups)</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;           call <a class="code" href="g2__gbytesc_8f.html#a9cf11b602b6b58376477c58af3281aa4">g2_sbytesc</a>(cpack,gwidth,iofst,nbitsgwidth,0,ngroups)</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;           itemp=nbitsgwidth*ngroups</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;           iofst=iofst+itemp</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;           <span class="comment">!         Pad last octet with Zeros, if necessary,</span></div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;           <span class="keywordflow">if</span> (mod(itemp,8).ne.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;              left=8-mod(itemp,8)</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;              call g2_sbytec(cpack,zero,iofst,left)</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;              call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,zero,iofst,left)</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;              iofst=iofst+left</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;           <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <span class="keywordflow">else</span></div>
@@ -559,13 +559,13 @@ $(document).ready(function(){initNavTree('misspack_8f_source.html','');});
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;           <span class="keywordflow">do</span> i=1,ngroups-1</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;              glen(i)=glen(i)-nglenref</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;           <span class="keywordflow">enddo</span></div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;           call g2_sbytesc(cpack,glen,iofst,nbitsglen,0,ngroups)</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;           call <a class="code" href="g2__gbytesc_8f.html#a9cf11b602b6b58376477c58af3281aa4">g2_sbytesc</a>(cpack,glen,iofst,nbitsglen,0,ngroups)</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;           itemp=nbitsglen*ngroups</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;           iofst=iofst+itemp</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;           <span class="comment">!         Pad last octet with Zeros, if necessary,</span></div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;           <span class="keywordflow">if</span> (mod(itemp,8).ne.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;              left=8-mod(itemp,8)</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;              call g2_sbytec(cpack,zero,iofst,left)</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;              call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,zero,iofst,left)</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;              iofst=iofst+left</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;           <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        <span class="keywordflow">else</span></div>
@@ -584,7 +584,7 @@ $(document).ready(function(){initNavTree('misspack_8f_source.html','');});
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;           grpwidth=gwidth(ng)+ngwidthref</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;       <span class="comment">!write(77,*)&#39;NGP &#39;,ng,grpwidth,glength,gref(ng)</span></div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;           <span class="keywordflow">if</span> ( grpwidth.ne.0 ) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;              call g2_sbytesc(cpack,ifld(n),iofst,grpwidth,0,glength)</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;              call <a class="code" href="g2__gbytesc_8f.html#a9cf11b602b6b58376477c58af3281aa4">g2_sbytesc</a>(cpack,ifld(n),iofst,grpwidth,0,glength)</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;              iofst=iofst+(grpwidth*glength)</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;           <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;           <span class="keywordflow">do</span> kk=1,glength</div>
@@ -596,7 +596,7 @@ $(document).ready(function(){initNavTree('misspack_8f_source.html','');});
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        <span class="comment">!         Pad last octet with Zeros, if necessary,</span></div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        <span class="keywordflow">if</span> (mod(iofst,8).ne.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;           left=8-mod(iofst,8)</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;           call g2_sbytec(cpack,zero,iofst,left)</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;           call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,zero,iofst,left)</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;           iofst=iofst+left</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        lcpack=iofst/8</div>
@@ -640,13 +640,15 @@ $(document).ready(function(){initNavTree('misspack_8f_source.html','');});
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;      <span class="keywordflow">return</span></div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;      <span class="keywordflow">end</span></div>
 <div class="ttc" id="interfaceintmath_1_1i1log2_html"><div class="ttname"><a href="interfaceintmath_1_1i1log2.html">intmath::i1log2</a></div><div class="ttdef"><b>Definition:</b> <a href="intmath_8f_source.html#l00012">intmath.f:12</a></div></div>
+<div class="ttc" id="g2__gbytesc_8f_html_a60b5e38d11b3583aa561bc04cfb17b52"><div class="ttname"><a href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a></div><div class="ttdeci">subroutine g2_sbytec(OUT, IN, ISKIP, NBYTE)</div><div class="ttdoc">This subrountine is to put arbitrary size values into a packed bit string, taking the low order bits ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00038">g2_gbytesc.f:38</a></div></div>
+<div class="ttc" id="g2__gbytesc_8f_html_a9cf11b602b6b58376477c58af3281aa4"><div class="ttname"><a href="g2__gbytesc_8f.html#a9cf11b602b6b58376477c58af3281aa4">g2_sbytesc</a></div><div class="ttdeci">subroutine g2_sbytesc(OUT, IN, ISKIP, NBYTE, NSKIP, N)</div><div class="ttdoc">This subrountine is to put arbitrary size values into a packed bit string, taking the low order bits ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00114">g2_gbytesc.f:114</a></div></div>
 <div class="ttc" id="classintmath_html"><div class="ttname"><a href="classintmath.html">intmath</a></div><div class="ttdef"><b>Definition:</b> <a href="intmath_8f_source.html#l00001">intmath.f:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_d016ec1399c85acecef32bf81e1fad9c.html">dox</a></li><li class="navelem"><a class="el" href="dir_a7b3ebe721b8c60c479822a40383d337.html">src</a></li><li class="navelem"><b>misspack.f</b></li>
+    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_29e1b67c9143278d7563af0e979ac998.html">gb_info</a></li><li class="navelem"><a class="el" href="dir_ef55fd17451adfc641685685314f83bc.html">src</a></li><li class="navelem"><b>misspack.f</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>

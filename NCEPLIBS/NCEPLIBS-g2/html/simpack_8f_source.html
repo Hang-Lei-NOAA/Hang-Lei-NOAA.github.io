@@ -268,11 +268,11 @@ $(document).ready(function(){initNavTree('simpack_8f_source.html','');});
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="comment">!  Pack data, Pad last octet with Zeros, if necessary,</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="comment">!  and calculate the length of the packed data in bytes</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">!</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        call g2_sbytesc(cpack,ifld,0,nbits,0,ndpts)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        call <a class="code" href="g2__gbytesc_8f.html#a9cf11b602b6b58376477c58af3281aa4">g2_sbytesc</a>(cpack,ifld,0,nbits,0,ndpts)</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        nbittot=nbits*ndpts</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        left=8-mod(nbittot,8)</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">if</span> (left.ne.8) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;          call g2_sbytec(cpack,zero,nbittot,left)    <span class="comment">! Pad with zeros to fill Octet</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;          call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cpack,zero,nbittot,left)    <span class="comment">! Pad with zeros to fill Octet</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;          nbittot=nbittot+left</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        lcpack=nbittot/8</div>
@@ -299,13 +299,15 @@ $(document).ready(function(){initNavTree('simpack_8f_source.html','');});
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      <span class="keywordflow">end</span></div>
 <div class="ttc" id="interfaceintmath_1_1i1log2_html"><div class="ttname"><a href="interfaceintmath_1_1i1log2.html">intmath::i1log2</a></div><div class="ttdef"><b>Definition:</b> <a href="intmath_8f_source.html#l00012">intmath.f:12</a></div></div>
 <div class="ttc" id="interfaceintmath_1_1ilog2_html"><div class="ttname"><a href="interfaceintmath_1_1ilog2.html">intmath::ilog2</a></div><div class="ttdef"><b>Definition:</b> <a href="intmath_8f_source.html#l00004">intmath.f:4</a></div></div>
+<div class="ttc" id="g2__gbytesc_8f_html_a60b5e38d11b3583aa561bc04cfb17b52"><div class="ttname"><a href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a></div><div class="ttdeci">subroutine g2_sbytec(OUT, IN, ISKIP, NBYTE)</div><div class="ttdoc">This subrountine is to put arbitrary size values into a packed bit string, taking the low order bits ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00038">g2_gbytesc.f:38</a></div></div>
+<div class="ttc" id="g2__gbytesc_8f_html_a9cf11b602b6b58376477c58af3281aa4"><div class="ttname"><a href="g2__gbytesc_8f.html#a9cf11b602b6b58376477c58af3281aa4">g2_sbytesc</a></div><div class="ttdeci">subroutine g2_sbytesc(OUT, IN, ISKIP, NBYTE, NSKIP, N)</div><div class="ttdoc">This subrountine is to put arbitrary size values into a packed bit string, taking the low order bits ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00114">g2_gbytesc.f:114</a></div></div>
 <div class="ttc" id="classintmath_html"><div class="ttname"><a href="classintmath.html">intmath</a></div><div class="ttdef"><b>Definition:</b> <a href="intmath_8f_source.html#l00001">intmath.f:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_d016ec1399c85acecef32bf81e1fad9c.html">dox</a></li><li class="navelem"><a class="el" href="dir_a7b3ebe721b8c60c479822a40383d337.html">src</a></li><li class="navelem"><b>simpack.f</b></li>
+    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_29e1b67c9143278d7563af0e979ac998.html">gb_info</a></li><li class="navelem"><a class="el" href="dir_ef55fd17451adfc641685685314f83bc.html">src</a></li><li class="navelem"><b>simpack.f</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>

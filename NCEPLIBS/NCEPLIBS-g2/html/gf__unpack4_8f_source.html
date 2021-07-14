@@ -177,14 +177,14 @@ $(document).ready(function(){initNavTree('gf__unpack4_8f_source.html','');});
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      ierr=0</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      nullify(ipdstmpl,coordlist)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      call g2_gbytec(cgrib,lensec,iofst,32)        <span class="comment">! Get Length of Section</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,lensec,iofst,32)        <span class="comment">! Get Length of Section</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      iofst=iofst+32</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      iofst=iofst+8     <span class="comment">! skip section number</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keyword">allocate</span>(mappds(lensec))</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      call g2_gbytec(cgrib,numcoord,iofst,16)    <span class="comment">! Get num of coordinate values</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,numcoord,iofst,16)    <span class="comment">! Get num of coordinate values</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      iofst=iofst+16</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      call g2_gbytec(cgrib,ipdsnum,iofst,16)    <span class="comment">! Get Prod. Def Template num.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,ipdsnum,iofst,16)    <span class="comment">! Get Prod. Def Template num.</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      iofst=iofst+16</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="comment">!   Get Product Definition Template</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      call getpdstemplate(ipdsnum,mappdslen,mappds,needext,iret)</div>
@@ -209,10 +209,10 @@ $(document).ready(function(){initNavTree('gf__unpack4_8f_source.html','');});
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <span class="keywordflow">do</span> i=1,mappdslen</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        nbits=iabs(mappds(i))*8</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> ( mappds(i).ge.0 ) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;          call g2_gbytec(cgrib,ipdstmpl(i),iofst,nbits)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;          call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,ipdstmpl(i),iofst,nbits)</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;          call g2_gbytec(cgrib,isign,iofst,1)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;          call g2_gbytec(cgrib,ipdstmpl(i),iofst+1,nbits-1)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;          call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,isign,iofst,1)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;          call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,ipdstmpl(i),iofst+1,nbits-1)</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;          <span class="keywordflow">if</span> (isign.eq.1) ipdstmpl(i)=-ipdstmpl(i)</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        iofst=iofst+nbits</div>
@@ -231,10 +231,10 @@ $(document).ready(function(){initNavTree('gf__unpack4_8f_source.html','');});
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">do</span> i=mappdslen+1,newmappdslen</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;          nbits=iabs(mappds(i))*8</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;          <span class="keywordflow">if</span> ( mappds(i).ge.0 ) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            call g2_gbytec(cgrib,ipdstmpl(i),iofst,nbits)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,ipdstmpl(i),iofst,nbits)</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;          <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            call g2_gbytec(cgrib,isign,iofst,1)</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            call g2_gbytec(cgrib,ipdstmpl(i),iofst+1,nbits-1)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,isign,iofst,1)</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            call <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cgrib,ipdstmpl(i),iofst+1,nbits-1)</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">if</span> (isign.eq.1) ipdstmpl(i)=-ipdstmpl(i)</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;          <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;          iofst=iofst+nbits</div>
@@ -256,7 +256,7 @@ $(document).ready(function(){initNavTree('gf__unpack4_8f_source.html','');});
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keywordflow">if</span>( <span class="keyword">allocated</span>(coordieee) ) <span class="keyword">deallocate</span>(coordieee)</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">return</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;         <span class="keywordflow">endif</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        call g2_gbytesc(cgrib,coordieee,iofst,32,0,numcoord)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        call <a class="code" href="g2__gbytesc_8f.html#a43b84c9ffac05a56d909d3520018d68d">g2_gbytesc</a>(cgrib,coordieee,iofst,32,0,numcoord)</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        call rdieee(coordieee,coordlist,numcoord)</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keyword">deallocate</span> (coordieee)</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        iofst=iofst+(32*numcoord)</div>
@@ -265,6 +265,8 @@ $(document).ready(function(){initNavTree('gf__unpack4_8f_source.html','');});
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      <span class="keywordflow">return</span>    <span class="comment">! End of Section 4 processing</span></div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      <span class="keywordflow">end</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="ttc" id="g2__gbytesc_8f_html_aca0f5451292195fe5e0eb3ff4e53fe98"><div class="ttname"><a href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a></div><div class="ttdeci">subroutine g2_gbytec(IN, IOUT, ISKIP, NBYTE)</div><div class="ttdoc">This subrountine is to extract arbitrary size values from a packed bit string, right justifying each ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00019">g2_gbytesc.f:19</a></div></div>
+<div class="ttc" id="g2__gbytesc_8f_html_a43b84c9ffac05a56d909d3520018d68d"><div class="ttname"><a href="g2__gbytesc_8f.html#a43b84c9ffac05a56d909d3520018d68d">g2_gbytesc</a></div><div class="ttdeci">subroutine g2_gbytesc(IN, IOUT, ISKIP, NBYTE, NSKIP, N)</div><div class="ttdoc">This subrountine is to extract arbitrary size values from a packed bit string, right justifying each ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00059">g2_gbytesc.f:59</a></div></div>
 <div class="ttc" id="classpdstemplates_html"><div class="ttname"><a href="classpdstemplates.html">pdstemplates</a></div><div class="ttdef"><b>Definition:</b> <a href="pdstemplates_8f_source.html#l00001">pdstemplates.f:1</a></div></div>
 <div class="ttc" id="classre__alloc_html"><div class="ttname"><a href="classre__alloc.html">re_alloc</a></div><div class="ttdef"><b>Definition:</b> <a href="realloc_8f_source.html#l00001">realloc.f:1</a></div></div>
 <div class="ttc" id="interfacere__alloc_1_1realloc_html"><div class="ttname"><a href="interfacere__alloc_1_1realloc.html">re_alloc::realloc</a></div><div class="ttdef"><b>Definition:</b> <a href="realloc_8f_source.html#l00003">realloc.f:3</a></div></div>
@@ -273,7 +275,7 @@ $(document).ready(function(){initNavTree('gf__unpack4_8f_source.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_d016ec1399c85acecef32bf81e1fad9c.html">dox</a></li><li class="navelem"><a class="el" href="dir_a7b3ebe721b8c60c479822a40383d337.html">src</a></li><li class="navelem"><b>gf_unpack4.f</b></li>
+    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_29e1b67c9143278d7563af0e979ac998.html">gb_info</a></li><li class="navelem"><a class="el" href="dir_ef55fd17451adfc641685685314f83bc.html">src</a></li><li class="navelem"><b>gf_unpack4.f</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>

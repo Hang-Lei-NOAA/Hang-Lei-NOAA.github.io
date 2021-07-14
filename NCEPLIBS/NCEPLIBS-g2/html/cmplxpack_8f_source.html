@@ -108,36 +108,36 @@ $(document).ready(function(){initNavTree('cmplxpack_8f_source.html','');});
 <div class="contents">
 <a href="cmplxpack_8f.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="cmplxpack_8f.html#a923be578e0ee66dd0286ce1dccac6bbf">   29</a></span>&#160;<span class="keyword">      subroutine </span><a class="code" href="cmplxpack_8f.html#a923be578e0ee66dd0286ce1dccac6bbf">cmplxpack</a>(fld,ndpts,idrsnum,idrstmpl,cpack,lcpack)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <span class="keywordtype">integer</span>,<span class="keywordtype">intent(in)</span> :: ndpts,idrsnum</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <span class="keywordtype">real</span>,<span class="keywordtype">intent(in)</span> :: fld(ndpts)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordtype">character(len=1)</span>,<span class="keywordtype">intent(out)</span> :: cpack(*)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keywordtype">integer</span>,<span class="keywordtype">intent(inout)</span> :: idrstmpl(*)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keywordtype">integer</span>,<span class="keywordtype">intent(out)</span> :: lcpack</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="cmplxpack_8f.html#a923be578e0ee66dd0286ce1dccac6bbf">   31</a></span>&#160;<span class="keyword">      subroutine </span><a class="code" href="cmplxpack_8f.html#a923be578e0ee66dd0286ce1dccac6bbf">cmplxpack</a>(fld,ndpts,idrsnum,idrstmpl,cpack,lcpack)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordtype">integer</span>,<span class="keywordtype">intent(in)</span> :: ndpts,idrsnum</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keywordtype">real</span>,<span class="keywordtype">intent(in)</span> :: fld(ndpts)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keywordtype">character(len=1)</span>,<span class="keywordtype">intent(out)</span> :: cpack(*)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keywordtype">integer</span>,<span class="keywordtype">intent(inout)</span> :: idrstmpl(*)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="keywordtype">integer</span>,<span class="keywordtype">intent(out)</span> :: lcpack</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="keywordflow">if</span> ( idrstmpl(7) .eq. 0 ) <span class="keywordflow">then</span>       <span class="comment">! No internal missing values</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;         call <a class="code" href="compack_8f.html#ae1301bac22c521b15e07191f49a9d296">compack</a>(fld,ndpts,idrsnum,idrstmpl,cpack,lcpack)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">elseif</span> ( idrstmpl(7).eq.1 .OR. idrstmpl(7).eq.2) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;         call misspack(fld,ndpts,idrsnum,idrstmpl,cpack,lcpack)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;         print *,<span class="stringliteral">&#39;cmplxpack: Do not recognize Missing value option.&#39;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;         lcpack=-1</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordflow">endif</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">return</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordflow">end</span></div>
-<div class="ttc" id="cmplxpack_8f_html_a923be578e0ee66dd0286ce1dccac6bbf"><div class="ttname"><a href="cmplxpack_8f.html#a923be578e0ee66dd0286ce1dccac6bbf">cmplxpack</a></div><div class="ttdeci">subroutine cmplxpack(fld, ndpts, idrsnum, idrstmpl, cpack, lcpack)</div><div class="ttdoc">This subroutine supports GRIB2 complex packing templates with or without spatial differences (i...</div><div class="ttdef"><b>Definition:</b> <a href="cmplxpack_8f_source.html#l00029">cmplxpack.f:29</a></div></div>
-<div class="ttc" id="compack_8f_html_ae1301bac22c521b15e07191f49a9d296"><div class="ttname"><a href="compack_8f.html#ae1301bac22c521b15e07191f49a9d296">compack</a></div><div class="ttdeci">subroutine compack(fld, ndpts, idrsnum, idrstmpl, cpack, lcpack)</div><div class="ttdoc">It uses a complex packing algorithm as defined in the GRIB2 documention and supports GRIB2 complex pa...</div><div class="ttdef"><b>Definition:</b> <a href="compack_8f_source.html#l00030">compack.f:30</a></div></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">if</span> ( idrstmpl(7) .eq. 0 ) <span class="keywordflow">then</span>       <span class="comment">! No internal missing values</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;         call <a class="code" href="compack_8f.html#ae1301bac22c521b15e07191f49a9d296">compack</a>(fld,ndpts,idrsnum,idrstmpl,cpack,lcpack)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordflow">elseif</span> ( idrstmpl(7).eq.1 .OR. idrstmpl(7).eq.2) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;         call misspack(fld,ndpts,idrsnum,idrstmpl,cpack,lcpack)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;         print *,<span class="stringliteral">&#39;cmplxpack: Do not recognize Missing value option.&#39;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;         lcpack=-1</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">return</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordflow">end</span></div>
+<div class="ttc" id="cmplxpack_8f_html_a923be578e0ee66dd0286ce1dccac6bbf"><div class="ttname"><a href="cmplxpack_8f.html#a923be578e0ee66dd0286ce1dccac6bbf">cmplxpack</a></div><div class="ttdeci">subroutine cmplxpack(fld, ndpts, idrsnum, idrstmpl, cpack, lcpack)</div><div class="ttdoc">This subroutine packs up a data field using a complex packing algorithm as defined in the GRIB2 docum...</div><div class="ttdef"><b>Definition:</b> <a href="cmplxpack_8f_source.html#l00031">cmplxpack.f:31</a></div></div>
+<div class="ttc" id="compack_8f_html_ae1301bac22c521b15e07191f49a9d296"><div class="ttname"><a href="compack_8f.html#ae1301bac22c521b15e07191f49a9d296">compack</a></div><div class="ttdeci">subroutine compack(fld, ndpts, idrsnum, idrstmpl, cpack, lcpack)</div><div class="ttdoc">This subroutine packs up a data field. </div><div class="ttdef"><b>Definition:</b> <a href="compack_8f_source.html#l00031">compack.f:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_d016ec1399c85acecef32bf81e1fad9c.html">dox</a></li><li class="navelem"><a class="el" href="dir_a7b3ebe721b8c60c479822a40383d337.html">src</a></li><li class="navelem"><a class="el" href="cmplxpack_8f.html">cmplxpack.f</a></li>
+    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_29e1b67c9143278d7563af0e979ac998.html">gb_info</a></li><li class="navelem"><a class="el" href="dir_ef55fd17451adfc641685685314f83bc.html">src</a></li><li class="navelem"><a class="el" href="cmplxpack_8f.html">cmplxpack.f</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>

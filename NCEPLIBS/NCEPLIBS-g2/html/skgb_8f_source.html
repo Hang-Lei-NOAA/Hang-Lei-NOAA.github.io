@@ -161,15 +161,15 @@ $(document).ready(function(){initNavTree('skgb_8f_source.html','');});
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        k=0</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">C  LOOK FOR &#39;GRIB...1&#39; IN PARTIAL SECTION</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        dowhile(lgrib.EQ.0.AND.k.LT.km)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;          CALL g2_gbytec(z,i4,(k+0)*8,4*8)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;          CALL g2_gbytec(z,i1,(k+7)*8,1*8)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;          CALL <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(z,i4,(k+0)*8,4*8)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;          CALL <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(z,i1,(k+7)*8,1*8)</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;          <span class="keywordflow">IF</span>(i4.EQ.1196575042.AND.(i1.EQ.1.OR.i1.EQ.2)) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">C  LOOK FOR &#39;7777&#39; AT END OF GRIB MESSAGE</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">IF</span> (i1.EQ.1) CALL g2_gbytec(z,kg,(k+4)*8,3*8)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">IF</span> (i1.EQ.2) CALL g2_gbytec(z,kg,(k+12)*8,4*8)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">IF</span> (i1.EQ.1) CALL <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(z,kg,(k+4)*8,3*8)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">IF</span> (i1.EQ.2) CALL <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(z,kg,(k+12)*8,4*8)</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            CALL baread(lugb,ks+k+kg-4,4,k4,z4)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">IF</span>(k4.EQ.4) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;              CALL g2_gbytec(z4,i4,0,4*8)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;              CALL <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(z4,i4,0,4*8)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;              <span class="keywordflow">IF</span>(i4.EQ.926365495) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">C  GRIB MESSAGE FOUND</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                lskip=ks+k</div>
@@ -185,12 +185,13 @@ $(document).ready(function(){initNavTree('skgb_8f_source.html','');});
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordflow">RETURN</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordflow">END</span></div>
+<div class="ttc" id="g2__gbytesc_8f_html_aca0f5451292195fe5e0eb3ff4e53fe98"><div class="ttname"><a href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a></div><div class="ttdeci">subroutine g2_gbytec(IN, IOUT, ISKIP, NBYTE)</div><div class="ttdoc">This subrountine is to extract arbitrary size values from a packed bit string, right justifying each ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00019">g2_gbytesc.f:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_d016ec1399c85acecef32bf81e1fad9c.html">dox</a></li><li class="navelem"><a class="el" href="dir_a7b3ebe721b8c60c479822a40383d337.html">src</a></li><li class="navelem"><b>skgb.f</b></li>
+    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_29e1b67c9143278d7563af0e979ac998.html">gb_info</a></li><li class="navelem"><a class="el" href="dir_ef55fd17451adfc641685685314f83bc.html">src</a></li><li class="navelem"><b>skgb.f</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>

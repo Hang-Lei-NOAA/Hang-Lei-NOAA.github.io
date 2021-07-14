@@ -138,12 +138,12 @@ typedef long&#160;</td><td class="memItemRight" valign="bottom"><b>g2int</b></td
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a36756568b6c88f71dae822a7a0a66151"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enc__jpeg2000_8c.html#a36756568b6c88f71dae822a7a0a66151">SUB_NAME</a> (unsigned char *cin, g2int *pwidth, g2int *pheight, g2int *pnbits, g2int *ltype, g2int *ratio, g2int *retry, char *outjpc, g2int *jpclen)</td></tr>
-<tr class="memdesc:a36756568b6c88f71dae822a7a0a66151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Using JasPer Software version 1.500.4 (or 1.700.2 ) written by the University of British Columbia, Image Power Inc, and others.  <a href="#a36756568b6c88f71dae822a7a0a66151">More...</a><br/></td></tr>
+<tr class="memdesc:a36756568b6c88f71dae822a7a0a66151"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Function encodes a grayscale image into a JPEG2000 code stream specified in the JPEG2000 Part-1 standard.  <a href="#a36756568b6c88f71dae822a7a0a66151">More...</a><br/></td></tr>
 <tr class="separator:a36756568b6c88f71dae822a7a0a66151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This Function encodes a grayscale image into a JPEG2000 code stream specified in the JPEG2000 Part-1 standard. </p>
-<dl class="section author"><dt>Author</dt><dd>Gilbert ORG: W/NP11 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2002-12-02 </dd></dl>
 
 <p>Definition in file <a class="el" href="enc__jpeg2000_8c_source.html">enc_jpeg2000.c</a>.</p>
@@ -214,9 +214,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Using JasPer Software version 1.500.4 (or 1.700.2 ) written by the University of British Columbia, Image Power Inc, and others. </p>
-<p>JasPer is available at http: * www.ece.uvic.ca/~mdadams/jasper/.</p>
-<p>PROGRAM HISTORY LOG: 2002-12-02 Gilbert 2004-07-20 GIlbert - Added retry argument/option to allow option of increasing the maximum number of guard bits to the JPEG2000 algorithm.</p>
+<p>This Function encodes a grayscale image into a JPEG2000 code stream specified in the JPEG2000 Part-1 standard. </p>
+<p>It uses JasPer Software version 1.500.4 (or 1.700.2 ) written by the University of British Columbia, Image Power Inc, and others. JasPer is available at http: * www.ece.uvic.ca/~mdadams/jasper/.</p>
+<p>PROGRAM HISTORY LOG:</p>
+<ul>
+<li>2002-12-02 Stephen Gilbert</li>
+<li>2004-07-20 Stephen Gilbert - Added retry argument/option to allow option of increasing the maximum number of guard bits to the JPEG2000 algorithm.</li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">cin</td><td>Packed matrix of Grayscale image values to encode. </td></tr>
@@ -235,16 +239,16 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>- &gt; 0 = Length in bytes of encoded JPEG2000 code stream<ul>
-<li>-3 = Error decode jpeg2000 code stream.</li>
-<li>-5 = decoded image had multiple color components. Only grayscale is expected.</li>
+<dl class="section return"><dt>Returns</dt><dd>0 successfully decode JPEG2000 code stream<ul>
+<li>-3 Error decode jpeg2000 code stream.</li>
+<li>-5 decoded image had multiple color components. Only grayscale is expected.</li>
 </ul>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Requires JasPer Software version 1.500.4 or 1.700.2</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Gilbert ORG: W/NP11 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2002-12-02 </dd></dl>
 
-<p>Definition at line <a class="el" href="enc__jpeg2000_8c_source.html#l00066">66</a> of file <a class="el" href="enc__jpeg2000_8c_source.html">enc_jpeg2000.c</a>.</p>
+<p>Definition at line <a class="el" href="enc__jpeg2000_8c_source.html#l00068">68</a> of file <a class="el" href="enc__jpeg2000_8c_source.html">enc_jpeg2000.c</a>.</p>
 
 </div>
 </div>
@@ -253,7 +257,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_d016ec1399c85acecef32bf81e1fad9c.html">dox</a></li><li class="navelem"><a class="el" href="dir_a7b3ebe721b8c60c479822a40383d337.html">src</a></li><li class="navelem"><a class="el" href="enc__jpeg2000_8c.html">enc_jpeg2000.c</a></li>
+    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_29e1b67c9143278d7563af0e979ac998.html">gb_info</a></li><li class="navelem"><a class="el" href="dir_ef55fd17451adfc641685685314f83bc.html">src</a></li><li class="navelem"><a class="el" href="enc__jpeg2000_8c.html">enc_jpeg2000.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>

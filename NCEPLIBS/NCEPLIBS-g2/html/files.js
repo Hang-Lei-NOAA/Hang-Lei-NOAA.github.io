@@ -19,9 +19,11 @@ var files =
     ] ],
     [ "enc_jpeg2000.c", "enc__jpeg2000_8c.html", "enc__jpeg2000_8c" ],
     [ "enc_png.c", "enc__png_8c.html", "enc__png_8c" ],
-    [ "g2_gbytesc.f", "g2__gbytesc_8f_source.html", null ],
-    [ "g2grids.f", "g2grids_8f_source.html", null ],
-    [ "gb_info.f", "gb__info_8f_source.html", null ],
+    [ "g2_gbytesc.f", "g2__gbytesc_8f.html", "g2__gbytesc_8f" ],
+    [ "g2grids.f", "g2grids_8f.html", [
+      [ "g2grids", "classg2grids.html", "classg2grids" ]
+    ] ],
+    [ "gb_info.f", "gb__info_8f.html", "gb__info_8f" ],
     [ "gdt2gds.f", "gdt2gds_8f_source.html", null ],
     [ "getdim.f", "getdim_8f_source.html", null ],
     [ "getfield.f", "getfield_8f_source.html", null ],

@@ -194,16 +194,16 @@ $(document).ready(function(){initNavTree('gribcreate_8f_source.html','');});
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      cgrib(2)=grib(2:2)   </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      cgrib(3)=grib(3:3)   </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      cgrib(4)=grib(4:4)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      call g2_sbytec(cgrib,zero,32,16)           <span class="comment">! reserved for future use</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      call g2_sbytec(cgrib,listsec0(1),48,8)     <span class="comment">! Discipline</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      call g2_sbytec(cgrib,listsec0(2),56,8)     <span class="comment">! GRIB edition number</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cgrib,zero,32,16)           <span class="comment">! reserved for future use</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cgrib,listsec0(1),48,8)     <span class="comment">! Discipline</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cgrib,listsec0(2),56,8)     <span class="comment">! GRIB edition number</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      lensec0=16      <span class="comment">! bytes (octets)</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">!</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">!  Pack Section 1 - Identification Section</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">!</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      ibeg=lensec0*8        <span class="comment">!   Calculate offset for beginning of section 1</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      iofst=ibeg+32         <span class="comment">!   leave space for length of section</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      call g2_sbytec(cgrib,one,iofst,8)     <span class="comment">! Store section number ( 1 )</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cgrib,one,iofst,8)     <span class="comment">! Store section number ( 1 )</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      iofst=iofst+8</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="comment">!</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <span class="comment">!   Pack up each input value in array listsec1 into the</span></div>
@@ -212,7 +212,7 @@ $(document).ready(function(){initNavTree('gribcreate_8f_source.html','');});
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="comment">!</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <span class="keywordflow">do</span> i=1,mapsec1len</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        nbits=mapsec1(i)*8</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        call g2_sbytec(cgrib,listsec1(i),iofst,nbits)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cgrib,listsec1(i),iofst,nbits)</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        iofst=iofst+nbits</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keywordflow">enddo</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <span class="comment">!</span></div>
@@ -220,21 +220,22 @@ $(document).ready(function(){initNavTree('gribcreate_8f_source.html','');});
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <span class="comment">!   1-4 of section 1.</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="comment">!</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      lensec1=(iofst-ibeg)/8</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      call g2_sbytec(cgrib,lensec1,ibeg,32)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cgrib,lensec1,ibeg,32)</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">!</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">!  Put current byte total of message into Section 0</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">!</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      call g2_sbytec(cgrib,zero,64,32)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      call g2_sbytec(cgrib,lensec0+lensec1,96,32)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cgrib,zero,64,32)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      call <a class="code" href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a>(cgrib,lensec0+lensec1,96,32)</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      <span class="keywordflow">return</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      <span class="keywordflow">end</span></div>
+<div class="ttc" id="g2__gbytesc_8f_html_a60b5e38d11b3583aa561bc04cfb17b52"><div class="ttname"><a href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a></div><div class="ttdeci">subroutine g2_sbytec(OUT, IN, ISKIP, NBYTE)</div><div class="ttdoc">This subrountine is to put arbitrary size values into a packed bit string, taking the low order bits ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00038">g2_gbytesc.f:38</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_d016ec1399c85acecef32bf81e1fad9c.html">dox</a></li><li class="navelem"><a class="el" href="dir_a7b3ebe721b8c60c479822a40383d337.html">src</a></li><li class="navelem"><b>gribcreate.f</b></li>
+    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_29e1b67c9143278d7563af0e979ac998.html">gb_info</a></li><li class="navelem"><a class="el" href="dir_ef55fd17451adfc641685685314f83bc.html">src</a></li><li class="navelem"><b>gribcreate.f</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>

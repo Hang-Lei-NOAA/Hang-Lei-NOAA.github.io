@@ -309,15 +309,15 @@ $(document).ready(function(){initNavTree('getgb2l_8f_source.html','');});
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">C  GET INFO</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      nullify(gfld%local)</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      iret=0</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      CALL g2_gbytec(cindex,lskip,4*8,4*8)</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      CALL g2_gbytec(cindex,skip2,8*8,4*8)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      CALL <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cindex,lskip,4*8,4*8)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      CALL <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cindex,skip2,8*8,4*8)</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">C  READ AND UNPACK LOCAL USE SECTION, IF PRESENT</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      <span class="keywordflow">IF</span> ( skip2.NE.0 ) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;         iskip=lskip+skip2</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;         CALL baread(lugb,iskip,4,lread,csize)    <span class="comment">! GET LENGTH OF SECTION</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;         CALL g2_gbytec(csize,ilen,0,32)</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;         CALL <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(csize,ilen,0,32)</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;         <span class="keyword">ALLOCATE</span>(ctemp(ilen))</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;         CALL baread(lugb,iskip,ilen,lread,ctemp)  <span class="comment">! READ IN SECTION</span></div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;         <span class="keywordflow">IF</span> (ilen.NE.lread) <span class="keywordflow">THEN</span></div>
@@ -340,6 +340,7 @@ $(document).ready(function(){initNavTree('getgb2l_8f_source.html','');});
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      <span class="keywordflow">RETURN</span></div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;      <span class="keywordflow">END</span></div>
+<div class="ttc" id="g2__gbytesc_8f_html_aca0f5451292195fe5e0eb3ff4e53fe98"><div class="ttname"><a href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a></div><div class="ttdeci">subroutine g2_gbytec(IN, IOUT, ISKIP, NBYTE)</div><div class="ttdoc">This subrountine is to extract arbitrary size values from a packed bit string, right justifying each ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00019">g2_gbytesc.f:19</a></div></div>
 <div class="ttc" id="classgrib__mod_html"><div class="ttname"><a href="classgrib__mod.html">grib_mod</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00001">gribmod.f:1</a></div></div>
 <div class="ttc" id="classgrib__mod_html_structgrib__mod_1_1gribfield"><div class="ttname"><a href="classgrib__mod.html#structgrib__mod_1_1gribfield">grib_mod::gribfield</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00174">gribmod.f:174</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -347,7 +348,7 @@ $(document).ready(function(){initNavTree('getgb2l_8f_source.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_d016ec1399c85acecef32bf81e1fad9c.html">dox</a></li><li class="navelem"><a class="el" href="dir_a7b3ebe721b8c60c479822a40383d337.html">src</a></li><li class="navelem"><b>getgb2l.f</b></li>
+    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_29e1b67c9143278d7563af0e979ac998.html">gb_info</a></li><li class="navelem"><a class="el" href="dir_ef55fd17451adfc641685685314f83bc.html">src</a></li><li class="navelem"><b>getgb2l.f</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
