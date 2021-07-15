@@ -24,9 +24,9 @@ var files =
       [ "g2grids", "classg2grids.html", "classg2grids" ]
     ] ],
     [ "gb_info.f", "gb__info_8f.html", "gb__info_8f" ],
-    [ "gdt2gds.f", "gdt2gds_8f_source.html", null ],
-    [ "getdim.f", "getdim_8f_source.html", null ],
-    [ "getfield.f", "getfield_8f_source.html", null ],
+    [ "gdt2gds.f", "gdt2gds_8f.html", "gdt2gds_8f" ],
+    [ "getdim.f", "getdim_8f.html", "getdim_8f" ],
+    [ "getfield.f", "getfield_8f.html", "getfield_8f" ],
     [ "getg2i.f", "getg2i_8f_source.html", null ],
     [ "getg2ir.f", "getg2ir_8f_source.html", null ],
     [ "getgb2.f", "getgb2_8f_source.html", null ],

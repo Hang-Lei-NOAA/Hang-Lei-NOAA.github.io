@@ -295,7 +295,7 @@ $(document).ready(function(){initNavTree('gettemplates_8f_source.html','');});
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">!</span></div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">if</span> (isecnum.eq.3) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;          iofst=iofst-40       <span class="comment">! reset offset to beginning of section</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;          call unpack3(cgrib,lcgrib,iofst,igds,igdstmpl,igdslen,</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;          call <a class="code" href="getfield_8f.html#a9af276fba8f97f4e440a2466415ee3b0">unpack3</a>(cgrib,lcgrib,iofst,igds,igdstmpl,igdslen,</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;     &amp;                 ideflist,idefnum,jerr)</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;          <span class="keywordflow">if</span> (jerr.eq.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            have3=.true.</div>
@@ -312,7 +312,7 @@ $(document).ready(function(){initNavTree('gettemplates_8f_source.html','');});
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;          numfld=numfld+1</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;          <span class="keywordflow">if</span> (numfld.eq.ifldnum) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            iofst=iofst-40       <span class="comment">! reset offset to beginning of section</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            call unpack4(cgrib,lcgrib,iofst,ipdsnum,ipdstmpl,ipdslen,</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            call <a class="code" href="getfield_8f.html#a7e1332ed52099a0dd9d86f9b15800291">unpack4</a>(cgrib,lcgrib,iofst,ipdsnum,ipdstmpl,ipdslen,</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;     &amp;                   coordlist,numcoord,jerr)</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">if</span> (jerr.eq.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;              have4=.true.</div>
@@ -351,12 +351,14 @@ $(document).ready(function(){initNavTree('gettemplates_8f_source.html','');});
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      <span class="keywordflow">return</span></div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      <span class="keywordflow">end</span></div>
 <div class="ttc" id="g2__gbytesc_8f_html_aca0f5451292195fe5e0eb3ff4e53fe98"><div class="ttname"><a href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a></div><div class="ttdeci">subroutine g2_gbytec(IN, IOUT, ISKIP, NBYTE)</div><div class="ttdoc">This subrountine is to extract arbitrary size values from a packed bit string, right justifying each ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00019">g2_gbytesc.f:19</a></div></div>
+<div class="ttc" id="getfield_8f_html_a7e1332ed52099a0dd9d86f9b15800291"><div class="ttname"><a href="getfield_8f.html#a7e1332ed52099a0dd9d86f9b15800291">unpack4</a></div><div class="ttdeci">subroutine unpack4(cgrib, lcgrib, iofst, ipdsnum, ipdstmpl, mappdslen, coordlist, numcoord, ierr)</div><div class="ttdoc">This subroutine unpacks Section 4 (Product Definition Section) starting at octet 6 of that Section...</div><div class="ttdef"><b>Definition:</b> <a href="getfield_8f_source.html#l00480">getfield.f:480</a></div></div>
+<div class="ttc" id="getfield_8f_html_a9af276fba8f97f4e440a2466415ee3b0"><div class="ttname"><a href="getfield_8f.html#a9af276fba8f97f4e440a2466415ee3b0">unpack3</a></div><div class="ttdeci">subroutine unpack3(cgrib, lcgrib, iofst, igds, igdstmpl, mapgridlen, ideflist, idefnum, ierr)</div><div class="ttdoc">This subroutine unpacks Section 3 (Grid Definition Section) starting at octet 6 of that Section...</div><div class="ttdef"><b>Definition:</b> <a href="getfield_8f_source.html#l00351">getfield.f:351</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_29e1b67c9143278d7563af0e979ac998.html">gb_info</a></li><li class="navelem"><a class="el" href="dir_ef55fd17451adfc641685685314f83bc.html">src</a></li><li class="navelem"><b>gettemplates.f</b></li>
+    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_d016ec1399c85acecef32bf81e1fad9c.html">dox</a></li><li class="navelem"><a class="el" href="dir_a7b3ebe721b8c60c479822a40383d337.html">src</a></li><li class="navelem"><b>gettemplates.f</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>

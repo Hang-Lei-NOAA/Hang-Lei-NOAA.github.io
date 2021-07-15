@@ -1,7 +1,7 @@
 var NAVTREE =
 [
   [ "NCEPLIBS-g2", "index.html", [
-    [ "user_guide", "md__home_Hang_8Lei_noscrub_docus_feature_gb_info_docs_user_guide.html", null ],
+    [ "user_guide", "md__home_Hang_8Lei_noscrub_docus_feature_dox_docs_user_guide.html", null ],
     [ "Data Types List", null, [
       [ "Data Types List", "annotated.html", "annotated" ],
       [ "Data Fields", "functions.html", [
@@ -22,7 +22,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"addfield_8f.html"
+"addfield_8f.html",
+"reduce_8f_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
