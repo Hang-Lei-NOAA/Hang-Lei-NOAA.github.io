@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>NCEPLIBS-g2: getdim.f File Reference</title>
+<title>NCEPLIBS-g2: getg2i.f File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('getdim_8f.html','');});
+$(document).ready(function(){initNavTree('getg2i_8f.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -105,61 +105,61 @@ $(document).ready(function(){initNavTree('getdim_8f.html','');});
   <div class="summary">
 <a href="#func-members">Functions/Subroutines</a>  </div>
   <div class="headertitle">
-<div class="title">getdim.f File Reference</div>  </div>
+<div class="title">getg2i.f File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This subroutine returns the info of GRIB2 Grid Definition Section 3 format.  
+<p>This subroutine read a GRIB2 index file and return its content.  
 <a href="#details">More...</a></p>
 
-<p><a href="getdim_8f_source.html">Go to the source code of this file.</a></p>
+<p><a href="getg2i_8f_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
-<tr class="memitem:ab6198d594ce437e75c6550b22d76119d"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getdim_8f.html#ab6198d594ce437e75c6550b22d76119d">getdim</a> (csec3, lcsec3, width, height, iscan)</td></tr>
-<tr class="memdesc:ab6198d594ce437e75c6550b22d76119d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This subroutine returns the dimensions and scanning mode of a grid definition packed in GRIB2 Grid Definition Section 3 format.  <a href="#ab6198d594ce437e75c6550b22d76119d">More...</a><br/></td></tr>
-<tr class="separator:ab6198d594ce437e75c6550b22d76119d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44c16f665d204ab2236a58ef37bc8b13"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="getg2i_8f.html#a44c16f665d204ab2236a58ef37bc8b13">getg2i</a> (LUGI, CBUF, NLEN, NNUM, IRET)</td></tr>
+<tr class="memdesc:a44c16f665d204ab2236a58ef37bc8b13"><td class="mdescLeft">&#160;</td><td class="mdescRight">READ A GRIB2 INDEX FILE AND RETURN ITS CONTENTS.  <a href="#a44c16f665d204ab2236a58ef37bc8b13">More...</a><br/></td></tr>
+<tr class="separator:a44c16f665d204ab2236a58ef37bc8b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This subroutine returns the info of GRIB2 Grid Definition Section 3 format. </p>
-<dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2002-12-11 </dd></dl>
+<div class="textblock"><p>This subroutine read a GRIB2 index file and return its content. </p>
+<dl class="section author"><dt>Author</dt><dd>Mark Iredell </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>1995-10-31 </dd></dl>
 
-<p>Definition in file <a class="el" href="getdim_8f_source.html">getdim.f</a>.</p>
+<p>Definition in file <a class="el" href="getg2i_8f_source.html">getg2i.f</a>.</p>
 </div><h2 class="groupheader">Function/Subroutine Documentation</h2>
-<a class="anchor" id="ab6198d594ce437e75c6550b22d76119d"></a>
+<a class="anchor" id="a44c16f665d204ab2236a58ef37bc8b13"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">subroutine getdim </td>
+          <td class="memname">subroutine getg2i </td>
           <td>(</td>
-          <td class="paramtype">character(len=1), dimension(*), intent(in)&#160;</td>
-          <td class="paramname"><em>csec3</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>lcsec3</em>, </td>
+          <td class="paramname"><em>LUGI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">character(len=1), dimension(:), pointer&#160;</td>
+          <td class="paramname"><em>CBUF</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">integer, intent(out)&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
+          <td class="paramname"><em>NLEN</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">integer, intent(out)&#160;</td>
-          <td class="paramname"><em>height</em>, </td>
+          <td class="paramname"><em>NNUM</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">integer, intent(out)&#160;</td>
-          <td class="paramname"><em>iscan</em>&#160;</td>
+          <td class="paramname"><em>IRET</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -169,22 +169,54 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This subroutine returns the dimensions and scanning mode of a grid definition packed in GRIB2 Grid Definition Section 3 format. </p>
+<p>READ A GRIB2 INDEX FILE AND RETURN ITS CONTENTS. </p>
+<p>VERSION 1 OF THE INDEX FILE HAS THE FOLLOWING FORMAT: 81-BYTE S.LORD HEADER WITH 'GB2IX1' IN COLUMNS 42-47 FOLLOWED BY 81-BYTE HEADER WITH NUMBER OF BYTES TO SKIP BEFORE INDEX RECORDS, TOTAL LENGTH IN BYTES OF THE INDEX RECORDS, NUMBER OF INDEX RECORDS, AND GRIB FILE BASENAME WRITTEN IN FORMAT ('IX1FORM:',3I10,2X,A40). EACH FOLLOWING INDEX RECORD CORRESPONDS TO A GRIB MESSAGE AND HAS THE INTERNAL FORMAT:</p>
+<ul>
+<li>BYTE 001 - 004 LENGTH OF INDEX RECORD</li>
+<li>BYTE 005 - 008 BYTES TO SKIP IN DATA FILE BEFORE GRIB MESSAGE</li>
+<li>BYTE 009 - 012 BYTES TO SKIP IN MESSAGE BEFORE LUS (LOCAL USE) SET = 0, IF NO LOCAL USE SECTION IN GRIB2 MESSAGE.</li>
+<li>BYTE 013 - 016 BYTES TO SKIP IN MESSAGE BEFORE GDS</li>
+<li>BYTE 017 - 020 BYTES TO SKIP IN MESSAGE BEFORE PDS</li>
+<li>BYTE 021 - 024 BYTES TO SKIP IN MESSAGE BEFORE DRS</li>
+<li>BYTE 025 - 028 BYTES TO SKIP IN MESSAGE BEFORE BMS</li>
+<li>BYTE 029 - 032 BYTES TO SKIP IN MESSAGE BEFORE DATA SECTION</li>
+<li>BYTE 033 - 040 BYTES TOTAL IN THE MESSAGE</li>
+<li>BYTE 041 - 041 GRIB VERSION NUMBER (CURRENTLY 2)</li>
+<li>BYTE 042 - 042 MESSAGE DISCIPLINE</li>
+<li>BYTE 043 - 044 FIELD NUMBER WITHIN GRIB2 MESSAGE</li>
+<li>BYTE 045 - II IDENTIFICATION SECTION (IDS)</li>
+<li>BYTE II+1- JJ GRID DEFINITION SECTION (GDS)</li>
+<li>BYTE JJ+1- KK PRODUCT DEFINITION SECTION (PDS)</li>
+<li>BYTE KK+1- LL THE DATA REPRESENTATION SECTION (DRS)</li>
+<li>BYTE LL+1-LL+6 FIRST 6 BYTES OF THE BIT MAP SECTION (BMS)</li>
+</ul>
+<p>PROGRAM HISTORY LOG:</p>
+<ul>
+<li>1995-10-31 Mark Iredell</li>
+<li>1996-10-31 Mark Iredell AUGMENTED OPTIONAL DEFINITIONS TO BYTE 320</li>
+<li>2002-01-03 Stephen Gilbert MODIFIED FROM GETGI TO WORK WITH GRIB2</li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">csec3</td><td>Character array that contains the packed GRIB2 GDS. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">lcsec3</td><td>Length (in octets) of section 3. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">width</td><td>x (or i) dimension of the grid. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">height</td><td>y (or j) dimension of the grid. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">iscan</td><td>Scanning mode (see Code Table 3.4).</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">LUGI</td><td>INTEGER UNIT OF THE UNBLOCKED GRIB INDEX FILE </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">CBUF</td><td>CHARACTER*1 POINTER TO A BUFFER THAT CONTAINS INDEX RECORDS. USERS SHOULD FREE MEMORY THAT CBUF POINTS TO, USING DEALLOCATE(CBUF) WHEN CBUF IS NO LONGER NEEDED. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">NLEN</td><td>INTEGER TOTAL LENGTH OF ALL INDEX RECORDS </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">NNUM</td><td>INTEGER NUMBER OF INDEX RECORDS </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">IRET</td><td>INTEGER RETURN CODE<ul>
+<li>0 ALL OK</li>
+<li>2 NOT ENOUGH MEMORY TO HOLD INDEX BUFFER</li>
+<li>3 ERROR READING INDEX FILE BUFFER</li>
+<li>4 ERROR READING INDEX FILE HEADER</li>
+</ul>
+</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>Returns width and height set to zero, if grid template not recognized.</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2002-12-11 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>SUBPROGRAM CAN BE CALLED FROM A MULTIPROCESSING ENVIRONMENT. DO NOT ENGAGE THE SAME LOGICAL UNIT FROM MORE THAN ONE PROCESSOR.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Mark Iredell </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2000-05-26 </dd></dl>
 
-<p>Definition at line <a class="el" href="getdim_8f_source.html#l00021">21</a> of file <a class="el" href="getdim_8f_source.html">getdim.f</a>.</p>
+<p>Definition at line <a class="el" href="getg2i_8f_source.html#l00056">56</a> of file <a class="el" href="getg2i_8f_source.html">getg2i.f</a>.</p>
 
 </div>
 </div>
@@ -193,7 +225,7 @@ Functions/Subroutines</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_d016ec1399c85acecef32bf81e1fad9c.html">dox</a></li><li class="navelem"><a class="el" href="dir_a7b3ebe721b8c60c479822a40383d337.html">src</a></li><li class="navelem"><a class="el" href="getdim_8f.html">getdim.f</a></li>
+    <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a></li><li class="navelem"><a class="el" href="dir_b90aa5a6084b86bdb838378bc1dc161c.html">Hang.Lei</a></li><li class="navelem"><a class="el" href="dir_a172c4a69c8c4fc64ef5d9224f684072.html">noscrub</a></li><li class="navelem"><a class="el" href="dir_dd819178255f7a9ad49a3b8867a6c150.html">docus</a></li><li class="navelem"><a class="el" href="dir_648917924aeb9ce7c1fc0528dd2caf69.html">feature</a></li><li class="navelem"><a class="el" href="dir_d016ec1399c85acecef32bf81e1fad9c.html">dox</a></li><li class="navelem"><a class="el" href="dir_a7b3ebe721b8c60c479822a40383d337.html">src</a></li><li class="navelem"><a class="el" href="getg2i_8f.html">getg2i.f</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>

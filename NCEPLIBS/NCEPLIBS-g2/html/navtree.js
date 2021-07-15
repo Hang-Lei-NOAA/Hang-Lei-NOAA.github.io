@@ -23,7 +23,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "addfield_8f.html",
-"reduce_8f_source.html"
+"pdstemplates_8f_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

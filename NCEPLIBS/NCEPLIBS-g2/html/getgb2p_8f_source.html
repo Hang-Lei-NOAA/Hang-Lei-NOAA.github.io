@@ -260,17 +260,17 @@ $(document).ready(function(){initNavTree('getgb2p_8f_source.html','');});
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">C  DECLARE INTERFACES (REQUIRED FOR CBUF POINTER)</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="keyword">INTERFACE</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">         SUBROUTINE </span>getg2i(LUGI,CBUF,NLEN,NNUM,IRET)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">         SUBROUTINE </span><a class="code" href="getg2i_8f.html#a44c16f665d204ab2236a58ef37bc8b13">getg2i</a>(LUGI,CBUF,NLEN,NNUM,IRET)</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keywordtype">CHARACTER(LEN=1)</span>,<span class="keywordtype">POINTER</span>,<span class="keywordtype">DIMENSION(:)</span> :: cbuf</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(IN)</span> :: lugi</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(OUT)</span> :: nlen,nnum,iret</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keyword">         END SUBROUTINE </span>getg2i</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">         SUBROUTINE </span>getg2ir(LUGB,MSK1,MSK2,MNUM,CBUF,NLEN,NNUM,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keyword">         END SUBROUTINE </span><a class="code" href="getg2i_8f.html#a44c16f665d204ab2236a58ef37bc8b13">getg2i</a></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">         SUBROUTINE </span><a class="code" href="getg2ir_8f.html#ab4764647a6cf4a3b178dc4069f46ebfd">getg2ir</a>(LUGB,MSK1,MSK2,MNUM,CBUF,NLEN,NNUM,</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;     &amp;                      nmess,iret)</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordtype">CHARACTER(LEN=1)</span>,<span class="keywordtype">POINTER</span>,<span class="keywordtype">DIMENSION(:)</span> :: cbuf</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(IN)</span> :: lugb,msk1,msk2,mnum</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(OUT)</span> :: nlen,nnum,nmess,iret</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keyword">         END SUBROUTINE </span>getg2ir</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keyword">         END SUBROUTINE </span><a class="code" href="getg2ir_8f.html#ab4764647a6cf4a3b178dc4069f46ebfd">getg2ir</a></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keyword">         SUBROUTINE </span>getgb2rp(LUGB,CINDEX,EXTRACT,GRIBM,LENG,IRET)</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(IN)</span> :: lugb</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordtype">CHARACTER(LEN=1)</span>,<span class="keywordtype">INTENT(IN)</span> :: cindex(*)</div>
@@ -284,11 +284,11 @@ $(document).ready(function(){initNavTree('getgb2p_8f_source.html','');});
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">C  DETERMINE WHETHER INDEX BUFFER NEEDS TO BE INITIALIZED</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      irgi=0</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      <span class="keywordflow">IF</span>(lugi.GT.0.AND.lugi.NE.lux) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        CALL getg2i(lugi,cbuf,nlen,nnum,irgi)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        CALL <a class="code" href="getg2i_8f.html#a44c16f665d204ab2236a58ef37bc8b13">getg2i</a>(lugi,cbuf,nlen,nnum,irgi)</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        lux=lugi</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      <span class="keywordflow">ELSEIF</span>(lugi.LE.0.AND.lugb.NE.lux) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        mskp=0</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        CALL getg2ir(lugb,msk1,msk2,mskp,cbuf,nlen,nnum,nmess,irgi)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        CALL <a class="code" href="getg2ir_8f.html#ab4764647a6cf4a3b178dc4069f46ebfd">getg2ir</a>(lugb,msk1,msk2,mskp,cbuf,nlen,nnum,nmess,irgi)</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        lux=lugb</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      <span class="keywordflow">ENDIF</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      <span class="keywordflow">IF</span>(irgi.GT.1) <span class="keywordflow">THEN</span></div>
@@ -331,6 +331,8 @@ $(document).ready(function(){initNavTree('getgb2p_8f_source.html','');});
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      <span class="keywordflow">END</span></div>
 <div class="ttc" id="classgrib__mod_html"><div class="ttname"><a href="classgrib__mod.html">grib_mod</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00001">gribmod.f:1</a></div></div>
 <div class="ttc" id="classgrib__mod_html_structgrib__mod_1_1gribfield"><div class="ttname"><a href="classgrib__mod.html#structgrib__mod_1_1gribfield">grib_mod::gribfield</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00174">gribmod.f:174</a></div></div>
+<div class="ttc" id="getg2i_8f_html_a44c16f665d204ab2236a58ef37bc8b13"><div class="ttname"><a href="getg2i_8f.html#a44c16f665d204ab2236a58ef37bc8b13">getg2i</a></div><div class="ttdeci">subroutine getg2i(LUGI, CBUF, NLEN, NNUM, IRET)</div><div class="ttdoc">READ A GRIB2 INDEX FILE AND RETURN ITS CONTENTS. </div><div class="ttdef"><b>Definition:</b> <a href="getg2i_8f_source.html#l00056">getg2i.f:56</a></div></div>
+<div class="ttc" id="getg2ir_8f_html_ab4764647a6cf4a3b178dc4069f46ebfd"><div class="ttname"><a href="getg2ir_8f.html#ab4764647a6cf4a3b178dc4069f46ebfd">getg2ir</a></div><div class="ttdeci">subroutine getg2ir(LUGB, MSK1, MSK2, MNUM, CBUF, NLEN, NNUM, NMESS, IRET)</div><div class="ttdoc">READ A GRIB FILE AND RETURN ITS INDEX CONTENTS. </div><div class="ttdef"><b>Definition:</b> <a href="getg2ir_8f_source.html#l00059">getg2ir.f:59</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
