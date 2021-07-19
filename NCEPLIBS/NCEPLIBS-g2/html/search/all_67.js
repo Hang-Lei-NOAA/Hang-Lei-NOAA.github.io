@@ -23,6 +23,8 @@ var searchData=
   ['getg2ir_2ef',['getg2ir.f',['../getg2ir_8f.html',1,'']]],
   ['getgb2',['getgb2',['../getgb2_8f.html#a59b91d6ac5c93ac460bb89760bf41694',1,'getgb2.f']]],
   ['getgb2_2ef',['getgb2.f',['../getgb2_8f.html',1,'']]],
+  ['getgb2l',['getgb2l',['../getgb2l_8f.html#a00d7ea0c7789605b5ff7269a9c41e0ad',1,'getgb2l.f']]],
+  ['getgb2l_2ef',['getgb2l.f',['../getgb2l_8f.html',1,'']]],
   ['getgridbyname',['getgridbyname',['../classg2grids.html#af909017f37048acf68815aa78a17a10f',1,'g2grids']]],
   ['getgridbynum',['getgridbynum',['../classg2grids.html#a863b03b8c8f14a707ca757e8bd34d272',1,'g2grids']]],
   ['grib_5fmod',['grib_mod',['../classgrib__mod.html',1,'']]],

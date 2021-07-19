@@ -376,7 +376,7 @@ $(document).ready(function(){initNavTree('getgb2_8f_source.html','');});
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      <span class="keywordflow">ENDIF</span></div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">C  READ LOCAL USE SECTION, IF AVAILABLE</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      CALL getgb2l(lugb,cbuf(lpos),gfld,iret)</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      CALL <a class="code" href="getgb2l_8f.html#a00d7ea0c7789605b5ff7269a9c41e0ad">getgb2l</a>(lugb,cbuf(lpos),gfld,iret)</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">C  READ AND UNPACK GRIB RECORD</span></div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;      <span class="keywordflow">IF</span> (unpack) <span class="keywordflow">THEN</span></div>
@@ -391,6 +391,7 @@ $(document).ready(function(){initNavTree('getgb2_8f_source.html','');});
 <div class="ttc" id="classgrib__mod_html"><div class="ttname"><a href="classgrib__mod.html">grib_mod</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00001">gribmod.f:1</a></div></div>
 <div class="ttc" id="classgrib__mod_html_structgrib__mod_1_1gribfield"><div class="ttname"><a href="classgrib__mod.html#structgrib__mod_1_1gribfield">grib_mod::gribfield</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00174">gribmod.f:174</a></div></div>
 <div class="ttc" id="getgb2_8f_html_a59b91d6ac5c93ac460bb89760bf41694"><div class="ttname"><a href="getgb2_8f.html#a59b91d6ac5c93ac460bb89760bf41694">getgb2</a></div><div class="ttdeci">subroutine getgb2(LUGB, LUGI, J, JDISC, JIDS, JPDTN, JPDT, JGDTN, JGDT, UNPACK, K, GFLD, IRET)</div><div class="ttdoc">This subroutine find and unpack a grib message. </div><div class="ttdef"><b>Definition:</b> <a href="getgb2_8f_source.html#l00231">getgb2.f:231</a></div></div>
+<div class="ttc" id="getgb2l_8f_html_a00d7ea0c7789605b5ff7269a9c41e0ad"><div class="ttname"><a href="getgb2l_8f.html#a00d7ea0c7789605b5ff7269a9c41e0ad">getgb2l</a></div><div class="ttdeci">subroutine getgb2l(LUGB, CINDEX, GFLD, IRET)</div><div class="ttdoc">This subroutine read and unpack a local use section from a grib2 message. </div><div class="ttdef"><b>Definition:</b> <a href="getgb2l_8f_source.html#l00156">getgb2l.f:156</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
