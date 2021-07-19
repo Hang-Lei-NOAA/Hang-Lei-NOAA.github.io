@@ -31,7 +31,7 @@ var files =
     [ "getg2ir.f", "getg2ir_8f.html", "getg2ir_8f" ],
     [ "getgb2.f", "getgb2_8f.html", "getgb2_8f" ],
     [ "getgb2l.f", "getgb2l_8f.html", "getgb2l_8f" ],
-    [ "getgb2p.f", "getgb2p_8f_source.html", null ],
+    [ "getgb2p.f", "getgb2p_8f.html", "getgb2p_8f" ],
     [ "getgb2r.f", "getgb2r_8f_source.html", null ],
     [ "getgb2rp.f", "getgb2rp_8f_source.html", null ],
     [ "getgb2s.f", "getgb2s_8f_source.html", null ],
