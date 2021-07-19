@@ -10,5 +10,6 @@ var searchData=
   ['getg2ir_2ef',['getg2ir.f',['../getg2ir_8f.html',1,'']]],
   ['getgb2_2ef',['getgb2.f',['../getgb2_8f.html',1,'']]],
   ['getgb2l_2ef',['getgb2l.f',['../getgb2l_8f.html',1,'']]],
-  ['getgb2p_2ef',['getgb2p.f',['../getgb2p_8f.html',1,'']]]
+  ['getgb2p_2ef',['getgb2p.f',['../getgb2p_8f.html',1,'']]],
+  ['getgb2r_2ef',['getgb2r.f',['../getgb2r_8f.html',1,'']]]
 ];
