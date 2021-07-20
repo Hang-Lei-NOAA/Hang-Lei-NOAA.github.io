@@ -235,13 +235,13 @@ $(document).ready(function(){initNavTree('getgb2p_8f_source.html','');});
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(IN)</span> :: lugb,msk1,msk2,mnum</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(OUT)</span> :: nlen,nnum,nmess,iret</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">         END SUBROUTINE </span><a class="code" href="getg2ir_8f.html#ab4764647a6cf4a3b178dc4069f46ebfd">getg2ir</a></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keyword">         SUBROUTINE </span>getgb2rp(LUGB,CINDEX,EXTRACT,GRIBM,LENG,IRET)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keyword">         SUBROUTINE </span><a class="code" href="getgb2rp_8f.html#a6807bd15c12b1d153be4863694d47ae7">getgb2rp</a>(LUGB,CINDEX,EXTRACT,GRIBM,LENG,IRET)</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(IN)</span> :: lugb</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordtype">CHARACTER(LEN=1)</span>,<span class="keywordtype">INTENT(IN)</span> :: cindex(*)</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordtype">LOGICAL</span>,<span class="keywordtype">INTENT(IN)</span> :: extract</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(OUT)</span> :: leng,iret</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordtype">CHARACTER(LEN=1)</span>,<span class="keywordtype">POINTER</span>,<span class="keywordtype">DIMENSION(:)</span> :: gribm</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword">         END SUBROUTINE </span>getgb2rp</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword">         END SUBROUTINE </span><a class="code" href="getgb2rp_8f.html#a6807bd15c12b1d153be4863694d47ae7">getgb2rp</a></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">      END INTERFACE</span></div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
@@ -262,7 +262,7 @@ $(document).ready(function(){initNavTree('getgb2p_8f_source.html','');});
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="keywordflow">ENDIF</span></div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">C  SEARCH INDEX BUFFER</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      CALL getgb2s(cbuf,nlen,nnum,j,jdisc,jids,jpdtn,jpdt,jgdtn,jgdt,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      CALL <a class="code" href="getgb2s_8f.html#a6b2c408bc524f6f37e9c461c3f74443c">getgb2s</a>(cbuf,nlen,nnum,j,jdisc,jids,jpdtn,jpdt,jgdtn,jgdt,</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;     &amp;             jk,gfld,lpos,irgs)</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      <span class="keywordflow">IF</span>(irgs.NE.0) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        iret=99</div>
@@ -271,7 +271,7 @@ $(document).ready(function(){initNavTree('getgb2p_8f_source.html','');});
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      <span class="keywordflow">ENDIF</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">C  EXTRACT GRIB MESSAGE FROM FILE</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      CALL getgb2rp(lugb,cbuf(lpos:),extract,gribm,leng,iret)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      CALL <a class="code" href="getgb2rp_8f.html#a6807bd15c12b1d153be4863694d47ae7">getgb2rp</a>(lugb,cbuf(lpos:),extract,gribm,leng,iret)</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">!      IF ( EXTRACT ) THEN</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">!         PRINT *,&#39;NOT SUPPOSED TO BE HERE.&#39;</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">!      ELSE</span></div>
@@ -295,9 +295,11 @@ $(document).ready(function(){initNavTree('getgb2p_8f_source.html','');});
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      <span class="keywordflow">END</span></div>
 <div class="ttc" id="classgrib__mod_html"><div class="ttname"><a href="classgrib__mod.html">grib_mod</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00001">gribmod.f:1</a></div></div>
 <div class="ttc" id="classgrib__mod_html_structgrib__mod_1_1gribfield"><div class="ttname"><a href="classgrib__mod.html#structgrib__mod_1_1gribfield">grib_mod::gribfield</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00174">gribmod.f:174</a></div></div>
+<div class="ttc" id="getgb2s_8f_html_a6b2c408bc524f6f37e9c461c3f74443c"><div class="ttname"><a href="getgb2s_8f.html#a6b2c408bc524f6f37e9c461c3f74443c">getgb2s</a></div><div class="ttdeci">subroutine getgb2s(CBUF, NLEN, NNUM, J, JDISC, JIDS, JPDTN, JPDT, JGDTN, JGDT, K, GFLD, LPOS, IRET)</div><div class="ttdoc">This subroutine find in the index file for a reference to the grib field requested. </div><div class="ttdef"><b>Definition:</b> <a href="getgb2s_8f_source.html#l00243">getgb2s.f:243</a></div></div>
 <div class="ttc" id="getg2i_8f_html_a44c16f665d204ab2236a58ef37bc8b13"><div class="ttname"><a href="getg2i_8f.html#a44c16f665d204ab2236a58ef37bc8b13">getg2i</a></div><div class="ttdeci">subroutine getg2i(LUGI, CBUF, NLEN, NNUM, IRET)</div><div class="ttdoc">READ A GRIB2 INDEX FILE AND RETURN ITS CONTENTS. </div><div class="ttdef"><b>Definition:</b> <a href="getg2i_8f_source.html#l00056">getg2i.f:56</a></div></div>
 <div class="ttc" id="getgb2p_8f_html_a12b440aa28985f8ea389adb7f065abe1"><div class="ttname"><a href="getgb2p_8f.html#a12b440aa28985f8ea389adb7f065abe1">getgb2p</a></div><div class="ttdeci">subroutine getgb2p(LUGB, LUGI, J, JDISC, JIDS, JPDTN, JPDT, JGDTN, JGDT, EXTRACT, K, GRIBM, LENG, IRET)</div><div class="ttdoc">This subroutine find and extracts a grib message from a file. </div><div class="ttdef"><b>Definition:</b> <a href="getgb2p_8f_source.html#l00098">getgb2p.f:98</a></div></div>
 <div class="ttc" id="getg2ir_8f_html_ab4764647a6cf4a3b178dc4069f46ebfd"><div class="ttname"><a href="getg2ir_8f.html#ab4764647a6cf4a3b178dc4069f46ebfd">getg2ir</a></div><div class="ttdeci">subroutine getg2ir(LUGB, MSK1, MSK2, MNUM, CBUF, NLEN, NNUM, NMESS, IRET)</div><div class="ttdoc">This subroutine read a GRIB file and return its index content. </div><div class="ttdef"><b>Definition:</b> <a href="getg2ir_8f_source.html#l00059">getg2ir.f:59</a></div></div>
+<div class="ttc" id="getgb2rp_8f_html_a6807bd15c12b1d153be4863694d47ae7"><div class="ttname"><a href="getgb2rp_8f.html#a6807bd15c12b1d153be4863694d47ae7">getgb2rp</a></div><div class="ttdeci">subroutine getgb2rp(LUGB, CINDEX, EXTRACT, GRIBM, LENG, IRET)</div><div class="ttdoc">This subroutine find and extracts a grib message from a file given the index for the requested field...</div><div class="ttdef"><b>Definition:</b> <a href="getgb2rp_8f_source.html#l00035">getgb2rp.f:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

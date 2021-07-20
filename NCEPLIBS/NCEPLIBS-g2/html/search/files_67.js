@@ -11,5 +11,7 @@ var searchData=
   ['getgb2_2ef',['getgb2.f',['../getgb2_8f.html',1,'']]],
   ['getgb2l_2ef',['getgb2l.f',['../getgb2l_8f.html',1,'']]],
   ['getgb2p_2ef',['getgb2p.f',['../getgb2p_8f.html',1,'']]],
-  ['getgb2r_2ef',['getgb2r.f',['../getgb2r_8f.html',1,'']]]
+  ['getgb2r_2ef',['getgb2r.f',['../getgb2r_8f.html',1,'']]],
+  ['getgb2rp_2ef',['getgb2rp.f',['../getgb2rp_8f.html',1,'']]],
+  ['getgb2s_2ef',['getgb2s.f',['../getgb2s_8f.html',1,'']]]
 ];

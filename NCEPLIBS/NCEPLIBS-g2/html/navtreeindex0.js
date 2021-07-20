@@ -206,7 +206,11 @@ var NAVTREEINDEX0 =
 "getgb2r_8f.html":[2,0,22],
 "getgb2r_8f.html#a9c8cac99054f88c1a5765ccca7d81efa":[2,0,22,0],
 "getgb2r_8f_source.html":[2,0,22],
+"getgb2rp_8f.html":[2,0,23],
+"getgb2rp_8f.html#a6807bd15c12b1d153be4863694d47ae7":[2,0,23,0],
 "getgb2rp_8f_source.html":[2,0,23],
+"getgb2s_8f.html":[2,0,24],
+"getgb2s_8f.html#a6b2c408bc524f6f37e9c461c3f74443c":[2,0,24,0],
 "getgb2s_8f_source.html":[2,0,24],
 "getidx_8f_source.html":[2,0,25],
 "getlocal_8f_source.html":[2,0,26],
@@ -245,9 +249,5 @@ var NAVTREEINDEX0 =
 "interfacere__alloc_1_1realloc.html#a70808277979ee031cdf8e1653af2c4b0":[1,0,8,0,1],
 "intmath_8f_source.html":[2,0,43],
 "ixgb2_8f_source.html":[2,0,44],
-"jpcpack_8f_source.html":[2,0,45],
-"jpcunpack_8f_source.html":[2,0,46],
-"md__home_Hang_8Lei_noscrub_docus_feature_dox_docs_user_guide.html":[0],
-"misspack_8f_source.html":[2,0,47],
-"mkieee_8f_source.html":[2,0,48]
+"jpcpack_8f_source.html":[2,0,45]
 };

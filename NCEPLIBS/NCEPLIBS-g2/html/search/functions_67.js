@@ -16,6 +16,8 @@ var searchData=
   ['getgb2l',['getgb2l',['../getgb2l_8f.html#a00d7ea0c7789605b5ff7269a9c41e0ad',1,'getgb2l.f']]],
   ['getgb2p',['getgb2p',['../getgb2p_8f.html#a12b440aa28985f8ea389adb7f065abe1',1,'getgb2p.f']]],
   ['getgb2r',['getgb2r',['../getgb2r_8f.html#a9c8cac99054f88c1a5765ccca7d81efa',1,'getgb2r.f']]],
+  ['getgb2rp',['getgb2rp',['../getgb2rp_8f.html#a6807bd15c12b1d153be4863694d47ae7',1,'getgb2rp.f']]],
+  ['getgb2s',['getgb2s',['../getgb2s_8f.html#a6b2c408bc524f6f37e9c461c3f74443c',1,'getgb2s.f']]],
   ['getgridbyname',['getgridbyname',['../classg2grids.html#af909017f37048acf68815aa78a17a10f',1,'g2grids']]],
   ['getgridbynum',['getgridbynum',['../classg2grids.html#a863b03b8c8f14a707ca757e8bd34d272',1,'g2grids']]]
 ];
