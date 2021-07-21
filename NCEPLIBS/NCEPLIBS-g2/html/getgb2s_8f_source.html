@@ -367,14 +367,14 @@ $(document).ready(function(){initNavTree('getgb2s_8f_source.html','');});
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="comment">!      REAL,POINTER,DIMENSION(:) :: COORD</span></div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      <span class="keyword">interface</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="keyword">         subroutine </span>gf_unpack1(cgrib,lcgrib,iofst,ids,idslen,ierr)</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="keyword">         subroutine </span><a class="code" href="gf__unpack1_8f.html#a12422d9723d41c32de24c2110c0631f3">gf_unpack1</a>(cgrib,lcgrib,iofst,ids,idslen,ierr)</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keywordtype">character(len=1)</span>,<span class="keywordtype">intent(in)</span> :: cgrib(lcgrib)</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(in)</span> :: lcgrib</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(inout)</span> :: iofst</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: ids</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(out)</span> :: ierr,idslen</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keyword">         end subroutine </span>gf_unpack1</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="keyword">         subroutine </span>gf_unpack3(cgrib,lcgrib,iofst,igds,igdstmpl,</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keyword">         end subroutine </span><a class="code" href="gf__unpack1_8f.html#a12422d9723d41c32de24c2110c0631f3">gf_unpack1</a></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="keyword">         subroutine </span><a class="code" href="gf__unpack3_8f.html#aa256495eea520bcee7b5ee13acae09dd">gf_unpack3</a>(cgrib,lcgrib,iofst,igds,igdstmpl,</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;     &amp;                         mapgridlen,ideflist,idefnum,ierr)</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keywordtype">character(len=1)</span>,<span class="keywordtype">intent(in)</span> :: cgrib(lcgrib)</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(in)</span> :: lcgrib</div>
@@ -382,8 +382,8 @@ $(document).ready(function(){initNavTree('getgb2s_8f_source.html','');});
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: igdstmpl,ideflist</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(out)</span> :: igds(5)</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(out)</span> :: ierr,idefnum</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keyword">         end subroutine </span>gf_unpack3</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="keyword">         subroutine </span>gf_unpack4(cgrib,lcgrib,iofst,ipdsnum,ipdstmpl,</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keyword">         end subroutine </span><a class="code" href="gf__unpack3_8f.html#aa256495eea520bcee7b5ee13acae09dd">gf_unpack3</a></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="keyword">         subroutine </span><a class="code" href="gf__unpack4_8f.html#a9fc5c6e470ca59137c75aff32ec9f446">gf_unpack4</a>(cgrib,lcgrib,iofst,ipdsnum,ipdstmpl,</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;     &amp;                      mappdslen,coordlist,numcoord,ierr)</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            <span class="keywordtype">character(len=1)</span>,<span class="keywordtype">intent(in)</span> :: cgrib(lcgrib)</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(in)</span> :: lcgrib</div>
@@ -392,8 +392,8 @@ $(document).ready(function(){initNavTree('getgb2s_8f_source.html','');});
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: ipdstmpl</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(out)</span> :: ipdsnum</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(out)</span> :: ierr,numcoord</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keyword">         end subroutine </span>gf_unpack4</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="keyword">         subroutine </span>gf_unpack5(cgrib,lcgrib,iofst,ndpts,idrsnum,</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keyword">         end subroutine </span><a class="code" href="gf__unpack4_8f.html#a9fc5c6e470ca59137c75aff32ec9f446">gf_unpack4</a></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="keyword">         subroutine </span><a class="code" href="gf__unpack5_8f.html#a7862ea0713e38195f1b380dc5f972cfa">gf_unpack5</a>(cgrib,lcgrib,iofst,ndpts,idrsnum,</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;     &amp;                         idrstmpl,mapdrslen,ierr)</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="keywordtype">character(len=1)</span>,<span class="keywordtype">intent(in)</span> :: cgrib(lcgrib)</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(in)</span> :: lcgrib</div>
@@ -401,7 +401,7 @@ $(document).ready(function(){initNavTree('getgb2s_8f_source.html','');});
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(out)</span> :: ndpts,idrsnum</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: idrstmpl</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(out)</span> :: ierr</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="keyword">         end subroutine </span>gf_unpack5</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="keyword">         end subroutine </span><a class="code" href="gf__unpack5_8f.html#a7862ea0713e38195f1b380dc5f972cfa">gf_unpack5</a></div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="keyword">      end interface</span></div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      </div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
@@ -435,7 +435,7 @@ $(document).ready(function(){initNavTree('getgb2s_8f_source.html','');});
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        match1=.false.</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        CALL <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cbuf,lsec1,(ipos+44)*8,4*8)  <span class="comment">! GET LENGTH OF IDS </span></div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        iof=0</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        CALL gf_unpack1(cbuf(ipos+45),lsec1,iof,gfld%IDSECT,</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        CALL <a class="code" href="gf__unpack1_8f.html#a12422d9723d41c32de24c2110c0631f3">gf_unpack1</a>(cbuf(ipos+45),lsec1,iof,gfld%IDSECT,</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;     &amp;                  gfld%IDSECTLEN,icnd)</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordflow">IF</span> ( icnd.EQ.0 ) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;           match1=.true.</div>
@@ -463,7 +463,7 @@ $(document).ready(function(){initNavTree('getgb2s_8f_source.html','');});
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;           CALL <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cbuf,numgdt,(jpos+12)*8,2*8)  <span class="comment">! GET GDT TEMPLATE NO.</span></div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;           <span class="keywordflow">IF</span> ( jgdtn.EQ.numgdt ) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;              iof=0</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;              CALL gf_unpack3(cbuf(jpos+1),lsec3,iof,kgds,gfld%IGDTMPL,</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;              CALL <a class="code" href="gf__unpack3_8f.html#aa256495eea520bcee7b5ee13acae09dd">gf_unpack3</a>(cbuf(jpos+1),lsec3,iof,kgds,gfld%IGDTMPL,</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;     &amp;                     gfld%IGDTLEN,gfld%LIST_OPT,gfld%NUM_OPT,icnd)</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;              <span class="keywordflow">IF</span> ( icnd.EQ.0 ) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                 match3=.true.</div>
@@ -502,7 +502,7 @@ $(document).ready(function(){initNavTree('getgb2s_8f_source.html','');});
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;           CALL <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cbuf,numpdt,(jpos+7)*8,2*8)  <span class="comment">! GET PDT TEMPLATE NO.</span></div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;           <span class="keywordflow">IF</span> ( jpdtn.EQ.numpdt ) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;              iof=0</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;              CALL gf_unpack4(cbuf(jpos+1),lsec4,iof,gfld%IPDTNUM,</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;              CALL <a class="code" href="gf__unpack4_8f.html#a9fc5c6e470ca59137c75aff32ec9f446">gf_unpack4</a>(cbuf(jpos+1),lsec4,iof,gfld%IPDTNUM,</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;     &amp;                        gfld%IPDTMPL,gfld%IPDTLEN,</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;     &amp;                        gfld%COORD_LIST,gfld%NUM_COORD,icnd)</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;              <span class="keywordflow">IF</span> ( icnd.EQ.0 ) <span class="keywordflow">THEN</span></div>
@@ -534,7 +534,7 @@ $(document).ready(function(){initNavTree('getgb2s_8f_source.html','');});
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;           jpos=ipos+44+lsec1</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;           <span class="keywordflow">IF</span> ( jgdtn.EQ.-1 ) <span class="keywordflow">THEN</span>     <span class="comment">! UNPACK GDS, IF NOT DONE BEFORE</span></div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;              iof=0</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;              CALL gf_unpack3(cbuf(jpos+1),lsec3,iof,kgds,gfld%IGDTMPL,</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;              CALL <a class="code" href="gf__unpack3_8f.html#aa256495eea520bcee7b5ee13acae09dd">gf_unpack3</a>(cbuf(jpos+1),lsec3,iof,kgds,gfld%IGDTMPL,</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;     &amp;                     gfld%IGDTLEN,gfld%LIST_OPT,gfld%NUM_OPT,icnd)</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;              gfld%GRIDDEF=kgds(1)</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;              gfld%NGRDPTS=kgds(2)</div>
@@ -545,14 +545,14 @@ $(document).ready(function(){initNavTree('getgb2s_8f_source.html','');});
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;           jpos=jpos+lsec3</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;           <span class="keywordflow">IF</span> ( jpdtn.EQ.-1 ) <span class="keywordflow">THEN</span>     <span class="comment">! UNPACK PDS, IF NOT DONE BEFORE</span></div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;              iof=0</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;              CALL gf_unpack4(cbuf(jpos+1),lsec4,iof,gfld%IPDTNUM,</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;              CALL <a class="code" href="gf__unpack4_8f.html#a9fc5c6e470ca59137c75aff32ec9f446">gf_unpack4</a>(cbuf(jpos+1),lsec4,iof,gfld%IPDTNUM,</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;     &amp;                        gfld%IPDTMPL,gfld%IPDTLEN,</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;     &amp;                        gfld%COORD_LIST,gfld%NUM_COORD,icnd)</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;           <span class="keywordflow">ENDIF</span></div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;           jpos=jpos+lsec4</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;           CALL <a class="code" href="g2__gbytesc_8f.html#aca0f5451292195fe5e0eb3ff4e53fe98">g2_gbytec</a>(cbuf,lsec5,jpos*8,4*8)  <span class="comment">! GET LENGTH OF DRS </span></div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;           iof=0</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;           CALL gf_unpack5(cbuf(jpos+1),lsec5,iof,gfld%NDPTS,</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;           CALL <a class="code" href="gf__unpack5_8f.html#a7862ea0713e38195f1b380dc5f972cfa">gf_unpack5</a>(cbuf(jpos+1),lsec5,iof,gfld%NDPTS,</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;     &amp;                     gfld%IDRTNUM,gfld%IDRTMPL,</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;     &amp;                     gfld%IDRTLEN,icnd)</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;           jpos=jpos+lsec5</div>
@@ -569,6 +569,10 @@ $(document).ready(function(){initNavTree('getgb2s_8f_source.html','');});
 <div class="ttc" id="classgrib__mod_html"><div class="ttname"><a href="classgrib__mod.html">grib_mod</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00001">gribmod.f:1</a></div></div>
 <div class="ttc" id="classgrib__mod_html_structgrib__mod_1_1gribfield"><div class="ttname"><a href="classgrib__mod.html#structgrib__mod_1_1gribfield">grib_mod::gribfield</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00174">gribmod.f:174</a></div></div>
 <div class="ttc" id="getgb2s_8f_html_a6b2c408bc524f6f37e9c461c3f74443c"><div class="ttname"><a href="getgb2s_8f.html#a6b2c408bc524f6f37e9c461c3f74443c">getgb2s</a></div><div class="ttdeci">subroutine getgb2s(CBUF, NLEN, NNUM, J, JDISC, JIDS, JPDTN, JPDT, JGDTN, JGDT, K, GFLD, LPOS, IRET)</div><div class="ttdoc">This subroutine find in the index file for a reference to the grib field requested. </div><div class="ttdef"><b>Definition:</b> <a href="getgb2s_8f_source.html#l00243">getgb2s.f:243</a></div></div>
+<div class="ttc" id="gf__unpack3_8f_html_aa256495eea520bcee7b5ee13acae09dd"><div class="ttname"><a href="gf__unpack3_8f.html#aa256495eea520bcee7b5ee13acae09dd">gf_unpack3</a></div><div class="ttdeci">subroutine gf_unpack3(cgrib, lcgrib, iofst, igds, igdstmpl, mapgridlen, ideflist, idefnum, ierr)</div><div class="ttdoc">This subroutine unpacks Section 3 (Grid Definition Section) starting at octet 6 of that Section...</div><div class="ttdef"><b>Definition:</b> <a href="gf__unpack3_8f_source.html#l00052">gf_unpack3.f:52</a></div></div>
+<div class="ttc" id="gf__unpack5_8f_html_a7862ea0713e38195f1b380dc5f972cfa"><div class="ttname"><a href="gf__unpack5_8f.html#a7862ea0713e38195f1b380dc5f972cfa">gf_unpack5</a></div><div class="ttdeci">subroutine gf_unpack5(cgrib, lcgrib, iofst, ndpts, idrsnum, idrstmpl, mapdrslen, ierr)</div><div class="ttdoc">This subroutine unpacks Section 5 (Data Representation Section) starting at octet 6 of that Section...</div><div class="ttdef"><b>Definition:</b> <a href="gf__unpack5_8f_source.html#l00036">gf_unpack5.f:36</a></div></div>
+<div class="ttc" id="gf__unpack1_8f_html_a12422d9723d41c32de24c2110c0631f3"><div class="ttname"><a href="gf__unpack1_8f.html#a12422d9723d41c32de24c2110c0631f3">gf_unpack1</a></div><div class="ttdeci">subroutine gf_unpack1(cgrib, lcgrib, iofst, ids, idslen, ierr)</div><div class="ttdoc">This subroutine unpacks Section 1 (Identification Section) starting at octet 6 of that Section...</div><div class="ttdef"><b>Definition:</b> <a href="gf__unpack1_8f_source.html#l00042">gf_unpack1.f:42</a></div></div>
+<div class="ttc" id="gf__unpack4_8f_html_a9fc5c6e470ca59137c75aff32ec9f446"><div class="ttname"><a href="gf__unpack4_8f.html#a9fc5c6e470ca59137c75aff32ec9f446">gf_unpack4</a></div><div class="ttdeci">subroutine gf_unpack4(cgrib, lcgrib, iofst, ipdsnum, ipdstmpl, mappdslen, coordlist, numcoord, ierr)</div><div class="ttdoc">This subroutine unpacks Section 4 (Product Definition Section) starting at octet 6 of that Section...</div><div class="ttdef"><b>Definition:</b> <a href="gf__unpack4_8f_source.html#l00041">gf_unpack4.f:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

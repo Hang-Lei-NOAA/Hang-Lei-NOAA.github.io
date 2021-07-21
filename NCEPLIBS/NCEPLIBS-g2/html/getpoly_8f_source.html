@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('getpoly_8f_source.html','');});
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordtype">integer</span> iofst,igdtlen,num_opt,jerr</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keyword">interface</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">         subroutine </span>gf_unpack3(cgrib,lcgrib,iofst,igds,igdstmpl,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">         subroutine </span><a class="code" href="gf__unpack3_8f.html#aa256495eea520bcee7b5ee13acae09dd">gf_unpack3</a>(cgrib,lcgrib,iofst,igds,igdstmpl,</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;     &amp;                         mapgridlen,ideflist,idefnum,ierr)</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordtype">character(len=1)</span>,<span class="keywordtype">intent(in)</span> :: cgrib(lcgrib)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(in)</span> :: lcgrib</div>
@@ -130,13 +130,13 @@ $(document).ready(function(){initNavTree('getpoly_8f_source.html','');});
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: igdstmpl,ideflist</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(out)</span> :: igds(5)</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordtype">integer</span>,<span class="keywordtype">intent(out)</span> :: ierr,idefnum</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">         end subroutine </span>gf_unpack3</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">         end subroutine </span><a class="code" href="gf__unpack3_8f.html#aa256495eea520bcee7b5ee13acae09dd">gf_unpack3</a></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">      end interface</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      nullify(igdstmpl,list_opt)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">!</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      iofst=0       <span class="comment">! set offset to beginning of section</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      call gf_unpack3(csec3,lcsec3,iofst,igds,igdstmpl,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      call <a class="code" href="gf__unpack3_8f.html#aa256495eea520bcee7b5ee13acae09dd">gf_unpack3</a>(csec3,lcsec3,iofst,igds,igdstmpl,</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;     &amp;                 igdtlen,list_opt,num_opt,jerr)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordflow">if</span> (jerr.eq.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;         selectcase( igds(5) )     <span class="comment">!  Template number</span></div>
@@ -160,6 +160,7 @@ $(document).ready(function(){initNavTree('getpoly_8f_source.html','');});
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keywordflow">return</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keywordflow">end</span></div>
+<div class="ttc" id="gf__unpack3_8f_html_aa256495eea520bcee7b5ee13acae09dd"><div class="ttname"><a href="gf__unpack3_8f.html#aa256495eea520bcee7b5ee13acae09dd">gf_unpack3</a></div><div class="ttdeci">subroutine gf_unpack3(cgrib, lcgrib, iofst, igds, igdstmpl, mapgridlen, ideflist, idefnum, ierr)</div><div class="ttdoc">This subroutine unpacks Section 3 (Grid Definition Section) starting at octet 6 of that Section...</div><div class="ttdef"><b>Definition:</b> <a href="gf__unpack3_8f_source.html#l00052">gf_unpack3.f:52</a></div></div>
 <div class="ttc" id="getpoly_8f_html_ab8d59bd4be7e6f0cd4cb2059fc693b30"><div class="ttname"><a href="getpoly_8f.html#ab8d59bd4be7e6f0cd4cb2059fc693b30">getpoly</a></div><div class="ttdeci">subroutine getpoly(csec3, lcsec3, jj, kk, mm)</div><div class="ttdoc">This subroutine returns the J, K, and M pentagonal resolution parameters specified in a GRIB Grid Def...</div><div class="ttdef"><b>Definition:</b> <a href="getpoly_8f_source.html#l00023">getpoly.f:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
