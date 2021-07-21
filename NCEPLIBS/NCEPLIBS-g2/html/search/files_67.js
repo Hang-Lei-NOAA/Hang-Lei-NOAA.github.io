@@ -13,5 +13,11 @@ var searchData=
   ['getgb2p_2ef',['getgb2p.f',['../getgb2p_8f.html',1,'']]],
   ['getgb2r_2ef',['getgb2r.f',['../getgb2r_8f.html',1,'']]],
   ['getgb2rp_2ef',['getgb2rp.f',['../getgb2rp_8f.html',1,'']]],
-  ['getgb2s_2ef',['getgb2s.f',['../getgb2s_8f.html',1,'']]]
+  ['getgb2s_2ef',['getgb2s.f',['../getgb2s_8f.html',1,'']]],
+  ['getidx_2ef',['getidx.f',['../getidx_8f.html',1,'']]],
+  ['getlocal_2ef',['getlocal.f',['../getlocal_8f.html',1,'']]],
+  ['getpoly_2ef',['getpoly.f',['../getpoly_8f.html',1,'']]],
+  ['gettemplates_2ef',['gettemplates.f',['../gettemplates_8f.html',1,'']]],
+  ['gf_5ffree_2ef',['gf_free.f',['../gf__free_8f.html',1,'']]],
+  ['gf_5fgetfld_2ef',['gf_getfld.f',['../gf__getfld_8f.html',1,'']]]
 ];
