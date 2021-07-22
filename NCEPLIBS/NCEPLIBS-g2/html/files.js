@@ -140,7 +140,7 @@ var files =
     [ "misspack.f", "misspack_8f.html", "misspack_8f" ],
     [ "mkieee.f", "mkieee_8f.html", "mkieee_8f" ],
     [ "mova2i.c", "mova2i_8c.html", null ],
-    [ "pack_gp.f", "pack__gp_8f_source.html", null ],
+    [ "pack_gp.f", "pack__gp_8f.html", "pack__gp_8f" ],
     [ "params.f", "params_8f_source.html", null ],
     [ "params_ecmwf.f", "params__ecmwf_8f_source.html", null ],
     [ "pdstemplates.f", "pdstemplates_8f_source.html", null ],
