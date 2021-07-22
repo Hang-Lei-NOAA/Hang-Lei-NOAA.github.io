@@ -109,6 +109,9 @@ $(document).ready(function(){initNavTree('classintmath.html','');});
 <div class="title">intmath Module Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This module defines integer math functions used by other programs.  
+ <a href="classintmath.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Types</h2></td></tr>
@@ -145,8 +148,28 @@ integer(kind=8) function&#160;</td><td class="memItemRight" valign="bottom"><b>i
 <tr class="separator:ad944cb5a1970cb4f7ce0366ebb43ea2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="intmath_8f_source.html#l00001">1</a> of file <a class="el" href="intmath_8f_source.html">intmath.f</a>.</p>
+<div class="textblock"><p>This module defines integer math functions used by other programs. </p>
+<p>It include following functions:</p>
+<ul>
+<li><a class="el" href="interfaceintmath_1_1ilog2.html">ilog2</a> Calculate log(x)/log(2).<ul>
+<li>ilog2_8 for 8 bit integer numbers.</li>
+<li>ilog2_4 for 4 bit integer numbers.</li>
+<li>ilog2_2 for 2 bit integer numbers.</li>
+<li>ilog2_1 for 1 bit integer numbers.</li>
+</ul>
+</li>
+<li><a class="el" href="interfaceintmath_1_1i1log2.html">i1log2</a> Calculate log(x+1)/log(2) unless x=maxint, in which case log(x)/log(2).<ul>
+<li>i1log2_8 for 8 bit integer numbers.</li>
+<li>i1log2_4 for 4 bit integer numbers.</li>
+<li>i1log2_2 for 2 bit integer numbers.</li>
+<li>i1log2_1 for 1 bit integer numbers.</li>
+</ul>
+</li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2000-06-21 </dd></dl>
+
+<p>Definition at line <a class="el" href="intmath_8f_source.html#l00022">22</a> of file <a class="el" href="intmath_8f_source.html">intmath.f</a>.</p>
 </div><hr/>The documentation for this module was generated from the following file:<ul>
 <li><a class="el" href="intmath_8f_source.html">intmath.f</a></li>
 </ul>

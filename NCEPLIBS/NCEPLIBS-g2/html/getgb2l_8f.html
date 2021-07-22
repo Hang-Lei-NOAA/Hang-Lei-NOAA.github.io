@@ -164,12 +164,12 @@ Functions/Subroutines</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This subroutine read and unpack a local use section from a grib2 message. </p>
-<p>It decoded information for the selected grib field and returned it in a derived type variable, gfld. gfld is of type gribfield, which is defined in module <a class="el" href="classgrib__mod.html">grib_mod</a>, so users of this routine will need to include the line "use grib_mod" in their calling routine. Each component of the gribfield type is described in the output argument list section below.</p>
+<p>It decoded information for the selected grib field and returned it in a derived type variable, gfld. gfld is of type gribfield, which is defined in module <a class="el" href="gribmod_8f.html#classgrib__mod" title="PROGRAM HISTORY LOG: 2002-01-23 Stephen Gilbert 2007-04-24 Boi Vuong Added GDT 3.204 Curvilinear Orth...">grib_mod</a>, so users of this routine will need to include the line "use grib_mod" in their calling routine. Each component of the gribfield type is described in the output argument list section below.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">LUGB</td><td>integer unit of the unblocked grib data file. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">CINDEX</td><td>index record of the grib field (see docblock of subroutine ixgb2 for description of an index record.) </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">GFLD</td><td>derived type gribfield (defined in module <a class="el" href="classgrib__mod.html">grib_mod</a>) (NOTE: See Remarks Section)<ul>
+    <tr><td class="paramdir">[out]</td><td class="paramname">GFLD</td><td>derived type gribfield (defined in module <a class="el" href="gribmod_8f.html#classgrib__mod" title="PROGRAM HISTORY LOG: 2002-01-23 Stephen Gilbert 2007-04-24 Boi Vuong Added GDT 3.204 Curvilinear Orth...">grib_mod</a>) (NOTE: See Remarks Section)<ul>
 <li>gfld%version GRIB edition number (currently 2)</li>
 <li>gfld%discipline Message Discipline (see Code Table 0.0)</li>
 <li>gfld%idsect Contains the entries in the Identification Section (Section 1) This element is actually a pointer to an array that holds the data.</li>

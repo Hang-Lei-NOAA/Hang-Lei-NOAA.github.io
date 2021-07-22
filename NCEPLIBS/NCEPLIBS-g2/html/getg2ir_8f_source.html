@@ -173,11 +173,11 @@ $(document).ready(function(){initNavTree('getg2ir_8f_source.html','');});
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(OUT)</span> :: nlen,nnum,nmess,iret</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keywordtype">CHARACTER(LEN=1)</span>,<span class="keywordtype">POINTER</span>,<span class="keywordtype">DIMENSION(:)</span> :: cbuftmp</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keyword">INTERFACE</span>      <span class="comment">! REQUIRED FOR CBUF POINTER</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">         SUBROUTINE </span>ixgb2(LUGB,LSKIP,LGRIB,CBUF,NUMFLD,MLEN,IRET)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">         SUBROUTINE </span><a class="code" href="ixgb2_8f.html#a497283dd9abc5761d4dfa0eefa43e35e">ixgb2</a>(LUGB,LSKIP,LGRIB,CBUF,NUMFLD,MLEN,IRET)</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;           <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(IN)</span> :: lugb,lskip,lgrib</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;           <span class="keywordtype">CHARACTER(LEN=1)</span>,<span class="keywordtype">POINTER</span>,<span class="keywordtype">DIMENSION(:)</span> :: cbuf</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;           <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(OUT)</span> :: numfld,mlen,iret</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">         END SUBROUTINE </span>ixgb2</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">         END SUBROUTINE </span><a class="code" href="ixgb2_8f.html#a497283dd9abc5761d4dfa0eefa43e35e">ixgb2</a></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">      END INTERFACE</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">C  INITIALIZE</span></div>
@@ -205,7 +205,7 @@ $(document).ready(function(){initNavTree('getg2ir_8f_source.html','');});
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      nnum=0</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      nmess=mnum</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      dowhile(iret.EQ.0.AND.lgrib.GT.0)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        CALL ixgb2(lugb,lskip,lgrib,cbuftmp,numfld,nbytes,iret1)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        CALL <a class="code" href="ixgb2_8f.html#a497283dd9abc5761d4dfa0eefa43e35e">ixgb2</a>(lugb,lskip,lgrib,cbuftmp,numfld,nbytes,iret1)</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">IF</span> (iret1.NE.0) print *,<span class="stringliteral">&#39; SAGT &#39;</span>,numfld,nbytes,iret1</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">IF</span>((nbytes+nlen).GT.mbuf) <span class="keywordflow">THEN</span>             <span class="comment">! ALLOCATE MORE SPACE, IF</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                                   <span class="comment">! NECESSARY</span></div>
@@ -240,6 +240,7 @@ $(document).ready(function(){initNavTree('getg2ir_8f_source.html','');});
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <span class="keywordflow">RETURN</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      <span class="keywordflow">END</span></div>
+<div class="ttc" id="ixgb2_8f_html_a497283dd9abc5761d4dfa0eefa43e35e"><div class="ttname"><a href="ixgb2_8f.html#a497283dd9abc5761d4dfa0eefa43e35e">ixgb2</a></div><div class="ttdeci">subroutine ixgb2(LUGB, LSKIP, LGRIB, CBUF, NUMFLD, MLEN, IRET)</div><div class="ttdoc">This subroutine generates an index record for each field in a grib2 message. </div><div class="ttdef"><b>Definition:</b> <a href="ixgb2_8f_source.html#l00054">ixgb2.f:54</a></div></div>
 <div class="ttc" id="classre__alloc_html"><div class="ttname"><a href="classre__alloc.html">re_alloc</a></div><div class="ttdef"><b>Definition:</b> <a href="realloc_8f_source.html#l00001">realloc.f:1</a></div></div>
 <div class="ttc" id="getg2ir_8f_html_ab4764647a6cf4a3b178dc4069f46ebfd"><div class="ttname"><a href="getg2ir_8f.html#ab4764647a6cf4a3b178dc4069f46ebfd">getg2ir</a></div><div class="ttdeci">subroutine getg2ir(LUGB, MSK1, MSK2, MNUM, CBUF, NLEN, NNUM, NMESS, IRET)</div><div class="ttdoc">This subroutine read a GRIB file and return its index content. </div><div class="ttdef"><b>Definition:</b> <a href="getg2ir_8f_source.html#l00059">getg2ir.f:59</a></div></div>
 <div class="ttc" id="interfacere__alloc_1_1realloc_html"><div class="ttname"><a href="interfacere__alloc_1_1realloc.html">re_alloc::realloc</a></div><div class="ttdef"><b>Definition:</b> <a href="realloc_8f_source.html#l00003">realloc.f:3</a></div></div>

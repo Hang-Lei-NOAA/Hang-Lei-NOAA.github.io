@@ -262,7 +262,7 @@ $(document).ready(function(){initNavTree('pngpack_8f_source.html','');});
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">!  Fill in ref value and number of bits in Template 5.0</span></div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">!</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      rmin4=rmin</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      call mkieee(rmin4,ref,1)   <span class="comment">! ensure reference value is IEEE format</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      call <a class="code" href="mkieee_8f.html#a375998969cdd6bf0800a5d3c69152aac">mkieee</a>(rmin4,ref,1)   <span class="comment">! ensure reference value is IEEE format</span></div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">!      call g2_gbytec(ref,idrstmpl(1),0,32)</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      iref=transfer(ref,iref)</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      idrstmpl(1)=iref</div>
@@ -271,6 +271,7 @@ $(document).ready(function(){initNavTree('pngpack_8f_source.html','');});
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      <span class="keywordflow">return</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <span class="keywordflow">end</span></div>
+<div class="ttc" id="mkieee_8f_html_a375998969cdd6bf0800a5d3c69152aac"><div class="ttname"><a href="mkieee_8f.html#a375998969cdd6bf0800a5d3c69152aac">mkieee</a></div><div class="ttdeci">subroutine mkieee(a, rieee, num)</div><div class="ttdoc">This subroutine stores a list of real values in 32-bit IEEE floating point format. </div><div class="ttdef"><b>Definition:</b> <a href="mkieee_8f_source.html#l00016">mkieee.f:16</a></div></div>
 <div class="ttc" id="g2__gbytesc_8f_html_a9cf11b602b6b58376477c58af3281aa4"><div class="ttname"><a href="g2__gbytesc_8f.html#a9cf11b602b6b58376477c58af3281aa4">g2_sbytesc</a></div><div class="ttdeci">subroutine g2_sbytesc(OUT, IN, ISKIP, NBYTE, NSKIP, N)</div><div class="ttdoc">This subrountine is to put arbitrary size values into a packed bit string, taking the low order bits ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00114">g2_gbytesc.f:114</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

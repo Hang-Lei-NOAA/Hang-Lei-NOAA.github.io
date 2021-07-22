@@ -500,7 +500,7 @@ $(document).ready(function(){initNavTree('compack_8f_source.html','');});
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="comment">!  Fill in ref value and number of bits in Template 5.2</span></div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="comment">!</span></div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;      rmin4 = rmin</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;      call mkieee(rmin4,ref,1)   <span class="comment">! ensure reference value is IEEE format</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;      call <a class="code" href="mkieee_8f.html#a375998969cdd6bf0800a5d3c69152aac">mkieee</a>(rmin4,ref,1)   <span class="comment">! ensure reference value is IEEE format</span></div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="comment">!    call g2_gbytec(ref,idrstmpl(1),0,32)</span></div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;      iref=transfer(ref,iref)</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;      idrstmpl(1)=iref</div>
@@ -523,11 +523,12 @@ $(document).ready(function(){initNavTree('compack_8f_source.html','');});
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;      <span class="keywordflow">endif</span></div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;      <span class="keywordflow">end</span></div>
-<div class="ttc" id="interfaceintmath_1_1i1log2_html"><div class="ttname"><a href="interfaceintmath_1_1i1log2.html">intmath::i1log2</a></div><div class="ttdef"><b>Definition:</b> <a href="intmath_8f_source.html#l00012">intmath.f:12</a></div></div>
+<div class="ttc" id="mkieee_8f_html_a375998969cdd6bf0800a5d3c69152aac"><div class="ttname"><a href="mkieee_8f.html#a375998969cdd6bf0800a5d3c69152aac">mkieee</a></div><div class="ttdeci">subroutine mkieee(a, rieee, num)</div><div class="ttdoc">This subroutine stores a list of real values in 32-bit IEEE floating point format. </div><div class="ttdef"><b>Definition:</b> <a href="mkieee_8f_source.html#l00016">mkieee.f:16</a></div></div>
+<div class="ttc" id="interfaceintmath_1_1i1log2_html"><div class="ttname"><a href="interfaceintmath_1_1i1log2.html">intmath::i1log2</a></div><div class="ttdef"><b>Definition:</b> <a href="intmath_8f_source.html#l00033">intmath.f:33</a></div></div>
 <div class="ttc" id="g2__gbytesc_8f_html_a60b5e38d11b3583aa561bc04cfb17b52"><div class="ttname"><a href="g2__gbytesc_8f.html#a60b5e38d11b3583aa561bc04cfb17b52">g2_sbytec</a></div><div class="ttdeci">subroutine g2_sbytec(OUT, IN, ISKIP, NBYTE)</div><div class="ttdoc">This subrountine is to put arbitrary size values into a packed bit string, taking the low order bits ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00038">g2_gbytesc.f:38</a></div></div>
 <div class="ttc" id="g2__gbytesc_8f_html_a9cf11b602b6b58376477c58af3281aa4"><div class="ttname"><a href="g2__gbytesc_8f.html#a9cf11b602b6b58376477c58af3281aa4">g2_sbytesc</a></div><div class="ttdeci">subroutine g2_sbytesc(OUT, IN, ISKIP, NBYTE, NSKIP, N)</div><div class="ttdoc">This subrountine is to put arbitrary size values into a packed bit string, taking the low order bits ...</div><div class="ttdef"><b>Definition:</b> <a href="g2__gbytesc_8f_source.html#l00114">g2_gbytesc.f:114</a></div></div>
 <div class="ttc" id="compack_8f_html_ae1301bac22c521b15e07191f49a9d296"><div class="ttname"><a href="compack_8f.html#ae1301bac22c521b15e07191f49a9d296">compack</a></div><div class="ttdeci">subroutine compack(fld, ndpts, idrsnum, idrstmpl, cpack, lcpack)</div><div class="ttdoc">This subroutine packs up a data field. </div><div class="ttdef"><b>Definition:</b> <a href="compack_8f_source.html#l00031">compack.f:31</a></div></div>
-<div class="ttc" id="classintmath_html"><div class="ttname"><a href="classintmath.html">intmath</a></div><div class="ttdef"><b>Definition:</b> <a href="intmath_8f_source.html#l00001">intmath.f:1</a></div></div>
+<div class="ttc" id="classintmath_html"><div class="ttname"><a href="classintmath.html">intmath</a></div><div class="ttdoc">This module defines integer math functions used by other programs. </div><div class="ttdef"><b>Definition:</b> <a href="intmath_8f_source.html#l00022">intmath.f:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

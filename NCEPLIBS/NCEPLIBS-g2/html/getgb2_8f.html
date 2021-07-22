@@ -219,7 +219,7 @@ Functions/Subroutines</h2></td></tr>
 
 <p>This subroutine find and unpack a grib message. </p>
 <p>It reads a grib index file (or optionally the grib file itself) to get the index buffer (i.e. table of contents) for the grib file. find in the index buffer a reference to the grib field requested. the grib field request specifies the number of fields to skip and the unpacked identification section, grid definition template and product defintion section parameters. (a requested parameter of -9999 means to allow any value of this parameter to be found.) if the requested grib field is found, then it is read from the grib file and unpacked. Its number is returned along with the associated unpacked parameters. the bitmap (if any), and the data values are unpacked only if argument "unpack" is set to true. if the grib field is not found, then the return code will be nonzero.</p>
-<p>The decoded information for the selected GRIB field is returned in a derived type variable, gfld. Gfld is of type gribfield, which is defined in module <a class="el" href="classgrib__mod.html">grib_mod</a>, so users of this routine will need to include the line "USE GRIB_MOD" in their calling routine. Each component of the gribfield type is described in the OUTPUT ARGUMENT LIST section below.</p>
+<p>The decoded information for the selected GRIB field is returned in a derived type variable, gfld. Gfld is of type gribfield, which is defined in module <a class="el" href="gribmod_8f.html#classgrib__mod" title="PROGRAM HISTORY LOG: 2002-01-23 Stephen Gilbert 2007-04-24 Boi Vuong Added GDT 3.204 Curvilinear Orth...">grib_mod</a>, so users of this routine will need to include the line "USE GRIB_MOD" in their calling routine. Each component of the gribfield type is described in the OUTPUT ARGUMENT LIST section below.</p>
 <p>PROGRAM HISTORY LOG:</p>
 <ul>
 <li>1994-04-01 Mark Iredell</li>
@@ -272,7 +272,7 @@ Functions/Subroutines</h2></td></tr>
 </ul>
 </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">K</td><td>integer field number unpacked </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">GFLD</td><td>derived type gribfield (defined in module <a class="el" href="classgrib__mod.html">grib_mod</a>) (NOTE: See Remarks Section)<ul>
+    <tr><td class="paramdir">[out]</td><td class="paramname">GFLD</td><td>derived type gribfield (defined in module <a class="el" href="gribmod_8f.html#classgrib__mod" title="PROGRAM HISTORY LOG: 2002-01-23 Stephen Gilbert 2007-04-24 Boi Vuong Added GDT 3.204 Curvilinear Orth...">grib_mod</a>) (NOTE: See Remarks Section)<ul>
 <li>gfld%version GRIB edition number (currently 2)</li>
 <li>gfld%discipline Message Discipline (see Code Table 0.0)</li>
 <li>gfld%idsect Contains the entries in the Identification Section (Section 1) This element is actually a pointer to an array that holds the data.</li>
