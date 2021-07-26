@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('addfield_8f.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -245,6 +245,7 @@ Functions/Subroutines</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ipdsnum</td><td>Product Definition Template Number ( see Code Table 4.0). </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ipdstmpl</td><td>Contains the data values for the specified Product Definition Template (N=ipdsnum). Each element of this integer array contains an entry (in the order specified) of Product Defintion Template 4.N </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ipdstmplen</td><td>Max dimension of ipdstmpl coordlist Array containg floating point values intended to document the vertical discretisation associated to model data on hybrid coordinate vertical levels. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">coordlist</td><td>Array containg floating point values intended to document the vertical discretisation associated to model data on hybrid coordinate vertical levels. (part of Section 4) The dimension of this array can be obtained in advance from maxvals(5), which is returned from subroutine gribinfo. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">numcoord</td><td>- number of values in array coordlist. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">idrsnum</td><td>- Data Representation Template Number ( see Code Table 5.0 ) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">idrstmpl</td><td>Contains the data values for the specified Data Representation Template (N=idrsnum). Each element of this integer array contains an entry (in the order specified) of Data Representation Template 5.N. Note that some values in this template (eg. reference values, number of bits, etc...) may be changed by the data packing algorithms. Use this to specify scaling factors and order of spatial differencing, if desired. </td></tr>
@@ -280,7 +281,7 @@ Functions/Subroutines</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2000-05-02 </dd></dl>
 
-<p>Definition at line <a class="el" href="addfield_8f_source.html#l00083">83</a> of file <a class="el" href="addfield_8f_source.html">addfield.f</a>.</p>
+<p>Definition at line <a class="el" href="addfield_8f_source.html#l00088">88</a> of file <a class="el" href="addfield_8f_source.html">addfield.f</a>.</p>
 
 </div>
 </div>
