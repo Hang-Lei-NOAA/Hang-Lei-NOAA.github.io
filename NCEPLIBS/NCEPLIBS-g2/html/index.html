@@ -45,7 +45,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Types&#160;List</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -86,7 +85,7 @@ $(document).ready(function(){initNavTree('index.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,74 +99,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="title">NCEPLIBS-g2 Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>Introduction</h1>
-<p>This document briefly describes the routines available for encoding/decoding GRIB Edition 2 (GRIB2) messages. A basic familiarity with GRIB is assumed.</p>
-<p>A GRIB Edition 2 message is a machine independent format for storing one or more gridded data fields. Each GRIB2 message consists of the following sections:</p>
-<pre>
-SECTION 0 - Indicator Section
-SECTION 1 - Identification Section
-SECTION 2 - (Local Use Section) - optional                           }
-SECTION 3 - Grid Definition Section                     }            }
-SECTION 4 - Product Definition Section    }             }            }(repeated)
-SECTION 5 - Data Representation Section   }             }(repeated)  }
-SECTION 6 - Bit-map Section               }(repeated)   }            }
-SECTION 7 - Data Section                  }             }            }
-SECTION 8 - End Section                   }             }            }
-</pre><p>Sequences of GRIB sections 2 to 7, 3 to 7, or sections 4 to 7 may be repeated within a single GRIB message. All sections within such repeated sequences must be present and shall appear in the numerical order noted above. Unrepeated sections remain in effect until redefined.</p>
-<p>The above overview was taken from WMO's FM 92-XII GRIB description of the experimental GRIB Edition 2 form.</p>
-<h1>GRIB2 Encoding Routines</h1>
-<p>Since a GRIB2 message can contain gridded fields for many parameters on a number of different grids, several routines are used to encode a message. This should give users more flexibility in how to organize data within one or more GRIB2 messages.</p>
-<p>To start a new GRIB2 message, call subroutine GRIBCREATE. GRIBCREATE encodes Sections 0 and 1 at the beginning of the message. This routine must be used to create each message.</p>
-<p>Subroutine ADDLOCAL can be used to add a Local Use Section ( Section 2 ). Note that section is optional and need not appear in a GRIB2 message.</p>
-<p>Subroutine ADDGRID is used to encode a grid definition into Section 3. This grid definition defines the geometry of the the data values in the fields that follow it. ADDGRID can be called again to change the grid definition describing subsequent data fields.</p>
-<p>Each data field is added to the GRIB2 message using routine ADDFIELD, which adds Sections 4, 5, 6, and 7 to the message.</p>
-<p>After all desired data fields have been added to the GRIB2 message, a call to routine GRIBEND is needed to add the final section 8 to the message and to update the length of the message. A call to GRIBEND is required for each GRIB2 message.</p>
-<h1>GRIB2 Decoding Routines</h1>
-<p>Subroutine GB_INFO can be used to find out how many Local Use sections and data fields are contained in a given GRIB2 message. In addition, this routine also returns the number of octets of the largest Local Use section in the message. This value can be used to ensure that the output array of subroutine GETLOCAL ( described below ) is dimensioned large enough.</p>
-<p>Subroutine GETLOCAL will return the requested occurrence of Section 2 from a given GRIB2 message.</p>
-<p>GF_GETFLD can be used to get all information pertaining to the nth data field in the message. The subroutine returns all the unpacked values for each Section and Template in a Fortran 90 derived type gribfield, which is defined in module GRIB_MOD. An option exists that lets the user decide if the subroutine should unpack the Bit-map ( if applicable ) and the data values or just return the field description information. Note that derived type gribfield contains pointers to dynamically allocated space that holds the contents of all arrays, and users are encouraged to free up this memory, when it is no longer needed, by an explicit call to subroutine GF_FREE.</p>
-<h1>Extracting GRIB2 Fields from a GRIB2 file</h1>
-<p>Subroutine GETGB2 can be used to extract a specified field from a file containing many GRIB2 messages. GETGB2 searches an index to find the location of the user specified field. The index can be supplied from a seperate GRIB2 index file, or it can be generated internally.</p>
-<p>The GRIB2 file ( and the index file, if supplied ) must be opened with a call to subroutine BAOPEN prior to the call to GETGB2.</p>
-<p>The decoded information for the selected GRIB field is returned in a derived type variable, gfld. Gfld is of type gribfield, which is defined in module <a class="el" href="gribmod_8f.html#classgrib__mod" title="PROGRAM HISTORY LOG: ">grib_mod</a>, so users of this routine will need to include the line "USE GRIB_MOD" in their calling routine. Each component of the gribfield type is described in the OUTPUT ARGUMENT LIST in the docblock for subroutine GETGB2 below.</p>
-<p>Note that derived type gribfield contains pointers to many arrays of data. The memory for these arrays is allocated when the values in the arrays are set, to help minimize problems with array overloading. Because of this, users are encouraged to free up this memory, when it is no longer needed, by an explicit call to subroutine GF_FREE.</p>
-<p>Example usage:</p>
-<div class="fragment"><div class="line">    use <a class="code" href="gribmod_8f.html#classgrib__mod">grib_mod</a></div>
-<div class="line">    type(gribfield) :: gfld</div>
-<div class="line">    integer,dimension(200) :: jids,jpdt,jgdt</div>
-<div class="line">    logical :: unpack=.true.</div>
-<div class="line">    ifile=10</div>
-<div class="line">! Open GRIB2 file </div>
-<div class="line">    call baopenr(ifile,<span class="stringliteral">&quot;filename&quot;</span>,iret)</div>
-<div class="line">    .</div>
-<div class="line">! Set GRIB2 field identification values to search for</div>
-<div class="line">    jdisc=</div>
-<div class="line">    jids(?)=</div>
-<div class="line">    jpdtn=</div>
-<div class="line">    jpdt(?)=</div>
-<div class="line">    jgdtn=</div>
-<div class="line">    jgdt(?)=</div>
-<div class="line"></div>
-<div class="line">! Get field from file</div>
-<div class="line">    call <a class="code" href="getgb2_8f.html#a59b91d6ac5c93ac460bb89760bf41694">getgb2</a>(ifile,0,j,jdisc,jids,jpdtn,jpdt,jgdtn,jgdt,</div>
-<div class="line">   &amp;            unpack,j,gfld,iret)</div>
-<div class="line"></div>
-<div class="line">! Process field ...</div>
-<div class="line">    firstval=gfld%fld(1)</div>
-<div class="line">    lastval=gfld%fld(gfld%ndpts)</div>
-<div class="line">    fldmax=maxval(gfld%fld)</div>
-<div class="line">    fldmin=minval(gfld%fld)</div>
-<div class="line">    </div>
-<div class="line">! Free memory when done with field</div>
-<div class="line">    call <a class="code" href="gf__free_8f.html#a027efd02c99c9464153fc76d9bb9627e">gf_free</a>(gfld)</div>
-<div class="line"></div>
-<div class="line">    stop</div>
-<div class="line">    end</div>
-</div><!-- fragment --><h1>GRIB2 Tables/Templates</h1>
-<p>WMO's GRIB2 specification "FM 92-XII GRIB - General Regularly-distributed
-Information in Binary Form" contains descriptions of each template and code table information. This document can be found at <a href="http://www.wmo.ch/web/www/WMOCodes.html">http://www.wmo.ch/web/www/WMOCodes.html</a> (PDF and MSWord formats are available)</p>
-<p>MDL has made an HTML version of the document available at <a href="http://www.nws.noaa.gov/tdl/iwt/grib2/frameset_grib2.htm">http://www.nws.noaa.gov/tdl/iwt/grib2/frameset_grib2.htm</a>. </p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
