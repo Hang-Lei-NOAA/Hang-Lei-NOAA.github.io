@@ -191,11 +191,11 @@ Functions/Subroutines</h2></td></tr>
 <p>It also performs various checks to see if the message is a valid GRIB2 message. Last, a list of safe array dimensions is returned for use in allocating return arrays from routines getlocal, gettemplates, and getfields. (See maxvals and REMARKS)</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">cgrib</td><td>Character that contains the GRIB2 message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cgrib</td><td>Character that contains the GRIB2 message. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">lcgrib</td><td>Length (in bytes) of array cgrib. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">listsec0</td><td>Contains information needed for GRIB Indicator Section 0. Must be dimensioned &gt;= 2.<ul>
-<li>listsec0(1) Discipline-GRIB Master Table Number (Code Table 0.0)</li>
-<li>listsec0(2) GRIB Edition Number (currently 2)</li>
+<li>listsec0(1) Discipline-GRIB Master Table Number.</li>
+<li>listsec0(2) GRIB Edition Number (currently 2).</li>
 <li>listsec0(3) Length of GRIB message. </li>
 </ul>
 </td></tr>

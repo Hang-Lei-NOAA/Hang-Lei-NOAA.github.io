@@ -124,9 +124,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a61429602b0de9ba46b443e66a2c1d8cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enc__jpeg2000_8c.html#a61429602b0de9ba46b443e66a2c1d8cb">JAS_1_700_2</a></td></tr>
 <tr class="memdesc:a61429602b0de9ba46b443e66a2c1d8cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define jasper type.  <a href="#a61429602b0de9ba46b443e66a2c1d8cb">More...</a><br/></td></tr>
 <tr class="separator:a61429602b0de9ba46b443e66a2c1d8cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9855b4e8c40619aab0092ba284943a67"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9855b4e8c40619aab0092ba284943a67"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAXOPTSSIZE</b>&#160;&#160;&#160;1024</td></tr>
-<tr class="separator:a9855b4e8c40619aab0092ba284943a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38a34255de7beef362367fd999e71a82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enc__jpeg2000_8c.html#a38a34255de7beef362367fd999e71a82">MAXOPTSSIZE</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="memdesc:a38a34255de7beef362367fd999e71a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Function encodes a grayscale image into a JPEG2000 code stream specified in the JPEG2000 Part-1 standard.  <a href="#a38a34255de7beef362367fd999e71a82">More...</a><br/></td></tr>
+<tr class="separator:a38a34255de7beef362367fd999e71a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -154,6 +154,53 @@ Typedefs</h2></td></tr>
 <p>Define jasper type. </p>
 
 <p>Definition at line <a class="el" href="enc__jpeg2000_8c_source.html#l00012">12</a> of file <a class="el" href="enc__jpeg2000_8c_source.html">enc_jpeg2000.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a38a34255de7beef362367fd999e71a82"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MAXOPTSSIZE&#160;&#160;&#160;1024</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This Function encodes a grayscale image into a JPEG2000 code stream specified in the JPEG2000 Part-1 standard. </p>
+<p>It uses JasPer Software version 1.500.4 (or 1.700.2 ) written by the University of British Columbia, Image Power Inc, and others. JasPer is available at http: * www.ece.uvic.ca/~mdadams/jasper/.</p>
+<p>PROGRAM HISTORY LOG:</p>
+<ul>
+<li>2002-12-02 Stephen Gilbert</li>
+<li>2004-07-20 Stephen Gilbert - Added retry argument/option to allow option of increasing the maximum number of guard bits to the JPEG2000 algorithm.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cin</td><td>Packed matrix of Grayscale image values to encode. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pwidth</td><td>Pointer to width of image </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pheight</td><td>Pointer to height of image </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pnbits</td><td>Pointer to depth (in bits) of image. i.e number of bits used to hold each data value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ltype</td><td>Pointer to indicator of lossless or lossy compression<ul>
+<li>= 1, for lossy compression</li>
+<li>!= 1, for lossless compression </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ratio</td><td>Pointer to target compression ratio. (ratio:1) Used only when *ltype == 1. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">retry</td><td>- Pointer to option type. 1 = try increasing number of guard bits otherwise, no additional options </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">jpclen</td><td>- Number of bytes allocated for new JPEG2000 code stream in outjpc. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outjpc</td><td>- Output encoded JPEG2000 code stream </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>0 Length in bytes of encoded JPEG2000 code stream.</li>
+<li>-3 Error decode jpeg2000 code stream.</li>
+<li>-5 decoded image had multiple color components. Only grayscale is expected.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Requires JasPer Software version 1.500.4 or 1.700.2</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2002-12-02 </dd></dl>
 
 </div>
 </div>

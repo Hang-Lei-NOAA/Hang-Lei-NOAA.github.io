@@ -182,7 +182,7 @@ Functions/Subroutines</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This subroutine returns the Grid Definition, Product Definition, Bit-map (if applicable), and the unpacked data for a given data field. </p>
-<p>All of the information returned is stored in a derived type variable, gfld. Gfld is of type gribfield, which is defined in module <a class="el" href="gribmod_8f.html#classgrib__mod" title="PROGRAM HISTORY LOG: 2002-01-23 Stephen Gilbert 2007-04-24 Boi Vuong Added GDT 3.204 Curvilinear Orth...">grib_mod</a>, so users of this routine will need to include the line "USE GRIB_MOD" in their calling routine. Each component of the gribfield type is described in the OUTPUT ARGUMENT LIST section below. Since there can be multiple data fields packed into a GRIB2 message, the calling routine indicates which field is being requested with the ifldnum argument.</p>
+<p>All of the information returned is stored in a derived type variable, gfld. Gfld is of type gribfield, which is defined in module <a class="el" href="gribmod_8f.html#classgrib__mod" title="PROGRAM HISTORY LOG: ">grib_mod</a>, so users of this routine will need to include the line "USE GRIB_MOD" in their calling routine. Each component of the gribfield type is described in the OUTPUT ARGUMENT LIST section below. Since there can be multiple data fields packed into a GRIB2 message, the calling routine indicates which field is being requested with the ifldnum argument.</p>
 <p>PROGRAM HISTORY LOG:</p>
 <ul>
 <li>2000-05-26 Stephen Gilbert</li>
@@ -201,7 +201,7 @@ Functions/Subroutines</h2></td></tr>
 <li>0 do not expand data field, leaving it an array of consecutive data points for each "1" in the bitmap. This argument is ignored if unpack == 0 OR if the returned field does not contain a bit-map. </li>
 </ul>
 </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">gfld</td><td>derived type gribfield (defined in module <a class="el" href="gribmod_8f.html#classgrib__mod" title="PROGRAM HISTORY LOG: 2002-01-23 Stephen Gilbert 2007-04-24 Boi Vuong Added GDT 3.204 Curvilinear Orth...">grib_mod</a>) (NOTE: See Remarks Section)<ul>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gfld</td><td>derived type gribfield (defined in module <a class="el" href="gribmod_8f.html#classgrib__mod" title="PROGRAM HISTORY LOG: ">grib_mod</a>) (NOTE: See Remarks Section)<ul>
 <li>gfld%version GRIB edition number (currently 2)</li>
 <li>gfld%discipline Message Discipline (see Code Table 0.0)</li>
 <li>gfld%idsect Contains the entries in the Identification Section (Section 1) This element is actually a pointer to an array that holds the data.</li>

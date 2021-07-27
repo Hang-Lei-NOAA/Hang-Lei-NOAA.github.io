@@ -178,14 +178,14 @@ Functions/Subroutines</h2></td></tr>
 <p>This subroutine unpacks Section 2 (Local Use Section) as defined in GRIB Edition 2. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">cgrib</td><td>Character array that contains the GRIB2 message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cgrib</td><td>Character array that contains the GRIB2 message. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">lcgrib</td><td>Length (in bytes) of GRIB message array cgrib. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">iofst</td><td>Bit offset of the beginning/end(returned) of Section 2. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">lencsec2</td><td>Length (in octets) of Local Use data </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">csec2</td><td>Pointer to a character*1 array containing local use data </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lencsec2</td><td>Length (in octets) of Local Use data. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">csec2</td><td>Pointer to a character*1 array containing local use data. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">ierr</td><td>Error return code.<ul>
 <li>0 no error.</li>
-<li>2 Array passed is not section 2</li>
+<li>2 Array passed is not section 2.</li>
 <li>6 memory allocation error.</li>
 </ul>
 </td></tr>

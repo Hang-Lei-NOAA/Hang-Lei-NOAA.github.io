@@ -108,40 +108,40 @@ $(document).ready(function(){initNavTree('gribmod_8f_source.html','');});
 <div class="contents">
 <a href="gribmod_8f.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="gribmod_8f.html">  150</a></span>&#160;      <span class="keyword">module</span> <a class="code" href="gribmod_8f.html#classgrib__mod">grib_mod</a></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <span class="keywordtype">character(len=12)</span> :: g2_version=<span class="stringliteral">&quot;g2lib-3.1.0&quot;</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
-<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="gribmod_8f.html">  154</a></span>&#160;      <span class="keyword">type</span> <a class="code" href="gribmod_8f.html#structgrib__mod_1_1gribfield">gribfield</a></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;          <span class="keywordtype">integer</span> :: version,discipline</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;          <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: idsect         =&gt; null ()</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;          <span class="keywordtype">integer</span> :: idsectlen</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;          <span class="keywordtype">character(len=1)</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: local =&gt; null ()</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;          <span class="keywordtype">integer</span> :: locallen</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;          <span class="keywordtype">integer</span> :: ifldnum</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;          <span class="keywordtype">integer</span> :: griddef,ngrdpts</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;          <span class="keywordtype">integer</span> :: numoct_opt,interp_opt,num_opt</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;          <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: list_opt       =&gt; null ()</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;          <span class="keywordtype">integer</span> :: igdtnum,igdtlen</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;          <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: igdtmpl        =&gt; null ()</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;          <span class="keywordtype">integer</span> :: ipdtnum,ipdtlen</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;          <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: ipdtmpl        =&gt; null ()</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;          <span class="keywordtype">integer</span> :: num_coord</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;          <span class="keywordtype">real</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: coord_list        =&gt; null ()</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;          <span class="keywordtype">integer</span> :: ndpts,idrtnum,idrtlen</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;          <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: idrtmpl        =&gt; null ()</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;          <span class="keywordtype">logical</span> :: unpacked</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;          <span class="keywordtype">logical</span> :: expanded</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;          <span class="keywordtype">integer</span> :: ibmap</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;          <span class="keywordtype">logical*1</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: bmap         =&gt; null ()</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;          <span class="keywordtype">real</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: fld               =&gt; null ()</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keyword">      end type </span><a class="code" href="gribmod_8f.html#structgrib__mod_1_1gribfield">gribfield</a></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="keyword">      end module</span></div>
-<div class="ttc" id="gribmod_8f_html_classgrib__mod"><div class="ttname"><a href="gribmod_8f.html#classgrib__mod">grib_mod</a></div><div class="ttdoc">PROGRAM HISTORY LOG: 2002-01-23 Stephen Gilbert 2007-04-24 Boi Vuong Added GDT 3.204 Curvilinear Orth...</div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00150">gribmod.f:150</a></div></div>
-<div class="ttc" id="gribmod_8f_html_structgrib__mod_1_1gribfield"><div class="ttname"><a href="gribmod_8f.html#structgrib__mod_1_1gribfield">grib_mod::gribfield</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00154">gribmod.f:154</a></div></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="gribmod_8f.html">  151</a></span>&#160;      <span class="keyword">module</span> <a class="code" href="gribmod_8f.html#classgrib__mod">grib_mod</a></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <span class="keywordtype">character(len=12)</span> :: g2_version=<span class="stringliteral">&quot;g2lib-3.1.0&quot;</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="gribmod_8f.html">  155</a></span>&#160;      <span class="keyword">type</span> <a class="code" href="gribmod_8f.html#structgrib__mod_1_1gribfield">gribfield</a></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;          <span class="keywordtype">integer</span> :: version,discipline</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;          <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: idsect         =&gt; null ()</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;          <span class="keywordtype">integer</span> :: idsectlen</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;          <span class="keywordtype">character(len=1)</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: local =&gt; null ()</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;          <span class="keywordtype">integer</span> :: locallen</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;          <span class="keywordtype">integer</span> :: ifldnum</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;          <span class="keywordtype">integer</span> :: griddef,ngrdpts</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;          <span class="keywordtype">integer</span> :: numoct_opt,interp_opt,num_opt</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;          <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: list_opt       =&gt; null ()</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;          <span class="keywordtype">integer</span> :: igdtnum,igdtlen</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;          <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: igdtmpl        =&gt; null ()</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;          <span class="keywordtype">integer</span> :: ipdtnum,ipdtlen</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;          <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: ipdtmpl        =&gt; null ()</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;          <span class="keywordtype">integer</span> :: num_coord</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;          <span class="keywordtype">real</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: coord_list        =&gt; null ()</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;          <span class="keywordtype">integer</span> :: ndpts,idrtnum,idrtlen</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;          <span class="keywordtype">integer</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: idrtmpl        =&gt; null ()</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;          <span class="keywordtype">logical</span> :: unpacked</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;          <span class="keywordtype">logical</span> :: expanded</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;          <span class="keywordtype">integer</span> :: ibmap</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;          <span class="keywordtype">logical*1</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: bmap         =&gt; null ()</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;          <span class="keywordtype">real</span>,<span class="keywordtype">pointer</span>,<span class="keywordtype">dimension(:)</span> :: fld               =&gt; null ()</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">      end type </span><a class="code" href="gribmod_8f.html#structgrib__mod_1_1gribfield">gribfield</a></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="keyword">      end module</span></div>
+<div class="ttc" id="gribmod_8f_html_classgrib__mod"><div class="ttname"><a href="gribmod_8f.html#classgrib__mod">grib_mod</a></div><div class="ttdoc">PROGRAM HISTORY LOG: </div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00151">gribmod.f:151</a></div></div>
+<div class="ttc" id="gribmod_8f_html_structgrib__mod_1_1gribfield"><div class="ttname"><a href="gribmod_8f.html#structgrib__mod_1_1gribfield">grib_mod::gribfield</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00155">gribmod.f:155</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('putgb2_8f.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a4f96571fa64ccab9c0355f3aeedf97b7"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="putgb2_8f.html#a4f96571fa64ccab9c0355f3aeedf97b7">putgb2</a> (LUGB, GFLD, IRET)</td></tr>
-<tr class="memdesc:a4f96571fa64ccab9c0355f3aeedf97b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This subroutine packs a single field into a grib2 message.  <a href="#a4f96571fa64ccab9c0355f3aeedf97b7">More...</a><br/></td></tr>
+<tr class="memdesc:a4f96571fa64ccab9c0355f3aeedf97b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This subroutine packs a single field into a grib2 message and writes out that message to the file associated with unit lugb.  <a href="#a4f96571fa64ccab9c0355f3aeedf97b7">More...</a><br/></td></tr>
 <tr class="separator:a4f96571fa64ccab9c0355f3aeedf97b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -157,13 +157,20 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This subroutine packs a single field into a grib2 message. </p>
-<p>and writes out that message to the file associated with unit lugb. note that file/unit lugb should be opened woth a call to subroutine baopenw before this routine is called. The information to be packed into the grib field is stored in a derived type variable, gfld. gfld is of type gribfield, which is defined in module <a class="el" href="gribmod_8f.html#classgrib__mod" title="PROGRAM HISTORY LOG: 2002-01-23 Stephen Gilbert 2007-04-24 Boi Vuong Added GDT 3.204 Curvilinear Orth...">grib_mod</a>, so users of this routine will need to include the line "use grib_mod" in their calling routine. Each component of the gribfield type is described in the input argument list section below.</p>
-<p>PROGRAM HISTORY LOG: 2002-04-22 Stephen Gilbert 2005-02-28 Stephen Gilbert Changed dimension of array cgrib to be a multiple of gfldngrdpts instead of gfldndpts. 2009-03-10Boi Vuong Initialize variable coordlist. 2011-06-09Boi Vuong Initialize variable gfldlist_opt. 2012-02-28Boi Vuong Initialize variable ilistopt.</p>
+<p>This subroutine packs a single field into a grib2 message and writes out that message to the file associated with unit lugb. </p>
+<p>note that file/unit lugb should be opened woth a call to subroutine baopenw before this routine is called. The information to be packed into the grib field is stored in a derived type variable, gfld. gfld is of type gribfield, which is defined in module <a class="el" href="gribmod_8f.html#classgrib__mod" title="PROGRAM HISTORY LOG: ">grib_mod</a>, so users of this routine will need to include the line "use grib_mod" in their calling routine. Each component of the gribfield type is described in the input argument list section below.</p>
+<p>PROGRAM HISTORY LOG:</p>
+<ul>
+<li>2002-04-22 Stephen Gilbert</li>
+<li>2005-02-28 Stephen Gilbert Changed dimension of array cgrib to be a multiple of gfldngrdpts instead of gfldndpts.</li>
+<li>2009-03-10Boi Vuong Initialize variable coordlist.</li>
+<li>2011-06-09Boi Vuong Initialize variable gfldlist_opt.</li>
+<li>2012-02-28Boi Vuong Initialize variable ilistopt.</li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">LUGB</td><td>integer unit of the unblocked grib data file. file must be opened with baopen or baopenw before calling this routine. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">GFLD</td><td>derived type gribfield (defined in module <a class="el" href="gribmod_8f.html#classgrib__mod" title="PROGRAM HISTORY LOG: 2002-01-23 Stephen Gilbert 2007-04-24 Boi Vuong Added GDT 3.204 Curvilinear Orth...">grib_mod</a>) (NOTE: See Remarks Section)<ul>
+    <tr><td class="paramdir">[in]</td><td class="paramname">GFLD</td><td>derived type gribfield (defined in module <a class="el" href="gribmod_8f.html#classgrib__mod" title="PROGRAM HISTORY LOG: ">grib_mod</a>) (NOTE: See Remarks Section)<ul>
 <li>gfld%version GRIB edition number (currently 2)</li>
 <li>gfld%discipline Message Discipline (see Code Table 0.0)</li>
 <li>gfld%idsect Contains the entries in the Identification Section (Section 1) This element is actually a pointer to an array that holds the data.</li>

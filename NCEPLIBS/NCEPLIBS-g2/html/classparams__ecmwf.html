@@ -122,10 +122,10 @@ Data Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a280642146d277203d5d4e05986b53d21"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classparams__ecmwf.html#a280642146d277203d5d4e05986b53d21">param_ecmwf_g1_to_g2</a> (g1val, g1ver, g2disc, g2cat, g2num)</td></tr>
-<tr class="memdesc:a280642146d277203d5d4e05986b53d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">This subroutine bridge a GRIB1 parameter to the corresponding GRIB2.  <a href="#a280642146d277203d5d4e05986b53d21">More...</a><br/></td></tr>
+<tr class="memdesc:a280642146d277203d5d4e05986b53d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">This subroutine returns the corresponding GRIB2 Discipline Category and Number for a given GRIB1 parameter value and table version.  <a href="#a280642146d277203d5d4e05986b53d21">More...</a><br/></td></tr>
 <tr class="separator:a280642146d277203d5d4e05986b53d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a331c25475a7e70ef54e66b8166f26b62"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classparams__ecmwf.html#a331c25475a7e70ef54e66b8166f26b62">param_ecmwf_g2_to_g1</a> (g2disc, g2cat, g2num, g1val, g1ver)</td></tr>
-<tr class="memdesc:a331c25475a7e70ef54e66b8166f26b62"><td class="mdescLeft">&#160;</td><td class="mdescRight">This subroutine bridge a GRIB2 info to the GRIB 1 parameter.  <a href="#a331c25475a7e70ef54e66b8166f26b62">More...</a><br/></td></tr>
+<tr class="memdesc:a331c25475a7e70ef54e66b8166f26b62"><td class="mdescLeft">&#160;</td><td class="mdescRight">This subroutine returns the GRIB 1 parameter number for a given GRIB2 Discipline, Category and Parameter number.  <a href="#a331c25475a7e70ef54e66b8166f26b62">More...</a><br/></td></tr>
 <tr class="separator:a331c25475a7e70ef54e66b8166f26b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -248,9 +248,7 @@ grib2num</td>
       </table>
 </div><div class="memdoc">
 
-<p>This subroutine bridge a GRIB1 parameter to the corresponding GRIB2. </p>
-<dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2001-06-05 This subroutine returns the corresponding GRIB2 Discipline Category and Number for a given GRIB1 parameter value and table version. </dd></dl>
+<p>This subroutine returns the corresponding GRIB2 Discipline Category and Number for a given GRIB1 parameter value and table version. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">g1val</td><td>GRIB1 parameter number for which discipline is requested </td></tr>
@@ -264,7 +262,7 @@ grib2num</td>
 <dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2001-06-05 </dd></dl>
 
-<p>Definition at line <a class="el" href="params__ecmwf_8f_source.html#l00239">239</a> of file <a class="el" href="params__ecmwf_8f_source.html">params_ecmwf.f</a>.</p>
+<p>Definition at line <a class="el" href="params__ecmwf_8f_source.html#l00235">235</a> of file <a class="el" href="params__ecmwf_8f_source.html">params_ecmwf.f</a>.</p>
 
 </div>
 </div>
@@ -310,9 +308,7 @@ grib2num</td>
       </table>
 </div><div class="memdoc">
 
-<p>This subroutine bridge a GRIB2 info to the GRIB 1 parameter. </p>
-<dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2002-01-04 This subroutine returns the GRIB 1 parameter number for a given GRIB2 Discipline, Category and Parameter number. </dd></dl>
+<p>This subroutine returns the GRIB 1 parameter number for a given GRIB2 Discipline, Category and Parameter number. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">g2disc</td><td>GRIB2 Discipline number (See Code Table 0.0) </td></tr>
@@ -326,7 +322,7 @@ grib2num</td>
 <dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2002-01-04 </dd></dl>
 
-<p>Definition at line <a class="el" href="params__ecmwf_8f_source.html#l00287">287</a> of file <a class="el" href="params__ecmwf_8f_source.html">params_ecmwf.f</a>.</p>
+<p>Definition at line <a class="el" href="params__ecmwf_8f_source.html#l00279">279</a> of file <a class="el" href="params__ecmwf_8f_source.html">params_ecmwf.f</a>.</p>
 
 </div>
 </div>

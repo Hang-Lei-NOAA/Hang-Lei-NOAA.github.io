@@ -202,17 +202,17 @@ Functions/Subroutines</h2></td></tr>
 <p>This subroutine unpacks Section 7 (Data Section). </p>
 <p>PROGRAM HISTORY LOG:</p>
 <ul>
-<li>2000-05-26 Stephen Gilbert Initial development</li>
+<li>2000-05-26 Stephen Gilbert Initial development.</li>
 <li>2002-12-17 Stephen Gilbert Added support for new templates using. PNG and JPEG2000 algorithms/templates.</li>
 <li>2002-12-29 Stephen Gilbert Added check on comunpack return code.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">cgrib</td><td>Character array that contains the GRIB2 message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cgrib</td><td>Character array that contains the GRIB2 message. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">lcgrib</td><td>Length (in bytes) of GRIB message array cgrib. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">iofst</td><td>Bit offset of the beginning/end(returned) of Section 7. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">igdsnum</td><td>Grid Definition Template Number (Code Table 3.0) (Only required to unpack DRT 5.51). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">igdstmpl</td><td>Pointer to an integer array containing the data values for the specified Grid Definition. Template (N=igdsnum). Each element of this integer array contains an entry (in the order specified) of Grid Definition Template 3.N (Only required to unpack DRT 5.51) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">igdstmpl</td><td>Pointer to an integer array containing the data values for the specified Grid Definition. Template (N=igdsnum). Each element of this integer array contains an entry (in the order specified) of Grid Definition Template 3.N (Only required to unpack DRT 5.51). </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ndpts</td><td>Number of data points unpacked and returned. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">idrsnum</td><td>Data Representation Template Number (Code Table 5.0). </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">idrstmpl</td><td>Pointer to an integer array containing the data values for the specified Data Representation Template (N=idrsnum). Each element of this integer array contains an entry (in the order specified) of Product Defintion Template 5.N A safe dimension for this array can be obtained in advance from maxvals(6), which is returned from subroutine gribinfo. </td></tr>

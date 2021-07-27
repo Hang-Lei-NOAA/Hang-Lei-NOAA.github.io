@@ -173,7 +173,7 @@ Functions/Subroutines</h2></td></tr>
 <p>This routine is used with routines <a class="el" href="addlocal_8f.html#a176884ec84d6c5f9d99f6ce1b9707eff" title="This subroutine adds a Local Use Section (Section 2) to a GRIB2 message. ">addlocal()</a>, <a class="el" href="addgrid_8f.html#a0550b62ab5fac8de78235d0c77c49c21" title="This routine is used with routines gribcreate(), addlocal(), addfield(), and gribend() to create a co...">addgrid()</a>, <a class="el" href="addfield_8f.html#abe47d00e9129168f66617de9260d91e2" title="This subroutine packs up Sections 4 through 7 for a given field and adds them to a GRIB2 message...">addfield()</a>, and <a class="el" href="gribend_8f.html#acb8e7c48285d0121896b0341d9aed8e9" title="This subroutine finalizes a GRIB message after all grids and fields have been added. ">gribend()</a> to create a complete GRIB2 message. Subroutine gribcreate must be called first to initialize a new GRIB2 message. Also, a call to gribend is required to complete GRIB2 message after all fields have been added.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">cgrib</td><td>Character array to contain the GRIB2 message </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cgrib</td><td>Character array to contain the GRIB2 message. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">lcgrib</td><td>Maximum Length (in bytes) of array cgrib. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">listsec0</td><td>Contains information needed for GRIB Indicator Section 0. Must be dimensioned &gt;= 2.<ul>
 <li>listsec0(1) Discipline-GRIB Master Table Number (Code Table 0.0)</li>
@@ -181,8 +181,8 @@ Functions/Subroutines</h2></td></tr>
 </ul>
 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">listsec1</td><td>Contains information needed for GRIB Identification Section 1. Must be dimensioned &gt;= 13.<ul>
-<li>listsec1(1)=Id of orginating centre (Common Code Table C-1)</li>
-<li>listsec1(2)=Id of orginating sub-centre (local table)</li>
+<li>listsec1(1) Id of orginating centre (Common Code Table C-1)</li>
+<li>listsec1(2) Id of orginating sub-centre (local table)</li>
 <li>listsec1(3) GRIB Master Tables Version Number (Code Table 1.0)</li>
 <li>listsec1(4) GRIB Local Tables Version Number (Code Table 1.1)</li>
 <li>listsec1(5) Significance of Reference Time (Code Table 1.2)</li>
@@ -197,8 +197,8 @@ Functions/Subroutines</h2></td></tr>
 </ul>
 </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">ierr</td><td>Error return code.<ul>
-<li>0 no error.</li>
-<li>1 Tried to use for version other than GRIB Edition 2.</li>
+<li>0 no error</li>
+<li>1 Tried to use for version other than GRIB Edition 2</li>
 </ul>
 </td></tr>
   </table>

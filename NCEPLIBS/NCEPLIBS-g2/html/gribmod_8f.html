@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('gribmod_8f.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Types</h2></td></tr>
 <tr class="memitem:classgrib__mod"><td class="memItemLeft" align="right" valign="top">module &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gribmod_8f.html#classgrib__mod">grib_mod</a></td></tr>
-<tr class="memdesc:classgrib__mod"><td class="mdescLeft">&#160;</td><td class="mdescRight">PROGRAM HISTORY LOG: 2002-01-23 Stephen Gilbert 2007-04-24 Boi Vuong Added GDT 3.204 Curvilinear Orthogonal Grids 2008-05-29 Boi Vuong Added GDT 3.32768 Rotate Lat/Lon E-grid 2009-02-17 Boi Vuong Allow negative scale factors and limits for Templates 4.5 and 4.9 2009-12-14 Boi Vuong Fixed bug in routine <a class="el" href="getidx_8f.html" title="This subroutine finds, reads or generates a grib2 index for the grib2 file associated with unit lugb...">getidx.f</a> Modified to increase length of seek(512) Added Templates (Satellite Product) 4.31 Added Templates (ICAO WAFS) 4.15 2013-05-07 Boi Vuong Initialized all pointers to null() 2013-08-29 Boi Vuong Changed version number 2.5.0 2015-11-01 Boi Vuong Changed version number 2.6.0 2017-18-01 Boi Vuong Changed version number 3.1.0.  <a href="gribmod_8f.html#classgrib__mod">More...</a><br/></td></tr>
+<tr class="memdesc:classgrib__mod"><td class="mdescLeft">&#160;</td><td class="mdescRight">PROGRAM HISTORY LOG:  <a href="gribmod_8f.html#classgrib__mod">More...</a><br/></td></tr>
 <tr class="separator:classgrib__mod"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structgrib__mod_1_1gribfield"><td class="memItemLeft" align="right" valign="top">type &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gribmod_8f.html#structgrib__mod_1_1gribfield">grib_mod::gribfield</a></td></tr>
 <tr class="separator:structgrib__mod_1_1gribfield"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,7 +138,24 @@ Data Types</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>PROGRAM HISTORY LOG: 2002-01-23 Stephen Gilbert 2007-04-24 Boi Vuong Added GDT 3.204 Curvilinear Orthogonal Grids 2008-05-29 Boi Vuong Added GDT 3.32768 Rotate Lat/Lon E-grid 2009-02-17 Boi Vuong Allow negative scale factors and limits for Templates 4.5 and 4.9 2009-12-14 Boi Vuong Fixed bug in routine <a class="el" href="getidx_8f.html" title="This subroutine finds, reads or generates a grib2 index for the grib2 file associated with unit lugb...">getidx.f</a> Modified to increase length of seek(512) Added Templates (Satellite Product) 4.31 Added Templates (ICAO WAFS) 4.15 2013-05-07 Boi Vuong Initialized all pointers to null() 2013-08-29 Boi Vuong Changed version number 2.5.0 2015-11-01 Boi Vuong Changed version number 2.6.0 2017-18-01 Boi Vuong Changed version number 3.1.0. </p>
+<div class="textblock"><p>PROGRAM HISTORY LOG: </p>
+<ul>
+<li>2002-01-23 Stephen Gilbert</li>
+<li>2007-04-24 Boi Vuong Added GDT 3.204 Curvilinear Orthogonal Grids</li>
+<li>2008-05-29 Boi Vuong Added GDT 3.32768 Rotate Lat/Lon E-grid</li>
+<li>2009-02-17 Boi Vuong Allow negative scale factors and limits for Templates 4.5 and 4.9</li>
+<li>2009-12-14 Boi Vuong<ul>
+<li>Fixed bug in routine <a class="el" href="getidx_8f.html" title="This subroutine finds, reads or generates a grib2 index for the grib2 file associated with unit lugb...">getidx.f</a></li>
+<li>Modified to increase length of seek(512)</li>
+<li>Added Templates (Satellite Product) 4.31</li>
+<li>Added Templates (ICAO WAFS) 4.15</li>
+</ul>
+</li>
+<li>2013-05-07 Boi Vuong Initialized all pointers to null()</li>
+<li>2013-08-29 Boi Vuong Changed version number 2.5.0</li>
+<li>2015-11-01 Boi Vuong Changed version number 2.6.0</li>
+<li>2017-18-01 Boi Vuong Changed version number 3.1.0</li>
+</ul>
 <p>This Fortran Module contains the declaration of derived type gribfield. If variable gfld is declared of type gribfield, (i.e.TYPE(GRIBFIELD) :: GFLD), it would have the following componenets:</p>
 <ul>
 <li>gfld%version GRIB edition number (currently 2)</li>
@@ -225,7 +242,7 @@ Data Types</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2002-01-23 </dd></dl>
 
-<p>Definition at line <a class="el" href="gribmod_8f_source.html#l00150">150</a> of file <a class="el" href="gribmod_8f_source.html">gribmod.f</a>.</p>
+<p>Definition at line <a class="el" href="gribmod_8f_source.html#l00151">151</a> of file <a class="el" href="gribmod_8f_source.html">gribmod.f</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -248,7 +265,7 @@ g2_version</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p>Definition at line <a class="el" href="gribmod_8f_source.html#l00154">154</a> of file <a class="el" href="gribmod_8f_source.html">gribmod.f</a>.</p>
+<p>Definition at line <a class="el" href="gribmod_8f_source.html#l00155">155</a> of file <a class="el" href="gribmod_8f_source.html">gribmod.f</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">

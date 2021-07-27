@@ -122,7 +122,7 @@ Data Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0570955986fc8d676e5acd2d990e828d"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpdstemplates.html#a0570955986fc8d676e5acd2d990e828d">extpdstemplate</a> (number, list, nummap, map)</td></tr>
-<tr class="memdesc:a0570955986fc8d676e5acd2d990e828d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This subroutine generates the remaining octet map.  <a href="#a0570955986fc8d676e5acd2d990e828d">More...</a><br/></td></tr>
+<tr class="memdesc:a0570955986fc8d676e5acd2d990e828d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This subroutine generates the remaining octet map for a given Product Definition Template, if required.  <a href="#a0570955986fc8d676e5acd2d990e828d">More...</a><br/></td></tr>
 <tr class="separator:a0570955986fc8d676e5acd2d990e828d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c4b84d6cf1959b749034c79acf5d497"><td class="memItemLeft" align="right" valign="top">integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpdstemplates.html#a2c4b84d6cf1959b749034c79acf5d497">getpdsindex</a> (number)</td></tr>
 <tr class="memdesc:a2c4b84d6cf1959b749034c79acf5d497"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the index of specified Product Definition Template 4.NN (NN=number) in array templates.  <a href="#a2c4b84d6cf1959b749034c79acf5d497">More...</a><br/></td></tr>
@@ -131,7 +131,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae982fefe8217f6bafdfafddcdac27198"><td class="mdescLeft">&#160;</td><td class="mdescRight">This subroutine returns PDS template information for a specified Product Definition Template 4.NN.  <a href="#ae982fefe8217f6bafdfafddcdac27198">More...</a><br/></td></tr>
 <tr class="separator:ae982fefe8217f6bafdfafddcdac27198"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5423f87b8df3bee2d8cb5be73fd02864"><td class="memItemLeft" align="right" valign="top">integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpdstemplates.html#a5423f87b8df3bee2d8cb5be73fd02864">getpdtlen</a> (number)</td></tr>
-<tr class="memdesc:a5423f87b8df3bee2d8cb5be73fd02864"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the initial length of the "static" part of Template 4.number.  <a href="#a5423f87b8df3bee2d8cb5be73fd02864">More...</a><br/></td></tr>
+<tr class="memdesc:a5423f87b8df3bee2d8cb5be73fd02864"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the initial length (number of entries) in the "static" part of specified Product Definition Template 4.number.  <a href="#a5423f87b8df3bee2d8cb5be73fd02864">More...</a><br/></td></tr>
 <tr class="separator:a5423f87b8df3bee2d8cb5be73fd02864"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -149,7 +149,7 @@ Data Fields</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This Fortran Module contains info on all the available GRIB2 Product Definition Templates used in Section 4 (PDS). </p>
 <p>Each Template has three parts: The number of entries in the template (mapgridlen); A map of the template (mapgrid), which contains the number of octets in which to pack each of the template values; and a logical value (needext) that indicates whether the Template needs to be extended. In some cases the number of entries in a template can vary depending upon values specified in the "static" part of the template. (Template 4.3 as an example)</p>
-<p>This module also contains two subroutines. <a class="el" href="classpdstemplates.html#ae982fefe8217f6bafdfafddcdac27198" title="This subroutine returns PDS template information for a specified Product Definition Template 4...">getpdstemplate()</a> returns the octet map for a specified Template number, and <a class="el" href="classpdstemplates.html#a0570955986fc8d676e5acd2d990e828d" title="This subroutine generates the remaining octet map. ">extpdstemplate()</a> will calculate the extended octet map of an appropriate template given values for the "static" part of the template. See docblocks below for the arguments and usage of these routines.</p>
+<p>This module also contains two subroutines. <a class="el" href="classpdstemplates.html#ae982fefe8217f6bafdfafddcdac27198" title="This subroutine returns PDS template information for a specified Product Definition Template 4...">getpdstemplate()</a> returns the octet map for a specified Template number, and <a class="el" href="classpdstemplates.html#a0570955986fc8d676e5acd2d990e828d" title="This subroutine generates the remaining octet map for a given Product Definition Template, if required. ">extpdstemplate()</a> will calculate the extended octet map of an appropriate template given values for the "static" part of the template. See docblocks below for the arguments and usage of these routines.</p>
 <p>PROGRAM HISTORY LOG:</p>
 <ul>
 <li>2000-05-11 Stephen Gilbert</li>
@@ -245,9 +245,8 @@ template_num</td>
       </table>
 </div><div class="memdoc">
 
-<p>This subroutine generates the remaining octet map. </p>
-<dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2000-05-11 This subroutine generates the remaining octet map for a given Product Definition Template, if required. Some Templates can vary depending on data values given in an earlier part of the Template, and it is necessary to know some of the earlier entry values to generate the full octet map of the Template.</dd></dl>
+<p>This subroutine generates the remaining octet map for a given Product Definition Template, if required. </p>
+<p>Some Templates can vary depending on data values given in an earlier part of the Template, and it is necessary to know some of the earlier entry values to generate the full octet map of the Template.</p>
 <p>PROGRAM HISTORY LOG:</p>
 <ul>
 <li>2000-05-11 Stephen Gilbert</li>
@@ -267,7 +266,7 @@ template_num</td>
 <dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2000-05-11 </dd></dl>
 
-<p>Definition at line <a class="el" href="pdstemplates_8f_source.html#l00473">473</a> of file <a class="el" href="pdstemplates_8f_source.html">pdstemplates.f</a>.</p>
+<p>Definition at line <a class="el" href="pdstemplates_8f_source.html#l00458">458</a> of file <a class="el" href="pdstemplates_8f_source.html">pdstemplates.f</a>.</p>
 
 </div>
 </div>
@@ -286,8 +285,6 @@ template_num</td>
 </div><div class="memdoc">
 
 <p>This function returns the index of specified Product Definition Template 4.NN (NN=number) in array templates. </p>
-<dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2001-06-28 This function returns the index of specified Product Definition Template 4.NN (NN=number) in array templates. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">number</td><td>NN, indicating the number of the Product Definition Template 4.NN that is being requested. </td></tr>
@@ -302,7 +299,7 @@ template_num</td>
 <dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2001-06-28 </dd></dl>
 
-<p>Definition at line <a class="el" href="pdstemplates_8f_source.html#l00376">376</a> of file <a class="el" href="pdstemplates_8f_source.html">pdstemplates.f</a>.</p>
+<p>Definition at line <a class="el" href="pdstemplates_8f_source.html#l00370">370</a> of file <a class="el" href="pdstemplates_8f_source.html">pdstemplates.f</a>.</p>
 
 </div>
 </div>
@@ -349,8 +346,7 @@ template_num</td>
 </div><div class="memdoc">
 
 <p>This subroutine returns PDS template information for a specified Product Definition Template 4.NN. </p>
-<dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2000-05-11 This subroutine returns PDS template information for a specified Product Definition Template 4.NN. The number of entries in the template is returned along with a map of the number of octets occupied by each entry. Also, a flag is returned to indicate whether the template would need to be extended.</dd></dl>
+<p>The number of entries in the template is returned along with a map of the number of octets occupied by each entry. Also, a flag is returned to indicate whether the template would need to be extended.</p>
 <p>PROGRAM HISTORY LOG:</p>
 <ul>
 <li>2000-05-11 Stephen Gilbert</li>
@@ -375,7 +371,7 @@ template_num</td>
 <dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2000-05-11 </dd></dl>
 
-<p>Definition at line <a class="el" href="pdstemplates_8f_source.html#l00422">422</a> of file <a class="el" href="pdstemplates_8f_source.html">pdstemplates.f</a>.</p>
+<p>Definition at line <a class="el" href="pdstemplates_8f_source.html#l00411">411</a> of file <a class="el" href="pdstemplates_8f_source.html">pdstemplates.f</a>.</p>
 
 </div>
 </div>
@@ -393,9 +389,7 @@ template_num</td>
       </table>
 </div><div class="memdoc">
 
-<p>This function returns the initial length of the "static" part of Template 4.number. </p>
-<dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2004-05-11 This function returns the initial length (number of entries) in the "static" part of specified Product Definition Template 4.number. </dd></dl>
+<p>This function returns the initial length (number of entries) in the "static" part of specified Product Definition Template 4.number. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">number</td><td>NN, indicating the number of the Product Definition Template 4.NN that is being requested. </td></tr>
@@ -410,7 +404,7 @@ template_num</td>
 <dl class="section author"><dt>Author</dt><dd>Stephen Gilbert </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2004-05-11 </dd></dl>
 
-<p>Definition at line <a class="el" href="pdstemplates_8f_source.html#l00709">709</a> of file <a class="el" href="pdstemplates_8f_source.html">pdstemplates.f</a>.</p>
+<p>Definition at line <a class="el" href="pdstemplates_8f_source.html#l00689">689</a> of file <a class="el" href="pdstemplates_8f_source.html">pdstemplates.f</a>.</p>
 
 </div>
 </div>

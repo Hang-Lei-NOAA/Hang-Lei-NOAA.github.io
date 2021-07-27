@@ -190,12 +190,12 @@ Functions/Subroutines</h2></td></tr>
 <p>This subroutine unpacks Section 5 (Data Representation Section) starting at octet 6 of that Section. </p>
 <p>PROGRAM HISTORY LOG:</p>
 <ul>
-<li>2000-05-26 Stephen Gilbert Initial development</li>
+<li>2000-05-26 Stephen Gilbert Initial development.</li>
 <li>2002-01-24 Stephen Gilbert Changed to dynamically allocate arrays and to pass pointers to those arrays through the argument list.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">cgrib</td><td>Character array that contains the GRIB2 message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cgrib</td><td>Character array that contains the GRIB2 message. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">lcgrib</td><td>Length (in bytes) of GRIB message array cgrib. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">iofst</td><td>Bit offset of the beginning/end(returned) of Section 5. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">ndpts</td><td>Number of data points unpacked and returned. </td></tr>

@@ -318,83 +318,77 @@ $(document).ready(function(){initNavTree('getgb2_8f_source.html','');});
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">C&gt;    - 99 request not found</span></div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">C&gt;    - other gf_getfld grib2 unpacker return code</span></div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">C&gt;</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">C&gt;    Subprograms called:</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">C&gt;    - GETIDX get index</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">C&gt;    - GETGB2S search index records</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">C&gt;    - GETGB2R read and unpack grib record</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">C&gt;    - GF_FREE frees memory used by gfld</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">C&gt;</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">C&gt;    @note specify an index file if feasible to increase speed.</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">C&gt;    do not engage the same logical unit from more than one processor.</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">C&gt;    Note that derived type gribfield contains pointers to many</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">C&gt;    arrays of data. The memory for these arrays is allocated</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">C&gt;    when the values in the arrays are set, to help minimize</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">C&gt;    problems with array overloading. Because of this users</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">C&gt;    are encouraged to free up this memory, when it is no longer</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">C&gt;    needed, by an explicit call to subroutine gf_free.</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">C&gt;</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">C&gt;    @author Mark Iredell @date 1994-04-01</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">C&gt;</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
-<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="getgb2_8f.html#a59b91d6ac5c93ac460bb89760bf41694">  231</a></span>&#160;<span class="keyword">      SUBROUTINE </span><a class="code" href="getgb2_8f.html#a59b91d6ac5c93ac460bb89760bf41694">getgb2</a>(LUGB,LUGI,J,JDISC,JIDS,JPDTN,JPDT,JGDTN,JGDT,</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;     &amp;                  unpack,k,gfld,iret)</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      <span class="keywordtype">USE </span><a class="code" href="gribmod_8f.html#classgrib__mod">grib_mod</a></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">C&gt;    @note specify an index file if feasible to increase speed.</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">C&gt;    do not engage the same logical unit from more than one processor.</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">C&gt;    Note that derived type gribfield contains pointers to many</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">C&gt;    arrays of data. The memory for these arrays is allocated</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">C&gt;    when the values in the arrays are set, to help minimize</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">C&gt;    problems with array overloading. Because of this users</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">C&gt;    are encouraged to free up this memory, when it is no longer</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">C&gt;    needed, by an explicit call to subroutine gf_free.</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">C&gt;</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">C&gt;    @author Mark Iredell @date 1994-04-01</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">C&gt;</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
+<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="getgb2_8f.html#a59b91d6ac5c93ac460bb89760bf41694">  225</a></span>&#160;<span class="keyword">      SUBROUTINE </span><a class="code" href="getgb2_8f.html#a59b91d6ac5c93ac460bb89760bf41694">getgb2</a>(LUGB,LUGI,J,JDISC,JIDS,JPDTN,JPDT,JGDTN,JGDT,</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;     &amp;                  unpack,k,gfld,iret)</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      <span class="keywordtype">USE </span><a class="code" href="gribmod_8f.html#classgrib__mod">grib_mod</a></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(IN)</span> :: lugb,lugi,j,jdisc,jpdtn,jgdtn</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;      <span class="keywordtype">INTEGER</span>,<span class="keywordtype">DIMENSION(:)</span> :: jids(*),jpdt(*),jgdt(*)</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;      <span class="keywordtype">LOGICAL</span>,<span class="keywordtype">INTENT(IN)</span> :: unpack</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;      <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(OUT)</span> :: k,iret</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      <span class="keywordtype">TYPE(</span><a class="code" href="gribmod_8f.html#structgrib__mod_1_1gribfield">gribfield</a><span class="keywordtype">)</span>,<span class="keywordtype">INTENT(OUT)</span> :: gfld</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;      <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(IN)</span> :: lugb,lugi,j,jdisc,jpdtn,jgdtn</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;      <span class="keywordtype">INTEGER</span>,<span class="keywordtype">DIMENSION(:)</span> :: jids(*),jpdt(*),jgdt(*)</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;      <span class="keywordtype">LOGICAL</span>,<span class="keywordtype">INTENT(IN)</span> :: unpack</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;      <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(OUT)</span> :: k,iret</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      <span class="keywordtype">TYPE(</span><a class="code" href="gribmod_8f.html#structgrib__mod_1_1gribfield">gribfield</a><span class="keywordtype">)</span>,<span class="keywordtype">INTENT(OUT)</span> :: gfld</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <span class="keywordtype">CHARACTER(LEN=1)</span>,<span class="keywordtype">POINTER</span>,<span class="keywordtype">DIMENSION(:)</span> :: cbuf</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">C  DECLARE INTERFACES (REQUIRED FOR CBUF POINTER)</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      <span class="keyword">INTERFACE</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="keyword">         SUBROUTINE </span><a class="code" href="getidx_8f.html#aacdcd327443e6e2cdf8da8298727ed6d">getidx</a>(LUGB,LUGI,CBUF,NLEN,NNUM,IRGI)</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordtype">CHARACTER(LEN=1)</span>,<span class="keywordtype">POINTER</span>,<span class="keywordtype">DIMENSION(:)</span> :: cbuf</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(IN)</span> :: lugb,lugi</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(OUT)</span> :: nlen,nnum,irgi</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="keyword">         END SUBROUTINE </span><a class="code" href="getidx_8f.html#aacdcd327443e6e2cdf8da8298727ed6d">getidx</a></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="keyword">      END INTERFACE</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment">C  DETERMINE WHETHER INDEX BUFFER NEEDS TO BE INITIALIZED</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      irgi=0</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      CALL <a class="code" href="getidx_8f.html#aacdcd327443e6e2cdf8da8298727ed6d">getidx</a>(lugb,lugi,cbuf,nlen,nnum,irgi)</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;      <span class="keywordflow">IF</span>(irgi.GT.1) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        iret=96</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordflow">RETURN</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      <span class="keywordflow">ENDIF</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="comment">C  SEARCH INDEX BUFFER</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      CALL <a class="code" href="getgb2s_8f.html#a6b2c408bc524f6f37e9c461c3f74443c">getgb2s</a>(cbuf,nlen,nnum,j,jdisc,jids,jpdtn,jpdt,jgdtn,jgdt,</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;     &amp;             jk,gfld,lpos,irgs)</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      <span class="keywordflow">IF</span>(irgs.NE.0) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        iret=99</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        CALL <a class="code" href="gf__free_8f.html#a027efd02c99c9464153fc76d9bb9627e">gf_free</a>(gfld)</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordflow">RETURN</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      <span class="keywordflow">ENDIF</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">C  READ LOCAL USE SECTION, IF AVAILABLE</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      CALL <a class="code" href="getgb2l_8f.html#a00d7ea0c7789605b5ff7269a9c41e0ad">getgb2l</a>(lugb,cbuf(lpos),gfld,iret)</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">C  READ AND UNPACK GRIB RECORD</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;      <span class="keywordflow">IF</span> (unpack) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">!    NUMFLD=GFLD%IFLDNUM</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">!    CALL GF_FREE(GFLD)</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        CALL <a class="code" href="getgb2r_8f.html#a9c8cac99054f88c1a5765ccca7d81efa">getgb2r</a>(lugb,cbuf(lpos),gfld,iret)</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;      <span class="keywordflow">ENDIF</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;      k=jk</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      <span class="keywordflow">RETURN</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      <span class="keywordflow">END</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;      <span class="keywordtype">CHARACTER(LEN=1)</span>,<span class="keywordtype">POINTER</span>,<span class="keywordtype">DIMENSION(:)</span> :: cbuf</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">C  DECLARE INTERFACES (REQUIRED FOR CBUF POINTER)</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      <span class="keyword">INTERFACE</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keyword">         SUBROUTINE </span><a class="code" href="getidx_8f.html#aacdcd327443e6e2cdf8da8298727ed6d">getidx</a>(LUGB,LUGI,CBUF,NLEN,NNUM,IRGI)</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keywordtype">CHARACTER(LEN=1)</span>,<span class="keywordtype">POINTER</span>,<span class="keywordtype">DIMENSION(:)</span> :: cbuf</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(IN)</span> :: lugb,lugi</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keywordtype">INTEGER</span>,<span class="keywordtype">INTENT(OUT)</span> :: nlen,nnum,irgi</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="keyword">         END SUBROUTINE </span><a class="code" href="getidx_8f.html#aacdcd327443e6e2cdf8da8298727ed6d">getidx</a></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="keyword">      END INTERFACE</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment">C  DETERMINE WHETHER INDEX BUFFER NEEDS TO BE INITIALIZED</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      irgi=0</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      CALL <a class="code" href="getidx_8f.html#aacdcd327443e6e2cdf8da8298727ed6d">getidx</a>(lugb,lugi,cbuf,nlen,nnum,irgi)</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      <span class="keywordflow">IF</span>(irgi.GT.1) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        iret=96</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">RETURN</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      <span class="keywordflow">ENDIF</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment">C  SEARCH INDEX BUFFER</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;      CALL <a class="code" href="getgb2s_8f.html#a6b2c408bc524f6f37e9c461c3f74443c">getgb2s</a>(cbuf,nlen,nnum,j,jdisc,jids,jpdtn,jpdt,jgdtn,jgdt,</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;     &amp;             jk,gfld,lpos,irgs)</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      <span class="keywordflow">IF</span>(irgs.NE.0) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        iret=99</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        CALL <a class="code" href="gf__free_8f.html#a027efd02c99c9464153fc76d9bb9627e">gf_free</a>(gfld)</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">RETURN</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      <span class="keywordflow">ENDIF</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">C  READ LOCAL USE SECTION, IF AVAILABLE</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      CALL <a class="code" href="getgb2l_8f.html#a00d7ea0c7789605b5ff7269a9c41e0ad">getgb2l</a>(lugb,cbuf(lpos),gfld,iret)</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">C  READ AND UNPACK GRIB RECORD</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      <span class="keywordflow">IF</span> (unpack) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="comment">!    NUMFLD=GFLD%IFLDNUM</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">!    CALL GF_FREE(GFLD)</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        CALL <a class="code" href="getgb2r_8f.html#a9c8cac99054f88c1a5765ccca7d81efa">getgb2r</a>(lugb,cbuf(lpos),gfld,iret)</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="keywordflow">ENDIF</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;      k=jk</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment">C - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;      <span class="keywordflow">RETURN</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      <span class="keywordflow">END</span></div>
 <div class="ttc" id="getgb2s_8f_html_a6b2c408bc524f6f37e9c461c3f74443c"><div class="ttname"><a href="getgb2s_8f.html#a6b2c408bc524f6f37e9c461c3f74443c">getgb2s</a></div><div class="ttdeci">subroutine getgb2s(CBUF, NLEN, NNUM, J, JDISC, JIDS, JPDTN, JPDT, JGDTN, JGDT, K, GFLD, LPOS, IRET)</div><div class="ttdoc">This subroutine find in the index file for a reference to the grib field requested. </div><div class="ttdef"><b>Definition:</b> <a href="getgb2s_8f_source.html#l00243">getgb2s.f:243</a></div></div>
 <div class="ttc" id="getgb2r_8f_html_a9c8cac99054f88c1a5765ccca7d81efa"><div class="ttname"><a href="getgb2r_8f.html#a9c8cac99054f88c1a5765ccca7d81efa">getgb2r</a></div><div class="ttdeci">subroutine getgb2r(LUGB, CINDEX, GFLD, IRET)</div><div class="ttdoc">This subroutine read and unpack sections 6 and 7 from a grib2 message. </div><div class="ttdef"><b>Definition:</b> <a href="getgb2r_8f_source.html#l00160">getgb2r.f:160</a></div></div>
 <div class="ttc" id="gf__free_8f_html_a027efd02c99c9464153fc76d9bb9627e"><div class="ttname"><a href="gf__free_8f.html#a027efd02c99c9464153fc76d9bb9627e">gf_free</a></div><div class="ttdeci">subroutine gf_free(gfld)</div><div class="ttdoc">This subroutine frees up memory that was used to store array values in derived type gribfield...</div><div class="ttdef"><b>Definition:</b> <a href="gf__free_8f_source.html#l00138">gf_free.f:138</a></div></div>
-<div class="ttc" id="gribmod_8f_html_classgrib__mod"><div class="ttname"><a href="gribmod_8f.html#classgrib__mod">grib_mod</a></div><div class="ttdoc">PROGRAM HISTORY LOG: 2002-01-23 Stephen Gilbert 2007-04-24 Boi Vuong Added GDT 3.204 Curvilinear Orth...</div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00150">gribmod.f:150</a></div></div>
-<div class="ttc" id="getgb2_8f_html_a59b91d6ac5c93ac460bb89760bf41694"><div class="ttname"><a href="getgb2_8f.html#a59b91d6ac5c93ac460bb89760bf41694">getgb2</a></div><div class="ttdeci">subroutine getgb2(LUGB, LUGI, J, JDISC, JIDS, JPDTN, JPDT, JGDTN, JGDT, UNPACK, K, GFLD, IRET)</div><div class="ttdoc">This subroutine find and unpack a grib message. </div><div class="ttdef"><b>Definition:</b> <a href="getgb2_8f_source.html#l00231">getgb2.f:231</a></div></div>
+<div class="ttc" id="gribmod_8f_html_classgrib__mod"><div class="ttname"><a href="gribmod_8f.html#classgrib__mod">grib_mod</a></div><div class="ttdoc">PROGRAM HISTORY LOG: </div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00151">gribmod.f:151</a></div></div>
+<div class="ttc" id="getgb2_8f_html_a59b91d6ac5c93ac460bb89760bf41694"><div class="ttname"><a href="getgb2_8f.html#a59b91d6ac5c93ac460bb89760bf41694">getgb2</a></div><div class="ttdeci">subroutine getgb2(LUGB, LUGI, J, JDISC, JIDS, JPDTN, JPDT, JGDTN, JGDT, UNPACK, K, GFLD, IRET)</div><div class="ttdoc">This subroutine find and unpack a grib message. </div><div class="ttdef"><b>Definition:</b> <a href="getgb2_8f_source.html#l00225">getgb2.f:225</a></div></div>
 <div class="ttc" id="getidx_8f_html_aacdcd327443e6e2cdf8da8298727ed6d"><div class="ttname"><a href="getidx_8f.html#aacdcd327443e6e2cdf8da8298727ed6d">getidx</a></div><div class="ttdeci">subroutine getidx(LUGB, LUGI, CINDEX, NLEN, NNUM, IRET)</div><div class="ttdoc">This subroutine finds, reads or generates a grib2 index for the grib2 file associated with unit lugb...</div><div class="ttdef"><b>Definition:</b> <a href="getidx_8f_source.html#l00046">getidx.f:46</a></div></div>
-<div class="ttc" id="gribmod_8f_html_structgrib__mod_1_1gribfield"><div class="ttname"><a href="gribmod_8f.html#structgrib__mod_1_1gribfield">grib_mod::gribfield</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00154">gribmod.f:154</a></div></div>
+<div class="ttc" id="gribmod_8f_html_structgrib__mod_1_1gribfield"><div class="ttname"><a href="gribmod_8f.html#structgrib__mod_1_1gribfield">grib_mod::gribfield</a></div><div class="ttdef"><b>Definition:</b> <a href="gribmod_8f_source.html#l00155">gribmod.f:155</a></div></div>
 <div class="ttc" id="getgb2l_8f_html_a00d7ea0c7789605b5ff7269a9c41e0ad"><div class="ttname"><a href="getgb2l_8f.html#a00d7ea0c7789605b5ff7269a9c41e0ad">getgb2l</a></div><div class="ttdeci">subroutine getgb2l(LUGB, CINDEX, GFLD, IRET)</div><div class="ttdoc">This subroutine read and unpack a local use section from a grib2 message. </div><div class="ttdef"><b>Definition:</b> <a href="getgb2l_8f_source.html#l00156">getgb2l.f:156</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

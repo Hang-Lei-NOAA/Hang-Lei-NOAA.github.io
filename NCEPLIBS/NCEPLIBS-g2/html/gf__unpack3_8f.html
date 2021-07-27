@@ -196,16 +196,16 @@ Functions/Subroutines</h2></td></tr>
 <p>This subroutine unpacks Section 3 (Grid Definition Section) starting at octet 6 of that Section. </p>
 <p>PROGRAM HISTORY LOG:</p>
 <ul>
-<li>2000-05-26 Stephen Gilbert Initial development</li>
+<li>2000-05-26 Stephen Gilbert Initial development.</li>
 <li>2002-01-24 Stephen Gilbert Changed to dynamically allocate arrays and to pass pointers to those arrays through the argument list.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">cgrib</td><td>Character array that contains the GRIB2 message </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cgrib</td><td>Character array that contains the GRIB2 message. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">lcgrib</td><td>Length (in bytes) of GRIB message array cgrib. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">iofst</td><td>Bit offset of the beginning/end(returned) of Section 3. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">igds</td><td>Contains information read from the appropriate GRIB Grid Definition Section 3 for the field being returned. Must be dimensioned &gt;= 5.<ul>
-<li>igds(1) Source of grid definition (see Code Table 3.0)</li>
+<li>igds(1) Source of grid definition (see Code Table 3.0).</li>
 <li>igds(2) Number of grid points in the defined grid.</li>
 <li>igds(3) Number of octets needed for each additional grid points definition. Used to define number of points in each row (or column) for non-regular grids. = 0, if using regular grid.</li>
 <li>igds(4) Interpretation of list for optional points definition (Code Table 3.11).</li>
@@ -213,7 +213,7 @@ Functions/Subroutines</h2></td></tr>
 </ul>
 </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">igdstmpl</td><td>Contains the data values for the specified Grid Definition Template (NN=igds(5)). Each element of this integer array contains an entry (in the order specified) of Grid Defintion Template 3.NN. A safe dimension for this array can be obtained in advance from maxvals(2), which is returned from subroutine gribinfo. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">mapgridlen</td><td>Number of elements in igdstmpl. i.e. number of entries in Grid Defintion Template 3.NN ( NN=igds(5) ). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">mapgridlen</td><td>Number of elements in igdstmpl. i.e. number of entries in Grid Defintion Template 3.NN (NN=igds(5)). </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">ideflist</td><td>(Used if igds(3) .ne. 0) This array contains the number of grid points contained in each row (or column). (part of Section 3) A safe dimension for this array can be obtained in advance from maxvals(3), which is returned from subroutine gribinfo. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">idefnum</td><td>(Used if igds(3) .ne. 0) The number of entries in array ideflist. i.e. number of rows (or columns) for which optional grid points are defined. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">ierr</td><td>Error return code.<ul>
